@@ -1,0 +1,28 @@
+var driver__mpu6050__basic_8h =
+[
+    [ "MPU6050_BASIC_DEFAULT_ACCELEROMETER_RANGE", "group__mpu6050__example__driver.html#gac21e0f6e3c0c821e5d067e1cd75dde3f", null ],
+    [ "MPU6050_BASIC_DEFAULT_CLOCK_SOURCE", "group__mpu6050__example__driver.html#ga6013b421ee39944f0876bb7b8da6de7d", null ],
+    [ "MPU6050_BASIC_DEFAULT_CYCLE_WAKE_UP", "group__mpu6050__example__driver.html#gac3e9203ba10231089f661b9e1be59fe5", null ],
+    [ "MPU6050_BASIC_DEFAULT_EXTERN_SYNC", "group__mpu6050__example__driver.html#ga835062982b28575f665e33316c670048", null ],
+    [ "MPU6050_BASIC_DEFAULT_FSYNC_INTERRUPT", "group__mpu6050__example__driver.html#gaf6919451fed1a1796b03cdf8d336d61f", null ],
+    [ "MPU6050_BASIC_DEFAULT_FSYNC_INTERRUPT_LEVEL", "group__mpu6050__example__driver.html#ga67dc8e9f5889f64ff28ad516cd1cf2b1", null ],
+    [ "MPU6050_BASIC_DEFAULT_GYROSCOPE_RANGE", "group__mpu6050__example__driver.html#ga59f80efcf6401e65ed67051bde964573", null ],
+    [ "MPU6050_BASIC_DEFAULT_IIC_BYPASS", "group__mpu6050__example__driver.html#ga0d4b93780e3e4a81356341bd0e6639fd", null ],
+    [ "MPU6050_BASIC_DEFAULT_IIC_MASTER", "group__mpu6050__example__driver.html#ga6690b1327fed38143cb521dcb40ac424", null ],
+    [ "MPU6050_BASIC_DEFAULT_INTERRUPT_DATA_READY", "group__mpu6050__example__driver.html#ga1e7c1ba41f1e037d5788bc369bf36574", null ],
+    [ "MPU6050_BASIC_DEFAULT_INTERRUPT_DMP", "group__mpu6050__example__driver.html#ga523d35068f1af48dbd51d7c475530dc6", null ],
+    [ "MPU6050_BASIC_DEFAULT_INTERRUPT_FIFO_OVERFLOW", "group__mpu6050__example__driver.html#gac24598d1fadcb13ccd5ee3ebffffed03", null ],
+    [ "MPU6050_BASIC_DEFAULT_INTERRUPT_I2C_MAST", "group__mpu6050__example__driver.html#gac4408bed943151d5ada6b2b134f8d58d", null ],
+    [ "MPU6050_BASIC_DEFAULT_INTERRUPT_LATCH", "group__mpu6050__example__driver.html#ga03f062f08ec20bf2890735dbaf8250b5", null ],
+    [ "MPU6050_BASIC_DEFAULT_INTERRUPT_MOTION", "group__mpu6050__example__driver.html#ga7706f4f8b5fe4bafbb6fc457cb55e5b3", null ],
+    [ "MPU6050_BASIC_DEFAULT_INTERRUPT_PIN_LEVEL", "group__mpu6050__example__driver.html#ga78e532145736b4ebf8c38df9c1bcf607", null ],
+    [ "MPU6050_BASIC_DEFAULT_INTERRUPT_PIN_TYPE", "group__mpu6050__example__driver.html#gae44cf52e7a8176e35e7c155e81d6ec57", null ],
+    [ "MPU6050_BASIC_DEFAULT_INTERRUPT_READ_CLEAR", "group__mpu6050__example__driver.html#ga80acb52601d1ca35bcea49f8279bcece", null ],
+    [ "MPU6050_BASIC_DEFAULT_LOW_PASS_FILTER", "group__mpu6050__example__driver.html#ga744b78b1d14c9dccb05566c1877275b4", null ],
+    [ "MPU6050_BASIC_DEFAULT_RATE", "group__mpu6050__example__driver.html#gafd56f0afabfa5e294d0841d339273402", null ],
+    [ "MPU6050_BASIC_DEFAULT_WAKE_UP_FREQUENCY", "group__mpu6050__example__driver.html#gaec9ae23890263e1acf7a3cba515b1a9a", null ],
+    [ "mpu6050_basic_deinit", "group__mpu6050__example__driver.html#ga0ccf1034d23b54163b1ba7e349a9eb82", null ],
+    [ "mpu6050_basic_init", "group__mpu6050__example__driver.html#ga25caa65e97f5d7469be240f207f888c2", null ],
+    [ "mpu6050_basic_read", "group__mpu6050__example__driver.html#ga92b4964e6a8ef6b228c414e7f875ce2c", null ],
+    [ "mpu6050_basic_read_temperature", "group__mpu6050__example__driver.html#ga105b3437eaeddcdf860357a90dee59b5", null ]
+];
