@@ -510,6 +510,16 @@ uint8_t mpu6050_fifo_init(mpu6050_address_t addr_pin)
         return 1;
     }
     
+    /* force fifo reset */
+    res = mpu6050_force_fifo_reset(&gs_handle);
+    if (res != 0)
+    {
+        mpu6050_interface_debug_print("mpu6050: force fifo reset failed.\n");
+        (void)mpu6050_deinit(&gs_handle);
+       
+        return 1;
+    }
+    
     return 0;
 }
 

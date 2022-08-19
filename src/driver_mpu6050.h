@@ -660,6 +660,18 @@ uint8_t mpu6050_set_fifo(mpu6050_handle_t *handle, mpu6050_bool_t enable);
 uint8_t mpu6050_get_fifo(mpu6050_handle_t *handle, mpu6050_bool_t *enable);
 
 /**
+ * @brief     force reset the fifo
+ * @param[in] *handle points to a mpu6050 handle structure
+ * @return    status code
+ *            - 0 success
+ *            - 1 force fifo reset failed
+ *            - 2 handle is NULL
+ *            - 3 handle is not initialized
+ * @note      none
+ */
+uint8_t mpu6050_force_fifo_reset(mpu6050_handle_t *handle);
+
+/**
  * @brief     enable or disable the iic master mode
  * @param[in] *handle points to a mpu6050 handle structure
  * @param[in] enable is a bool value

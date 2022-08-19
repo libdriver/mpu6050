@@ -1182,6 +1182,19 @@ uint8_t mpu6050_dmp_read_test(mpu6050_address_t addr, uint32_t times)
         return 1;
     }
     
+    /* force fifo reset */
+    res = mpu6050_force_fifo_reset(&gs_handle);
+    if (res != 0)
+    {
+        mpu6050_interface_debug_print("mpu6050: force fifo reset failed.\n");
+        (void)mpu6050_deinit(&gs_handle);
+       
+        return 1;
+    }
+    
+    /* delay 100 ms */
+    mpu6050_interface_delay_ms(100);
+    
     for (i = 0; i < times; i++)
     {
         uint16_t l;
