@@ -165,6 +165,7 @@ var driver__mpu6050_8c =
     [ "mpu6050_fifo_get", "group__mpu6050__basic__driver.html#ga63bf44db29f62e35cad9912814475e3d", null ],
     [ "mpu6050_fifo_reset", "group__mpu6050__basic__driver.html#ga36943efb673b78be8b51736647b08fa1", null ],
     [ "mpu6050_fifo_set", "group__mpu6050__basic__driver.html#gad95cdad91ae331907daac3e08b317ef3", null ],
+    [ "mpu6050_force_fifo_reset", "group__mpu6050__basic__driver.html#gaa4894a003a82e223ebd86649861917eb", null ],
     [ "mpu6050_get_accelerometer_range", "group__mpu6050__basic__driver.html#gac82253b5704f4f765b8a3253c470d09d", null ],
     [ "mpu6050_get_accelerometer_test", "group__mpu6050__basic__driver.html#ga105cecf10fc754cc8217972ed9b02d43", null ],
     [ "mpu6050_get_accelerometer_x_test", "group__mpu6050__basic__driver.html#ga15e774a11d5508db954213069969419e", null ],

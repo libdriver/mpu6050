@@ -543,11 +543,21 @@ uint8_t mpu6050_fifo_test(mpu6050_address_t addr, uint32_t times)
         return 1;
     }
     
+    /* force fifo reset */
+    res = mpu6050_force_fifo_reset(&gs_handle);
+    if (res != 0)
+    {
+        mpu6050_interface_debug_print("mpu6050: force fifo reset failed.\n");
+        (void)mpu6050_deinit(&gs_handle);
+       
+        return 1;
+    }
+    
+    /* delay 1000 ms */
+    mpu6050_interface_delay_ms(1000);
+    
     for (i = 0; i < times; i++)
     {
-        /* delay 1000 ms */
-        mpu6050_interface_delay_ms(1000);
-        
         /* read data */
         gs_len = 80;
         res = mpu6050_read(&gs_handle, gs_accel_raw, gs_accel_g, gs_gyro_raw, gs_gyro_dps, &gs_len);
@@ -567,6 +577,10 @@ uint8_t mpu6050_fifo_test(mpu6050_address_t addr, uint32_t times)
         mpu6050_interface_debug_print("mpu6050: gyro x[0] is %0.2fdps.\n", gs_gyro_dps[0][0]);
         mpu6050_interface_debug_print("mpu6050: gyro y[0] is %0.2fdps.\n", gs_gyro_dps[0][1]);
         mpu6050_interface_debug_print("mpu6050: gyro z[0] is %0.2fdps.\n", gs_gyro_dps[0][2]);
+        
+        /* delay 1000 ms */
+        mpu6050_interface_delay_ms(1000);
+        
     }
     
     /* finish fifo test */

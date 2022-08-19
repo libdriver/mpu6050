@@ -365,6 +365,9 @@ Functions</h2></td></tr>
 <tr class="memitem:gad4c5d2ba47af89663395cadfa3cb5b39"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mpu6050__basic__driver.html#gad4c5d2ba47af89663395cadfa3cb5b39">mpu6050_get_fifo</a> (<a class="el" href="group__mpu6050__basic__driver.html#gab9152935d0f1c91a6183aa8f398b7045">mpu6050_handle_t</a> *handle, <a class="el" href="group__mpu6050__basic__driver.html#gabd66e87c6875710ce056b940d20f85c9">mpu6050_bool_t</a> *enable)</td></tr>
 <tr class="memdesc:gad4c5d2ba47af89663395cadfa3cb5b39"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the fifo status  <a href="group__mpu6050__basic__driver.html#gad4c5d2ba47af89663395cadfa3cb5b39">More...</a><br /></td></tr>
 <tr class="separator:gad4c5d2ba47af89663395cadfa3cb5b39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa4894a003a82e223ebd86649861917eb"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mpu6050__basic__driver.html#gaa4894a003a82e223ebd86649861917eb">mpu6050_force_fifo_reset</a> (<a class="el" href="group__mpu6050__basic__driver.html#gab9152935d0f1c91a6183aa8f398b7045">mpu6050_handle_t</a> *handle)</td></tr>
+<tr class="memdesc:gaa4894a003a82e223ebd86649861917eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">force reset the fifo  <a href="group__mpu6050__basic__driver.html#gaa4894a003a82e223ebd86649861917eb">More...</a><br /></td></tr>
+<tr class="separator:gaa4894a003a82e223ebd86649861917eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaa35e9a70bdae6b95305c7fa3e95aaeda"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mpu6050__basic__driver.html#gaa35e9a70bdae6b95305c7fa3e95aaeda">mpu6050_set_iic_master</a> (<a class="el" href="group__mpu6050__basic__driver.html#gab9152935d0f1c91a6183aa8f398b7045">mpu6050_handle_t</a> *handle, <a class="el" href="group__mpu6050__basic__driver.html#gabd66e87c6875710ce056b940d20f85c9">mpu6050_bool_t</a> enable)</td></tr>
 <tr class="memdesc:gaa35e9a70bdae6b95305c7fa3e95aaeda"><td class="mdescLeft">&#160;</td><td class="mdescRight">enable or disable the iic master mode  <a href="group__mpu6050__basic__driver.html#gaa35e9a70bdae6b95305c7fa3e95aaeda">More...</a><br /></td></tr>
 <tr class="separator:gaa35e9a70bdae6b95305c7fa3e95aaeda"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1601,6 +1604,40 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>status code<ul>
 <li>0 success</li>
 <li>1 fifo write failed</li>
+<li>2 handle is NULL</li>
+<li>3 handle is not initialized </li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>none </dd></dl>
+
+</div>
+</div>
+<a id="gaa4894a003a82e223ebd86649861917eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa4894a003a82e223ebd86649861917eb">&#9670;&nbsp;</a></span>mpu6050_force_fifo_reset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t mpu6050_force_fifo_reset </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__mpu6050__basic__driver.html#gab9152935d0f1c91a6183aa8f398b7045">mpu6050_handle_t</a> *&#160;</td>
+          <td class="paramname"><em>handle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>force reset the fifo </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to a mpu6050 handle structure </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>status code<ul>
+<li>0 success</li>
+<li>1 force fifo reset failed</li>
 <li>2 handle is NULL</li>
 <li>3 handle is not initialized </li>
 </ul>

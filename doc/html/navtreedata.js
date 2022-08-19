@@ -52,10 +52,10 @@ var NAVTREEINDEX =
 [
 "annotated.html",
 "group__mpu6050__basic__driver.html#ga256c4511d42d65b5691686569a78328d",
-"group__mpu6050__basic__driver.html#gaaa9295dfae70a56066f5687bc85cdf6e",
-"group__mpu6050__basic__driver.html#gga7017581b2d00edbe1e1dd543a566b573a8b8742c691eed0cd2976c1eebc328af5",
-"group__mpu6050__dmp__driver.html#gga5e7590cf3620da9a5fc7abd2b0c025cea9acc3ff066f7043df1f50c6550f7bafc",
-"group__mpu6050__interface__driver.html#gaf09d98bce66f648d644cfe93f3ec5fe7"
+"group__mpu6050__basic__driver.html#gaa7b1f767fb233d9322501fffc0817867",
+"group__mpu6050__basic__driver.html#gga58827093ced72522015756873c1f6b52abb50edd30e8f383f75ac5c7229edb9b9",
+"group__mpu6050__dmp__driver.html#gga5e7590cf3620da9a5fc7abd2b0c025cea60f927361967dc8289b7e6c56bbbaf60",
+"group__mpu6050__interface__driver.html#gae82a00b862b6c02b4f76f5ccd3d820c6"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
