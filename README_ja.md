@@ -359,6 +359,7 @@ if (gpio_interrupt_init() != 0)
 g_gpio_irq = mpu6050_dmp_irq_handler;
 
 /* run dmp function */
+addr = MPU6050_ADDRESS_AD0_LOW;
 if (mpu6050_dmp_init(addr, a_receive_callback, 
                      a_dmp_tap_callback, a_dmp_orient_callback) != 0)
 {
