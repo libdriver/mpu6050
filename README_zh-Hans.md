@@ -52,6 +52,8 @@ LibDriver MPU6050是LibDriver推出的MPU6050的全功能驱动，该驱动提�
 #### example basic
 
 ```C
+#include "driver_mpu6050_basic.h"
+
 uint8_t res;
 uint32_t i;
 uint32_t times;
@@ -122,6 +124,8 @@ return 0;
 #### example fifo
 
 ```C
+#include "driver_mpu6050_fifo.h"
+
 uint32_t i;
 uint32_t times;
 uint16_t len;
@@ -203,6 +207,8 @@ return 0;
 #### example dmp
 
 ```C
+#include "driver_mpu6050_dmp.h"
+
 uint32_t i;
 uint32_t times;
 uint32_t cnt;

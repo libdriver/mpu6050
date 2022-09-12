@@ -29,15 +29,15 @@ LibDriver MPU6050 is the full function driver of mpu6050 launched by LibDriver. 
 
 /src includes LibDriver MPU6050 source files.
 
-/interface includes LibDriver MPU6050 IIC platform independent template。
+/interface includes LibDriver MPU6050 IIC platform independent template.
 
-/test includes LibDriver MPU6050 driver test code and this code can test the chip necessary function simply。
+/test includes LibDriver MPU6050 driver test code and this code can test the chip necessary function simply.
 
 /example includes LibDriver MPU6050 sample code.
 
 /doc includes LibDriver MPU6050 offline document.
 
-/datasheet includes MPU6050 datasheet。
+/datasheet includes MPU6050 datasheet.
 
 /project includes the common Linux and MCU development board sample code. All projects use the shell script to debug the driver and the detail instruction can be found in each project's README.md.
 
@@ -52,6 +52,8 @@ Add /src, /interface and /example to your project.
 #### example basic
 
 ```C
+#include "driver_mpu6050_basic.h"
+
 uint8_t res;
 uint32_t i;
 uint32_t times;
@@ -122,6 +124,8 @@ return 0;
 #### example fifo
 
 ```C
+#include "driver_mpu6050_fifo.h"
+
 uint32_t i;
 uint32_t times;
 uint16_t len;
@@ -203,6 +207,8 @@ return 0;
 #### example dmp
 
 ```C
+#include "driver_mpu6050_dmp.h"
+
 uint32_t i;
 uint32_t times;
 uint32_t cnt;
