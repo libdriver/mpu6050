@@ -52,6 +52,8 @@ LibDriver MPU6050은 LibDriver에서 출시한 mpu6050의 전체 기능 드라�
 #### example basic
 
 ```C
+#include "driver_mpu6050_basic.h"
+
 uint8_t res;
 uint32_t i;
 uint32_t times;
@@ -122,6 +124,8 @@ return 0;
 #### example fifo
 
 ```c
+#include "driver_mpu6050_fifo.h"
+
 uint32_t i;
 uint32_t times;
 uint16_t len;
@@ -203,6 +207,8 @@ return 0;
 #### example dmp
 
 ```C
+#include "driver_mpu6050_dmp.h"
+
 uint32_t i;
 uint32_t times;
 uint32_t cnt;
