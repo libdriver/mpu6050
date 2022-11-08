@@ -221,11 +221,7 @@ static float gs_gyro_dps[128][3];
 static int32_t gs_quat[128][4];          
 static float gs_pitch[128];              
 static float gs_roll[128];                
-static float gs_yaw[128];                  
-static int32_t gs_quat[128][4];         
-static float gs_pitch[128];             
-static float gs_roll[128];             
-static float gs_yaw[128];     
+static float gs_yaw[128];                     
 mpu6050_address_t addr;
 
 static void a_receive_callback(uint8_t type)
