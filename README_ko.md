@@ -439,13 +439,13 @@ return 0;
 
 ### 문서
 
-온라인 문서: https://www.libdriver.com/docs/mpu6050/index.html
+온라인 문서: [https://www.libdriver.com/docs/mpu6050/index.html](https://www.libdriver.com/docs/mpu6050/index.html).
 
-오프라인 문서: /doc/html/index.html
+오프라인 문서: /doc/html/index.html.
 
 ### 기고
 
-연락주세요lishifenging@outlook.com
+CONTRIBUTING.md 를 참조하십시오.
 
 ### 저작권
 
@@ -461,4 +461,4 @@ MIT 라이선스(MIT)
 
 ### 문의하기
 
-연락주세요lishifenging@outlook.com
+연락주세요lishifenging@outlook.com.

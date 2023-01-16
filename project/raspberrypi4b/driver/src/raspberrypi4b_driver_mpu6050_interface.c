@@ -46,7 +46,7 @@
 /**
  * @brief iic device hanble definition
  */
-static int gs_iic_fd;                       /**< iic handle */
+static int gs_fd;                       /**< iic handle */
 
 /**
  * @brief  interface iic bus init
@@ -57,7 +57,7 @@ static int gs_iic_fd;                       /**< iic handle */
  */
 uint8_t mpu6050_interface_iic_init(void)
 {
-    return iic_init(IIC_DEVICE_NAME, &gs_iic_fd);
+    return iic_init(IIC_DEVICE_NAME, &gs_fd);
 }
 
 /**
@@ -69,7 +69,7 @@ uint8_t mpu6050_interface_iic_init(void)
  */
 uint8_t mpu6050_interface_iic_deinit(void)
 {
-    return iic_deinit(gs_iic_fd);
+    return iic_deinit(gs_fd);
 }
 
 /**
@@ -85,7 +85,7 @@ uint8_t mpu6050_interface_iic_deinit(void)
  */
 uint8_t mpu6050_interface_iic_read(uint8_t addr, uint8_t reg, uint8_t *buf, uint16_t len)
 {
-    return iic_read(gs_iic_fd, addr, reg, buf, len);
+    return iic_read(gs_fd, addr, reg, buf, len);
 }
 
 /**
@@ -101,7 +101,7 @@ uint8_t mpu6050_interface_iic_read(uint8_t addr, uint8_t reg, uint8_t *buf, uint
  */
 uint8_t mpu6050_interface_iic_write(uint8_t addr, uint8_t reg, uint8_t *buf, uint16_t len)
 {
-    return iic_write(gs_iic_fd, addr, reg, buf, len);
+    return iic_write(gs_fd, addr, reg, buf, len);
 }
 
 /**
@@ -125,7 +125,7 @@ void mpu6050_interface_debug_print(const char *const fmt, ...)
     uint8_t len;
     va_list args;
     
-    memset((char *)str, 0, sizeof(char)*256); 
+    memset((char *)str, 0, sizeof(char) * 256); 
     va_start(args, fmt);
     vsnprintf((char *)str, 256, (char const *)fmt, args);
     va_end(args);

@@ -25,16 +25,18 @@
  * @brief     gpio source file
  * @version   1.0.0
  * @author    Shifeng Li
- * @date      2021-2-12
+ * @date      2022-11-11
  *
  * <h3>history</h3>
  * <table>
  * <tr><th>Date        <th>Version  <th>Author      <th>Description
- * <tr><td>2021/02/12  <td>1.0      <td>Shifeng Li  <td>first upload
+ * <tr><td>2022/11/11  <td>1.0      <td>Shifeng Li  <td>first upload
  * </table>
  */
 
 #include "gpio.h"
+#include <gpiod.h>
+#include <pthread.h>
 
 /**
  * @brief gpio device name definition
@@ -49,40 +51,51 @@
 /**
  * @brief global var definition
  */
-static struct gpiod_chip *gs_chip;               /**< gpio chip handle */
-static struct gpiod_line *gs_line;               /**< gpio line handle */
-static pthread_t gs_pid;                         /**< gpio pthread pid */
-extern uint8_t (*g_gpio_irq)(void);              /**< gpio irq function address */
+static struct gpiod_chip *gs_chip;        /**< gpio chip handle */
+static struct gpiod_line *gs_line;        /**< gpio line handle */
+static pthread_t gs_pid;                  /**< gpio pthread pid */
+extern uint8_t (*g_gpio_irq)(void);       /**< gpio irq */
 
 /**
  * @brief  gpio interrupt pthread
- * @param  *p ponts to a args
+ * @param  *p ponts to an args buffer
  * @return NULL
  * @note   none
  */
-static void *gpio_interrupt_pthread(void *p)
+static void *a_gpio_interrupt_pthread(void *p)
 {
     int res;
     struct gpiod_line_event event;
-
+    
+    /* enable catching cancel signal */
     pthread_setcancelstate(PTHREAD_CANCEL_ENABLE, NULL);
+
+    /* cancel the pthread at once */
     pthread_setcanceltype(PTHREAD_CANCEL_ASYNCHRONOUS, NULL);
+
+    /* loop */
     while (1)
     {
+        /* wait for the event */
         res = gpiod_line_event_wait(gs_line, NULL);
         if (res == 1)
         {
-             if (gpiod_line_event_read(gs_line, &event) != 0)
-             {
-                 continue;
-             }
-             if (event.event_type == GPIOD_LINE_EVENT_FALLING_EDGE)
-             {
-                 if (g_gpio_irq)
-                 {
-                     g_gpio_irq();
-                 }
-             }
+            /* read the event */
+            if (gpiod_line_event_read(gs_line, &event) != 0)
+            {
+                continue;
+            }
+
+            /* if the falling edge */
+            if (event.event_type == GPIOD_LINE_EVENT_FALLING_EDGE)
+            {
+                /* check the g_gpio_irq */
+                if (g_gpio_irq != NULL)
+                {
+                    /* run the callback */
+                    g_gpio_irq();
+                }
+            }
         }
     }
 }
@@ -97,30 +110,37 @@ static void *gpio_interrupt_pthread(void *p)
 uint8_t gpio_interrupt_init(void)
 {
     uint8_t res;
-
+    
+    /* open the gpio group */
     gs_chip = gpiod_chip_open(GPIO_DEVICE_NAME);
-    if (!gs_chip)
+    if (gs_chip == NULL)
     {
         perror("gpio: open failed.\n");
 
         return 1;
     }
+    
+    /* get the gpio line */
     gs_line = gpiod_chip_get_line(gs_chip, GPIO_DEVICE_LINE);
-    if (!gs_line) 
+    if (gs_line == NULL) 
     {
         perror("gpio: get line failed.\n");
         gpiod_chip_close(gs_chip);
 
         return 1;
     }
+
+    /* catch the falling edge */
     if (gpiod_line_request_falling_edge_events(gs_line, "gpiointerrupt") < 0)
     {
-        perror("gpio: set falling edge events failed.\n");
+        perror("gpio: set edge events failed.\n");
         gpiod_chip_close(gs_chip);
 
         return 1;
     }
-    res = pthread_create(&gs_pid, NULL, gpio_interrupt_pthread, NULL);
+
+    /* creat a gpio interrupt pthread */
+    res = pthread_create(&gs_pid, NULL, a_gpio_interrupt_pthread, NULL);
     if (res != 0)
     {
         perror("gpio: creat pthread failed.\n");
@@ -142,14 +162,17 @@ uint8_t gpio_interrupt_init(void)
 uint8_t gpio_interrupt_deinit(void)
 {
     uint8_t res;
-
+    
+    /* close the gpio interrupt pthread */
     res = pthread_cancel(gs_pid);
-    if (res)
+    if (res != 0)
     {
         perror("gpio: delete pthread failed.\n");
 
         return 1;
     }
+
+    /* close the gpio */
     gpiod_chip_close(gs_chip);
     
     return 0;
