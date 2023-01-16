@@ -1,7 +1,6 @@
 <div align=center>
-<img src="/doc/image/misra.png"/>
+<img src="/doc/image/misra.svg" width="180" height="180"/>
 </div>
-
 
 ### Table of Contents
 
@@ -51,4 +50,4 @@ LibDriver complies with deviated MISRA standards.Libdriver complies with all man
 
 ### Report
 
-Detailed reports can be found in /misra/Polyspace report.pdf.
+Detailed reports can be found in /misra/mpu6050_polyspace_report.pdf.

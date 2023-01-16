@@ -25,20 +25,19 @@
  * @brief     gpio header file
  * @version   1.0.0
  * @author    Shifeng Li
- * @date      2021-2-12
+ * @date      2022-11-11
  *
  * <h3>history</h3>
  * <table>
  * <tr><th>Date        <th>Version  <th>Author      <th>Description
- * <tr><td>2021/02/12  <td>1.0      <td>Shifeng Li  <td>first upload
+ * <tr><td>2022/11/11  <td>1.0      <td>Shifeng Li  <td>first upload
  * </table>
  */
 
 #ifndef GPIO_H
 #define GPIO_H
 
-#include <gpiod.h>
-#include <pthread.h>
+#include <unistd.h>
 #include <stdint.h>
 #include <stdio.h>
 

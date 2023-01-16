@@ -2,67 +2,129 @@
 
 #### 1.1 Chip Info
 
-chip name : STM32F407ZGT6.
+Chip Name: STM32F407ZGT6.
 
-extern oscillator : 8MHz.
+Extern Oscillator: 8MHz.
 
-uart pin: TX/RX PA9/PA10.
+UART Pin: TX/RX PA9/PA10.
 
-iic pin: SCL/SDA PB8/PB9.
+IIC Pin: SCL/SDA PB8/PB9.
 
-gpio pin: INT PB0.
+GPIO Pin: INT PB0.
 
-### 2. Shell
+### 2. Development and Debugging
 
-#### 2.1 Shell Parameter
+#### 2.1 Integrated Development Environment
 
-baud rate: 115200.
+LidDriver provides both Keil and IAR integrated development environment projects.
 
-data bits : 8.
+MDK is the Keil ARM project and your Keil version must be 5 or higher.Keil ARM project needs STMicroelectronics STM32F4 Series Device Family Pack and you can download from https://www.keil.com/dd2/stmicroelectronics/stm32f407zgtx.
 
-stop bits: 1.
+EW is the IAR ARM project and your IAR version must be 9 or higher.
 
-parity: none.
+#### 2.2 Serial Port Parameter
 
-flow control: none.
+Baud Rate: 115200.
+
+Data Bits : 8.
+
+Stop Bits: 1.
+
+Parity: None.
+
+Flow Control: None.
+
+#### 2.3 Serial Port Assistant
+
+We use '\n' to wrap lines.If your serial port assistant displays exceptions (e.g. the displayed content does not divide lines), please modify the configuration of your serial port assistant or replace one that supports '\n' parsing.
 
 ### 3. MPU6050
 
 #### 3.1 Command Instruction
 
-​           mpu6050 is a basic command which can test all mpu6050 driver function:
+1. Show mpu6050 chip and driver information.
 
-​           -i         show mpu6050 chip and driver information.
+   ```shell
+   mpu6050 (-i | --information)
+   ```
 
-​           -h        show mpu6050 help.
+2. Show mpu6050 help.
 
-​           -p        show mpu6050 pin connections of the current board.
+   ```shell
+   mpu6050 (-h | --help)
+   ```
 
-​           -t  (reg -a (0 | 1) | read <times> -a (0 | 1) | fifo <times> -a (0 | 1) | dmp <times> -a (0 | 1) | motion -a (0 | 1) | pedometer <times> -a (0 | 1))
+3. Show mpu6050 pin connections of the current board.
 
-​           -t reg -a (0 | 1)        run mpu6050 register test. 
+   ```shell
+   mpu6050 (-p | --port)
+   ```
 
-​           -t read <times> -a (0 | 1)        run mpu6050 read test. times means the test times.
+4. Run mpu6050 register test.
 
-​           -t fifo <times> -a (0 | 1)        run mpu6050 fifo test. times means the test times.
+   ```shell
+   mpu6050 (-t reg | --test=reg) [--addr=<0 | 1>]
+   ```
 
-​           -t dmp <times> -a (0 | 1)        run mpu6050 dmp test. times means the test times.
+5. Run mpu6050 read test, num means the test times.
 
-​           -t motion -a (0 | 1)        run mpu6050 motion test. 
+   ```shell
+   mpu6050 (-t read | --test=read) [--addr=<0 | 1>] [--times=<num>]
+   ```
 
-​           -t pedometer <times> -a (0 | 1)        run mpu6050 pedometer test. times means the test times.
+6. Run mpu6050 fifo test, num means the test times.
 
-​           -c  (read <times> -a (0 | 1) | fifo <times> -a (0 | 1) | dmp <times> -a (0 | 1) | motion -a (0 | 1) | pedometer <times> -a (0 | 1))
+   ```shell
+   mpu6050 (-t fifo | --test=fifo) [--addr=<0 | 1>] [--times=<num>]
+   ```
 
-​           -c read <times> -a (0 | 1)        run mpu6050 read function. times means the read times.
+7. Run mpu6050 dmp test, num means the test times.
 
-​           -c fifo <times> -a (0 | 1)        run mpu6050 fifo function. times means the read times.
+   ```shell
+   mpu6050 (-t dmp | --test=dmp) [--addr=<0 | 1>] [--times=<num>]
+   ```
 
-​           -c dmp <times> -a (0 | 1)        run mpu6050 dmp function. times means the read times.
+8. Run mpu6050 motion test.
 
-​           -c motion -a (0 | 1)        run mpu6050 motion function. 
+   ```shell
+   mpu6050 (-t motion | --test=motion) [--addr=<0 | 1>]
+   ```
 
-​           -c pedometer <times> -a (0 | 1)        run mpu6050 pedometer function. times means the read times.
+9. Run mpu6050 pedometer test, num means the test times.
+
+   ```shell
+   mpu6050 (-t pedometer | --test=pedometer) [--addr=<0 | 1>] [--times=<num>]
+   ```
+
+10. Run mpu6050 read function, num means the read times.
+
+    ```shell
+    mpu6050 (-e read | --example=read) [--addr=<0 | 1>] [--times=<num>]
+    ```
+
+11. Run mpu6050 fifo function, num means the read times.
+
+    ```shell
+    mpu6050 (-e fifo | --example=fifo) [--addr=<0 | 1>] [--times=<num>]
+    ```
+
+12. Run mpu6050 dmp function, num means the read times.
+
+    ```shell
+    mpu6050 (-e dmp | --example=dmp) [--addr=<0 | 1>] [--times=<num>]
+    ```
+
+13. Run mpu6050 motion function.
+
+    ```shell
+    mpu6050 (-e motion | --example=motion) [--addr=<0 | 1>]
+    ```
+
+14. Run mpu6050 pedometer function, num means the read times.
+
+    ```shell
+    mpu6050 (-e pedometer | --example=pedometer) [--addr=<0 | 1>] [--times=<num>]
+    ```
 
 #### 3.2 Command Example
 
@@ -89,7 +151,7 @@ mpu6050: INT connected to GPIOB PIN0.
 ```
 
 ```shell
-mpu6050 -t reg -a 0
+mpu6050 -t reg --addr=0
 
 mpu6050: chip is TDK MPU6050.
 mpu6050: manufacturer is TDK.
@@ -205,7 +267,7 @@ mpu6050: check signal path reset ok.
 mpu6050: gyro signal path reset.
 mpu6050: check signal path reset ok.
 mpu6050: mpu6050_set_sample_rate_divider/mpu6050_get_sample_rate_divider test.
-mpu6050: set sample rate divider 0x13.
+mpu6050: set sample rate divider 0x80005EF.
 mpu6050: check sample rate divider ok.
 mpu6050: mpu6050_set_extern_sync/mpu6050_get_extern_sync test.
 mpu6050: set extern sync input disabled.
@@ -646,7 +708,7 @@ mpu6050: finish register test.
 ```
 
 ```shell
-mpu6050 -t read 3 -a 0 
+mpu6050 -t read --addr=0 --times=3
 
 mpu6050: chip is TDK MPU6050.
 mpu6050: manufacturer is TDK.
@@ -659,94 +721,94 @@ mpu6050: max temperature is 85.0C.
 mpu6050: min temperature is -40.0C.
 mpu6050: start read test.
 mpu6050: set accelerometer range 2g.
-mpu6050: acc x is -0.20g.
-mpu6050: acc y is -0.18g.
+mpu6050: acc x is -0.12g.
+mpu6050: acc y is -0.12g.
+mpu6050: acc z is 0.99g.
+mpu6050: acc x is -0.12g.
+mpu6050: acc y is -0.12g.
 mpu6050: acc z is 0.98g.
-mpu6050: acc x is -0.20g.
-mpu6050: acc y is -0.18g.
-mpu6050: acc z is 0.98g.
-mpu6050: acc x is -0.20g.
-mpu6050: acc y is -0.18g.
-mpu6050: acc z is 0.98g.
+mpu6050: acc x is -0.12g.
+mpu6050: acc y is -0.12g.
+mpu6050: acc z is 0.99g.
 mpu6050: set accelerometer range 4g.
-mpu6050: acc x is -0.20g.
-mpu6050: acc y is -0.18g.
-mpu6050: acc z is 0.97g.
-mpu6050: acc x is -0.20g.
-mpu6050: acc y is -0.18g.
-mpu6050: acc z is 0.98g.
-mpu6050: acc x is -0.20g.
-mpu6050: acc y is -0.18g.
-mpu6050: acc z is 0.98g.
+mpu6050: acc x is -0.12g.
+mpu6050: acc y is -0.13g.
+mpu6050: acc z is 0.99g.
+mpu6050: acc x is -0.12g.
+mpu6050: acc y is -0.12g.
+mpu6050: acc z is 0.99g.
+mpu6050: acc x is -0.12g.
+mpu6050: acc y is -0.12g.
+mpu6050: acc z is 0.99g.
 mpu6050: set accelerometer range 8g.
-mpu6050: acc x is -0.20g.
-mpu6050: acc y is -0.18g.
-mpu6050: acc z is 0.97g.
-mpu6050: acc x is -0.20g.
-mpu6050: acc y is -0.18g.
-mpu6050: acc z is 0.98g.
-mpu6050: acc x is -0.20g.
-mpu6050: acc y is -0.18g.
-mpu6050: acc z is 0.98g.
+mpu6050: acc x is -0.12g.
+mpu6050: acc y is -0.12g.
+mpu6050: acc z is 0.99g.
+mpu6050: acc x is -0.12g.
+mpu6050: acc y is -0.13g.
+mpu6050: acc z is 0.99g.
+mpu6050: acc x is -0.12g.
+mpu6050: acc y is -0.13g.
+mpu6050: acc z is 0.99g.
 mpu6050: set accelerometer range 16g.
-mpu6050: acc x is -0.20g.
-mpu6050: acc y is -0.18g.
-mpu6050: acc z is 0.97g.
-mpu6050: acc x is -0.20g.
-mpu6050: acc y is -0.18g.
-mpu6050: acc z is 0.98g.
-mpu6050: acc x is -0.20g.
-mpu6050: acc y is -0.18g.
-mpu6050: acc z is 0.98g.
+mpu6050: acc x is -0.12g.
+mpu6050: acc y is -0.12g.
+mpu6050: acc z is 0.99g.
+mpu6050: acc x is -0.12g.
+mpu6050: acc y is -0.12g.
+mpu6050: acc z is 0.99g.
+mpu6050: acc x is -0.12g.
+mpu6050: acc y is -0.12g.
+mpu6050: acc z is 0.99g.
 mpu6050: set gyroscope range 250dps.
-mpu6050: gyro x is -0.11dps.
-mpu6050: gyro y is 1.02dps.
-mpu6050: gyro z is 0.19dps.
-mpu6050: gyro x is -0.02dps.
-mpu6050: gyro y is 1.02dps.
-mpu6050: gyro z is 0.22dps.
-mpu6050: gyro x is -0.02dps.
-mpu6050: gyro y is 0.99dps.
-mpu6050: gyro z is 0.22dps.
-mpu6050: set gyroscope range 500dps.
-mpu6050: gyro x is -0.05dps.
-mpu6050: gyro y is 0.96dps.
-mpu6050: gyro z is 0.20dps.
-mpu6050: gyro x is 0.06dps.
+mpu6050: gyro x is -0.23dps.
 mpu6050: gyro y is 0.92dps.
-mpu6050: gyro z is 0.17dps.
-mpu6050: gyro x is -0.06dps.
-mpu6050: gyro y is 0.93dps.
-mpu6050: gyro z is 0.11dps.
+mpu6050: gyro z is 0.13dps.
+mpu6050: gyro x is -0.17dps.
+mpu6050: gyro y is 0.85dps.
+mpu6050: gyro z is 0.08dps.
+mpu6050: gyro x is -0.18dps.
+mpu6050: gyro y is 0.88dps.
+mpu6050: gyro z is 0.14dps.
+mpu6050: set gyroscope range 500dps.
+mpu6050: gyro x is -0.20dps.
+mpu6050: gyro y is 0.82dps.
+mpu6050: gyro z is 0.08dps.
+mpu6050: gyro x is -0.18dps.
+mpu6050: gyro y is 0.85dps.
+mpu6050: gyro z is 0.09dps.
+mpu6050: gyro x is -0.20dps.
+mpu6050: gyro y is 0.96dps.
+mpu6050: gyro z is 0.09dps.
 mpu6050: set gyroscope range 1000dps.
-mpu6050: gyro x is -0.09dps.
-mpu6050: gyro y is 1.10dps.
-mpu6050: gyro z is 0.21dps.
-mpu6050: gyro x is 0.00dps.
-mpu6050: gyro y is 0.91dps.
-mpu6050: gyro z is 0.03dps.
-mpu6050: gyro x is -0.03dps.
-mpu6050: gyro y is 1.01dps.
-mpu6050: gyro z is 0.15dps.
-mpu6050: set gyroscope range 2000dps.
-mpu6050: gyro x is -0.12dps.
-mpu6050: gyro y is 0.98dps.
-mpu6050: gyro z is 0.18dps.
-mpu6050: gyro x is -0.06dps.
-mpu6050: gyro y is 0.91dps.
-mpu6050: gyro z is 0.06dps.
-mpu6050: gyro x is -0.06dps.
-mpu6050: gyro y is 0.98dps.
+mpu6050: gyro x is -0.18dps.
+mpu6050: gyro y is 0.85dps.
 mpu6050: gyro z is 0.12dps.
+mpu6050: gyro x is -0.18dps.
+mpu6050: gyro y is 0.88dps.
+mpu6050: gyro z is 0.12dps.
+mpu6050: gyro x is -0.21dps.
+mpu6050: gyro y is 0.95dps.
+mpu6050: gyro z is 0.09dps.
+mpu6050: set gyroscope range 2000dps.
+mpu6050: gyro x is -0.24dps.
+mpu6050: gyro y is 0.85dps.
+mpu6050: gyro z is 0.06dps.
+mpu6050: gyro x is -0.18dps.
+mpu6050: gyro y is 0.91dps.
+mpu6050: gyro z is 0.12dps.
+mpu6050: gyro x is -0.18dps.
+mpu6050: gyro y is 0.85dps.
+mpu6050: gyro z is 0.06dps.
 mpu6050: read temperature.
-mpu6050: temperature 26.85C.
-mpu6050: temperature 26.87C.
-mpu6050: temperature 26.86C.
+mpu6050: temperature 29.38C.
+mpu6050: temperature 29.38C.
+mpu6050: temperature 29.38C.
 mpu6050: finish read test.
 ```
 
 ```shell
-mpu6050 -t fifo 3 -a 0
+mpu6050 -t fifo --addr=0 --times=3
 
 mpu6050: chip is TDK MPU6050.
 mpu6050: manufacturer is TDK.
@@ -758,32 +820,32 @@ mpu6050: max current is 3.90mA.
 mpu6050: max temperature is 85.0C.
 mpu6050: min temperature is -40.0C.
 mpu6050: start fifo test.
-mpu6050: fifo 48.
-mpu6050: acc x[0] is -0.20g.
-mpu6050: acc y[0] is -0.18g.
-mpu6050: acc z[0] is 0.97g.
-mpu6050: gyro x[0] is -10.49dps.
-mpu6050: gyro y[0] is -0.61dps.
-mpu6050: gyro z[0] is 29.02dps.
-mpu6050: fifo 50.
-mpu6050: acc x[0] is -0.20g.
-mpu6050: acc y[0] is -0.18g.
-mpu6050: acc z[0] is 0.97g.
-mpu6050: gyro x[0] is 0.00dps.
-mpu6050: gyro y[0] is 0.91dps.
+mpu6050: fifo 47.
+mpu6050: acc x[0] is -0.11g.
+mpu6050: acc y[0] is -0.13g.
+mpu6050: acc z[0] is 0.99g.
+mpu6050: gyro x[0] is -0.24dps.
+mpu6050: gyro y[0] is 0.73dps.
 mpu6050: gyro z[0] is 0.12dps.
 mpu6050: fifo 50.
-mpu6050: acc x[0] is -0.20g.
-mpu6050: acc y[0] is -0.18g.
-mpu6050: acc z[0] is 0.97g.
-mpu6050: gyro x[0] is -0.06dps.
-mpu6050: gyro y[0] is 0.98dps.
-mpu6050: gyro z[0] is 0.18dps.
+mpu6050: acc x[0] is -0.11g.
+mpu6050: acc y[0] is -0.13g.
+mpu6050: acc z[0] is 0.99g.
+mpu6050: gyro x[0] is -0.18dps.
+mpu6050: gyro y[0] is 0.85dps.
+mpu6050: gyro z[0] is 0.12dps.
+mpu6050: fifo 50.
+mpu6050: acc x[0] is -0.11g.
+mpu6050: acc y[0] is -0.13g.
+mpu6050: acc z[0] is 0.99g.
+mpu6050: gyro x[0] is -0.24dps.
+mpu6050: gyro y[0] is 0.85dps.
+mpu6050: gyro z[0] is 0.06dps.
 mpu6050: finish fifo test.
 ```
 
 ```shell
-mpu6050 -t dmp 3 -a 0
+mpu6050 -t dmp --addr=0 --times=3
 
 mpu6050: chip is TDK MPU6050.
 mpu6050: manufacturer is TDK.
@@ -811,7 +873,7 @@ mpu6050: dmp set shake reject time 40 ms.
 mpu6050: check shake reject time ok.
 mpu6050: mpu6050_dmp_set_shake_reject_thresh/mpu6050_dmp_get_shake_reject_thresh test.
 mpu6050: set shake reject thresh 200 dps.
-mpu6050: check shake reject thresh ok.
+mpu6050: check shake reject thresh error.
 mpu6050: mpu6050_dmp_set_tap_time_multi/mpu6050_dmp_get_tap_time_multi test.
 mpu6050: dmp set tap time multi 500 ms.
 mpu6050: check tap time multi ok.
@@ -866,41 +928,41 @@ mpu6050: enable feature orient.
 mpu6050: enable feature send raw accel.
 mpu6050: enable feature send cal gyro.
 mpu6050: enable feature gyro cal.
-mpu6050: fifo 5.
-mpu6050: pitch[0] is 0.56dps.
-mpu6050: roll[0] is 0.93dps.
+mpu6050: fifo 16.
+mpu6050: pitch[0] is 0.51dps.
+mpu6050: roll[0] is 0.86dps.
 mpu6050: yaw[0] is 0.01dps.
-mpu6050: acc x[0] is -0.20g.
-mpu6050: acc y[0] is -0.18g.
-mpu6050: acc z[0] is 0.98g.
+mpu6050: acc x[0] is -0.11g.
+mpu6050: acc y[0] is -0.13g.
+mpu6050: acc z[0] is 0.99g.
 mpu6050: gyro x[0] is -0.06dps.
-mpu6050: gyro y[0] is 0.79dps.
-mpu6050: gyro z[0] is 0.06dps.
-mpu6050: fifo 25.
-mpu6050: pitch[0] is 0.78dps.
-mpu6050: roll[0] is 0.72dps.
+mpu6050: gyro y[0] is -0.06dps.
+mpu6050: gyro z[0] is -0.06dps.
+mpu6050: fifo 19.
+mpu6050: pitch[0] is 0.48dps.
+mpu6050: roll[0] is 0.81dps.
 mpu6050: yaw[0] is 0.01dps.
-mpu6050: acc x[0] is -0.20g.
-mpu6050: acc y[0] is -0.18g.
-mpu6050: acc z[0] is 0.97g.
-mpu6050: gyro x[0] is -0.06dps.
-mpu6050: gyro y[0] is -0.12dps.
-mpu6050: gyro z[0] is -0.12dps.
-mpu6050: fifo 30.
-mpu6050: pitch[0] is 0.70dps.
-mpu6050: roll[0] is 0.65dps.
-mpu6050: yaw[0] is 0.01dps.
-mpu6050: acc x[0] is -0.20g.
-mpu6050: acc y[0] is -0.18g.
+mpu6050: acc x[0] is -0.11g.
+mpu6050: acc y[0] is -0.13g.
 mpu6050: acc z[0] is 0.98g.
 mpu6050: gyro x[0] is -0.06dps.
 mpu6050: gyro y[0] is -0.12dps.
+mpu6050: gyro z[0] is -0.06dps.
+mpu6050: fifo 20.
+mpu6050: pitch[0] is 0.45dps.
+mpu6050: roll[0] is 0.74dps.
+mpu6050: yaw[0] is -0.00dps.
+mpu6050: acc x[0] is -0.11g.
+mpu6050: acc y[0] is -0.13g.
+mpu6050: acc z[0] is 0.99g.
+mpu6050: gyro x[0] is -0.06dps.
+mpu6050: gyro y[0] is -0.06dps.
 mpu6050: gyro z[0] is -0.06dps.
 mpu6050: finish dmp read test.
 ```
 
 ```shell
-mpu6050 -t motion -a 0
+mpu6050 -t motion --addr=0
 
 mpu6050: chip is TDK MPU6050.
 mpu6050: manufacturer is TDK.
@@ -928,7 +990,7 @@ mpu6050: dmp set shake reject time 40 ms.
 mpu6050: check shake reject time ok.
 mpu6050: mpu6050_dmp_set_shake_reject_thresh/mpu6050_dmp_get_shake_reject_thresh test.
 mpu6050: set shake reject thresh 200 dps.
-mpu6050: check shake reject thresh ok.
+mpu6050: check shake reject thresh error.
 mpu6050: mpu6050_dmp_set_tap_time_multi/mpu6050_dmp_get_tap_time_multi test.
 mpu6050: dmp set tap time multi 200 ms.
 mpu6050: check tap time multi ok.
@@ -983,16 +1045,16 @@ mpu6050: enable feature orient.
 mpu6050: enable feature send raw accel.
 mpu6050: enable feature send cal gyro.
 mpu6050: enable feature gyro cal.
-mpu6050: orient irq reverse landscape.
 mpu6050: irq motion.
-mpu6050: irq dmp
 mpu6050: irq data ready
-mpu6050: tap irq x up with 2.
+mpu6050: tap irq x up with 5.
+mpu6050: irq dmp
+mpu6050: orient irq reverse landscape.
 mpu6050: finish dmp tap orient motion test.
 ```
 
 ```shell
-mpu6050 -t pedometer 3 -a 0
+mpu6050 -t pedometer --addr=0 --times=3
 
 mpu6050: chip is TDK MPU6050.
 mpu6050: manufacturer is TDK.
@@ -1010,7 +1072,7 @@ mpu6050: mpu6050_dmp_set_pedometer_walk_time/mpu6050_dmp_get_pedometer_walk_time
 mpu6050: dmp set pedometer walk time 200 ms.
 mpu6050: check pedometer walk time ok.
 mpu6050: mpu6050_dmp_set_pedometer_step_count/mpu6050_dmp_get_pedometer_step_count test.
-mpu6050: dmp set pedometer step count 667.
+mpu6050: dmp set pedometer step count 768.
 mpu6050: check pedometer step count ok.
 mpu6050: dmp set gesture continuous mode.
 mpu6050: mpu6050_dmp_set_fifo_rate/mpu6050_dmp_get_fifo_rate test.
@@ -1025,114 +1087,114 @@ mpu6050: finish dmp pedometer test.
 ```
 
 ```shell
-mpu6050 -c read 3 -a 0
+mpu6050 -e read --addr=0 --times=3
 
 mpu6050: 1/3.
-mpu6050: acc x is -0.01g.
-mpu6050: acc y is -0.04g.
+mpu6050: acc x is -0.00g.
+mpu6050: acc y is 0.00g.
 mpu6050: acc z is 0.12g.
-mpu6050: gyro x is 154.51dps.
-mpu6050: gyro y is 25.61dps.
-mpu6050: gyro z is 527.38dps.
-mpu6050: temperature 26.51C.
+mpu6050: gyro x is 40.91dps.
+mpu6050: gyro y is -161.40dps.
+mpu6050: gyro z is -219.27dps.
+mpu6050: temperature 32.81C.
 mpu6050: 2/3.
-mpu6050: acc x is -0.09g.
-mpu6050: acc y is -0.33g.
-mpu6050: acc z is 0.95g.
-mpu6050: gyro x is 0.00dps.
-mpu6050: gyro y is 0.98dps.
-mpu6050: gyro z is 0.18dps.
-mpu6050: temperature 26.56C.
+mpu6050: acc x is -0.05g.
+mpu6050: acc y is 0.04g.
+mpu6050: acc z is 1.00g.
+mpu6050: gyro x is -0.18dps.
+mpu6050: gyro y is 1.65dps.
+mpu6050: gyro z is 0.00dps.
+mpu6050: temperature 32.93C.
 mpu6050: 3/3.
-mpu6050: acc x is -0.09g.
-mpu6050: acc y is -0.33g.
-mpu6050: acc z is 0.95g.
+mpu6050: acc x is -0.05g.
+mpu6050: acc y is 0.04g.
+mpu6050: acc z is 1.00g.
 mpu6050: gyro x is 0.00dps.
-mpu6050: gyro y is 0.98dps.
-mpu6050: gyro z is 0.18dps.
-mpu6050: temperature 26.57C.
+mpu6050: gyro y is 1.95dps.
+mpu6050: gyro z is 0.06dps.
+mpu6050: temperature 32.92C.
 ```
 
 ```shell
-mpu6050 -c fifo 3 -a 0
+mpu6050 -e fifo --addr=0 --times=3
 
 mpu6050: 1/3.
-mpu6050: fifo 18.
-mpu6050: acc x[0] is -0.08g.
-mpu6050: acc y[0] is -0.29g.
-mpu6050: acc z[0] is 0.84g.
-mpu6050: gyro x[0] is -20.00dps.
-mpu6050: gyro y[0] is -23.17dps.
-mpu6050: gyro z[0] is 24.57dps.
+mpu6050: fifo 17.
+mpu6050: acc x[0] is -0.12g.
+mpu6050: acc y[0] is -0.14g.
+mpu6050: acc z[0] is 0.99g.
+mpu6050: gyro x[0] is -0.12dps.
+mpu6050: gyro y[0] is 0.79dps.
+mpu6050: gyro z[0] is 0.06dps.
 mpu6050: 2/3.
 mpu6050: fifo 23.
-mpu6050: acc x[0] is -0.09g.
-mpu6050: acc y[0] is -0.33g.
-mpu6050: acc z[0] is 0.95g.
-mpu6050: gyro x[0] is 0.00dps.
+mpu6050: acc x[0] is -0.12g.
+mpu6050: acc y[0] is -0.14g.
+mpu6050: acc z[0] is 0.98g.
+mpu6050: gyro x[0] is -0.30dps.
 mpu6050: gyro y[0] is 0.91dps.
 mpu6050: gyro z[0] is 0.12dps.
 mpu6050: 3/3.
 mpu6050: fifo 23.
-mpu6050: acc x[0] is -0.09g.
-mpu6050: acc y[0] is -0.33g.
-mpu6050: acc z[0] is 0.95g.
-mpu6050: gyro x[0] is -0.06dps.
+mpu6050: acc x[0] is -0.12g.
+mpu6050: acc y[0] is -0.14g.
+mpu6050: acc z[0] is 0.99g.
+mpu6050: gyro x[0] is -0.18dps.
 mpu6050: gyro y[0] is 0.85dps.
-mpu6050: gyro z[0] is 0.06dps.
+mpu6050: gyro z[0] is 0.12dps.
 ```
 
 ```shell
-mpu6050 -c dmp 3 -a 0
+mpu6050 -e dmp --addr=0 --times=3
 
 mpu6050: 1/3.
 mpu6050: fifo 6.
-mpu6050: pitch[0] is 0.11dps.
-mpu6050: roll[0] is 0.79dps.
+mpu6050: pitch[0] is 0.13dps.
+mpu6050: roll[0] is 0.82dps.
 mpu6050: yaw[0] is 0.00dps.
-mpu6050: acc x[0] is -0.09g.
-mpu6050: acc y[0] is -0.34g.
-mpu6050: acc z[0] is 0.95g.
+mpu6050: acc x[0] is -0.16g.
+mpu6050: acc y[0] is -0.18g.
+mpu6050: acc z[0] is 0.97g.
+mpu6050: gyro x[0] is -0.06dps.
+mpu6050: gyro y[0] is -0.12dps.
+mpu6050: gyro z[0] is -0.06dps.
+mpu6050: 2/3.
+mpu6050: fifo 6.
+mpu6050: pitch[0] is 0.10dps.
+mpu6050: roll[0] is 0.75dps.
+mpu6050: yaw[0] is -0.00dps.
+mpu6050: acc x[0] is -0.16g.
+mpu6050: acc y[0] is -0.18g.
+mpu6050: acc z[0] is 0.97g.
 mpu6050: gyro x[0] is -0.06dps.
 mpu6050: gyro y[0] is -0.18dps.
-mpu6050: gyro z[0] is 0.00dps.
-mpu6050: 2/3.
-mpu6050: fifo 7.
-mpu6050: pitch[0] is 0.09dps.
-mpu6050: roll[0] is 0.72dps.
-mpu6050: yaw[0] is 0.00dps.
-mpu6050: acc x[0] is -0.09g.
-mpu6050: acc y[0] is -0.34g.
-mpu6050: acc z[0] is 0.95g.
-mpu6050: gyro x[0] is -0.06dps.
-mpu6050: gyro y[0] is -0.24dps.
-mpu6050: gyro z[0] is 0.00dps.
+mpu6050: gyro z[0] is -0.06dps.
 mpu6050: 3/3.
-mpu6050: fifo 6.
+mpu6050: fifo 7.
 mpu6050: pitch[0] is 0.07dps.
-mpu6050: roll[0] is 0.64dps.
+mpu6050: roll[0] is 0.68dps.
 mpu6050: yaw[0] is -0.00dps.
-mpu6050: acc x[0] is -0.09g.
-mpu6050: acc y[0] is -0.33g.
-mpu6050: acc z[0] is 0.95g.
+mpu6050: acc x[0] is -0.16g.
+mpu6050: acc y[0] is -0.18g.
+mpu6050: acc z[0] is 0.97g.
 mpu6050: gyro x[0] is -0.06dps.
 mpu6050: gyro y[0] is -0.12dps.
 mpu6050: gyro z[0] is -0.06dps.
 ```
 
 ```shell
-mpu6050 -c motion -a 0
+mpu6050 -e motion --addr=0
 
 mpu6050: irq motion.
 mpu6050: irq dmp
 mpu6050: irq data ready
-mpu6050: orient irq reverse portrait.
 mpu6050: tap irq x up with 6.
+mpu6050: orient irq portrait.
 mpu6050: finish dmp tap orient motion.
 ```
 
 ```shell
-mpu6050 -c pedometer 3 -a 0
+mpu6050 -e pedometer --addr=0 --times=3
 
 mpu6050: pedometer step count is 7.
 mpu6050: pedometer step count is 8.
@@ -1142,33 +1204,31 @@ mpu6050: pedometer step count is 9.
 ```shell
 mpu6050 -h
 
-mpu6050 -i
-	show mpu6050 chip and driver information.
-mpu6050 -h
-	show mpu6050 help.
-mpu6050 -p
-	show mpu6050 pin connections of the current board.
-mpu6050 -t reg -a (0 | 1)
-	run mpu6050 register test.
-mpu6050 -t read <times> -a (0 | 1)
-	run mpu6050 read test.times means the test times.
-mpu6050 -t fifo <times> -a (0 | 1)
-	run mpu6050 fifo test.times means the test times.
-mpu6050 -t dmp <times> -a (0 | 1)
-	run mpu6050 dmp test.times means the test times.
-mpu6050 -t motion -a (0 | 1)
-	run mpu6050 motion test.
-mpu6050 -t pedometer <times> -a (0 | 1)
-	run mpu6050 pedometer test.times means the test times.
-mpu6050 -c read <times> -a (0 | 1)
-	run mpu6050 read function.times means the read times.
-mpu6050 -c fifo <times> -a (0 | 1)
-	run mpu6050 fifo function. times means the read times.
-mpu6050 -c dmp <times> -a (0 | 1)
-	run mpu6050 dmp function.times means the read times.
-mpu6050 -c motion -a (0 | 1)
-	run mpu6050 motion function.
-mpu6050 -c pedometer <times> -a (0 | 1)
-	run mpu6050 pedometer function.times means the read times.
+Usage:
+  mpu6050 (-i | --information)
+  mpu6050 (-h | --help)
+  mpu6050 (-p | --port)
+  mpu6050 (-t reg | --test=reg) [--addr=<0 | 1>]
+  mpu6050 (-t read | --test=read) [--addr=<0 | 1>] [--times=<num>]
+  mpu6050 (-t fifo | --test=fifo) [--addr=<0 | 1>] [--times=<num>]
+  mpu6050 (-t dmp | --test=dmp) [--addr=<0 | 1>] [--times=<num>]
+  mpu6050 (-t motion | --test=motion) [--addr=<0 | 1>]
+  mpu6050 (-t pedometer | --test=pedometer) [--addr=<0 | 1>] [--times=<num>]
+  mpu6050 (-e read | --example=read) [--addr=<0 | 1>] [--times=<num>]
+  mpu6050 (-e fifo | --example=fifo) [--addr=<0 | 1>] [--times=<num>]
+  mpu6050 (-e dmp | --example=dmp) [--addr=<0 | 1>] [--times=<num>]
+  mpu6050 (-e motion | --example=motion) [--addr=<0 | 1>]
+  mpu6050 (-e pedometer | --example=pedometer) [--addr=<0 | 1>] [--times=<num>]
+
+Options:
+      --addr=<0 | 1>      Set the addr pin.([default: 0])
+  -e <read | fifo | dmp | motion | pedometer>, --example=<read | fifo | dmp | motion | pedometer>
+                          Run the driver example.
+  -h, --help              Show the help.
+  -i, --information       Show the chip information.
+  -p, --port              Display the pin connections of the current board.
+  -t <reg | read | fifo | dmp | motion | pedometer>, --test=<reg | read | fifo | dmp | motion | pedometer>
+                          Run the driver test.
+      --times=<num>       Set the running times.([default: 3])
 ```
 

@@ -25,12 +25,12 @@
  * @brief     gpio source file
  * @version   1.0.0
  * @author    Shifeng Li
- * @date      2021-2-12
+ * @date      2022-11-11
  *
  * <h3>history</h3>
  * <table>
  * <tr><th>Date        <th>Version  <th>Author      <th>Description
- * <tr><td>2021/02/12  <td>1.0      <td>Shifeng Li  <td>first upload
+ * <tr><td>2022/11/11  <td>1.0      <td>Shifeng Li  <td>first upload
  * </table>
  */
 
@@ -46,16 +46,19 @@ uint8_t gpio_interrupt_init(void)
 {
     GPIO_InitTypeDef GPIO_InitStruct;
     
+    /* enable gpio clock */
     __HAL_RCC_GPIOB_CLK_ENABLE();
- 
+    
+    /* gpio init */
     GPIO_InitStruct.Pin = GPIO_PIN_0;
     GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;
     GPIO_InitStruct.Pull = GPIO_PULLUP;
     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
     HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
-  
+    
+    /* enable nvic */
     HAL_NVIC_SetPriority(EXTI0_IRQn, 3, 0);
-    HAL_NVIC_EnableIRQ(EXTI0_IRQn);  
+    HAL_NVIC_EnableIRQ(EXTI0_IRQn);
     
     return 0;
 }
@@ -64,12 +67,15 @@ uint8_t gpio_interrupt_init(void)
  * @brief  gpio interrupt deinit
  * @return status code
  *         - 0 success
- * @note   gpio pin is PB0
+ * @note   none
  */
 uint8_t gpio_interrupt_deinit(void)
 {
+    /* gpio deinit */
     HAL_GPIO_DeInit(GPIOB, GPIO_PIN_0);
+    
+    /* disable nvic */
     HAL_NVIC_DisableIRQ(EXTI0_IRQn);
-
+    
     return 0;
 }

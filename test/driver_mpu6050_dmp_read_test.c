@@ -1222,7 +1222,7 @@ uint8_t mpu6050_dmp_read_test(mpu6050_address_t addr, uint32_t times)
             mpu6050_interface_debug_print("mpu6050: gyro y[0] is %0.2fdps.\n", gs_gyro_dps[0][1]);
             mpu6050_interface_debug_print("mpu6050: gyro z[0] is %0.2fdps.\n", gs_gyro_dps[0][2]);
         }
-        mpu6050_interface_delay_ms(100);
+        mpu6050_interface_delay_ms(50);
     }
     
     /* finish dmp read test */
