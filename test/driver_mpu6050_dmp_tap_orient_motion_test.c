@@ -46,7 +46,7 @@ static int32_t gs_quat[128][4];           /**< quat buffer */
 static float gs_pitch[128];               /**< pitch buffer */
 static float gs_roll[128];                /**< roll buffer */
 static float gs_yaw[128];                 /**< yaw buffer */
-static uint8_t gs_flag;                   /**< flag */
+static volatile uint8_t gs_flag;          /**< flag */
 
 /**
  * @brief  dmp tap orient motion test irq
