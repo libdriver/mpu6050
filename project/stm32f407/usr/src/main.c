@@ -44,6 +44,7 @@
 #include "driver_mpu6050_fifo.h"
 #include "driver_mpu6050_dmp.h"
 #include "shell.h"
+#include "mutex.h"
 #include "clock.h"
 #include "delay.h"
 #include "gpio.h"
@@ -85,10 +86,8 @@ void HAL_GPIO_EXTI_Callback(uint16_t pin)
 {
     if (pin == GPIO_PIN_0)
     {
-        if (g_gpio_irq != NULL)
-        {
-            g_gpio_irq();
-        }
+        /* run the irq in the mutex mode */
+        mutex_irq(g_gpio_irq);
     }
 }
 
@@ -423,17 +422,24 @@ uint8_t mpu6050(uint8_t argc, char **argv)
             return 1;
         }
         
-        /* set the callback */
-        g_gpio_irq = mpu6050_fifo_test_irq_handler;
+        /* don't need */
+        g_gpio_irq = NULL;
+        
+        /* mutex lock */
+        (void)mutex_lock();
         
         /* run fifo test */
         if (mpu6050_fifo_test(addr, times) != 0)
         {
             g_gpio_irq = NULL;
             (void)gpio_interrupt_deinit();
+            (void)mutex_unlock();
             
             return 1;
         }
+        
+        /* mutex unlock */
+        (void)mutex_unlock();
         
         /* gpio deinit */
         g_gpio_irq = NULL;
@@ -452,14 +458,21 @@ uint8_t mpu6050(uint8_t argc, char **argv)
         /* set the callback */
         g_gpio_irq = mpu6050_dmp_read_test_irq_handler;
         
+        /* mutex lock */
+        (void)mutex_lock();
+        
         /* run dmp test */
         if (mpu6050_dmp_read_test(addr, times) != 0)
         {
             g_gpio_irq = NULL;
             (void)gpio_interrupt_deinit();
+            (void)mutex_unlock();
             
             return 1;
         }
+        
+        /* mutex unlock */
+        (void)mutex_unlock();
         
         /* gpio deinit */
         g_gpio_irq = NULL;
@@ -504,14 +517,21 @@ uint8_t mpu6050(uint8_t argc, char **argv)
         /* set the callback */
         g_gpio_irq = mpu6050_dmp_pedometer_test_irq_handler;
         
+        /* mutex lock */
+        (void)mutex_lock();
+        
         /* run pedometer test */
         if (mpu6050_dmp_pedometer_test(addr, times) != 0)
         {
             g_gpio_irq = NULL;
             (void)gpio_interrupt_deinit();
+            (void)mutex_unlock();
             
             return 1;
         }
+        
+        /* mutex unlock */
+        (void)mutex_unlock();
         
         /* gpio deint */
         g_gpio_irq = NULL;
@@ -580,8 +600,8 @@ uint8_t mpu6050(uint8_t argc, char **argv)
             return 1;
         }
         
-        /* set the callback */
-        g_gpio_irq = mpu6050_fifo_irq_handler;
+        /* don't need */
+        g_gpio_irq = NULL;
         
         /* fifo init */
         if (mpu6050_fifo_init(addr) != 0)
@@ -604,6 +624,9 @@ uint8_t mpu6050(uint8_t argc, char **argv)
             {
                 len = 128;
                 
+                /* mutex lock */
+                (void)mutex_lock();
+                
                 /* read data */
                 if (mpu6050_fifo_read(gs_accel_raw, gs_accel_g,
                                       gs_gyro_raw, gs_gyro_dps, &len) != 0)
@@ -611,9 +634,13 @@ uint8_t mpu6050(uint8_t argc, char **argv)
                     (void)mpu6050_fifo_deinit();
                     g_gpio_irq = NULL;
                     (void)gpio_interrupt_deinit();
+                    (void)mutex_unlock();
                     
                     return 1;
                 }
+                
+                /* mutex unlock */
+                (void)mutex_unlock();
                 
                 /* output */
                 mpu6050_interface_debug_print("mpu6050: %d/%d.\n", i + 1, times);
@@ -671,6 +698,9 @@ uint8_t mpu6050(uint8_t argc, char **argv)
             {
                 len = 128;
                 
+                /* mutex lock */
+                (void)mutex_lock();
+                
                 /* read data */
                 if (mpu6050_dmp_read_all(gs_accel_raw, gs_accel_g,
                                          gs_gyro_raw, gs_gyro_dps, 
@@ -682,9 +712,13 @@ uint8_t mpu6050(uint8_t argc, char **argv)
                     (void)mpu6050_dmp_deinit();
                     g_gpio_irq = NULL;
                     (void)gpio_interrupt_deinit();
+                    (void)mutex_unlock();
                     
                     return 1;
                 }
+                
+                /* mutex unlock */
+                (void)mutex_unlock();
                 
                 /* output */
                 mpu6050_interface_debug_print("mpu6050: %d/%d.\n", i + 1, times);
@@ -749,6 +783,9 @@ uint8_t mpu6050(uint8_t argc, char **argv)
                 uint16_t l;
                 uint8_t res;
                 
+                /* mutex lock */
+                (void)mutex_lock();
+                
                 /* read data */
                 l = 128;
                 res = mpu6050_dmp_read_all(gs_accel_raw, gs_accel_g,
@@ -762,6 +799,9 @@ uint8_t mpu6050(uint8_t argc, char **argv)
                     /* output data */
                     mpu6050_interface_debug_print("mpu6050: dmp read failed.\n");
                 }
+                
+                /* mutex unlock */
+                (void)mutex_unlock();
                 
                 /* delay 500ms */
                 mpu6050_interface_delay_ms(500);
@@ -821,6 +861,9 @@ uint8_t mpu6050(uint8_t argc, char **argv)
                 /* delay 200 ms */
                 mpu6050_interface_delay_ms(200);
                 
+                /* mutex lock */
+                (void)mutex_lock();
+                
                 /* read data */
                 l = 128;
                 res = mpu6050_dmp_read_all(gs_accel_raw, gs_accel_g,
@@ -844,6 +887,7 @@ uint8_t mpu6050(uint8_t argc, char **argv)
                             (void)mpu6050_dmp_deinit();
                             g_gpio_irq = NULL;
                             (void)gpio_interrupt_deinit();
+                            (void)mutex_unlock();
                             
                             return 1;
                         }
@@ -857,6 +901,9 @@ uint8_t mpu6050(uint8_t argc, char **argv)
                         }
                     }
                 }
+                
+                /* mutex unlock */
+                (void)mutex_unlock();
             }
             
             /* dmp deinit */

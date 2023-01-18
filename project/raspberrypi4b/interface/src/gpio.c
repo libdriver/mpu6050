@@ -35,6 +35,7 @@
  */
 
 #include "gpio.h"
+#include "mutex.h"
 #include <gpiod.h>
 #include <pthread.h>
 
@@ -89,12 +90,8 @@ static void *a_gpio_interrupt_pthread(void *p)
             /* if the falling edge */
             if (event.event_type == GPIOD_LINE_EVENT_FALLING_EDGE)
             {
-                /* check the g_gpio_irq */
-                if (g_gpio_irq != NULL)
-                {
-                    /* run the callback */
-                    g_gpio_irq();
-                }
+                /* run the callback in the mutex mode */
+                mutex_irq(g_gpio_irq);
             }
         }
     }

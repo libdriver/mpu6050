@@ -399,6 +399,11 @@
               <FilePath>..\usr\src\getopt.c</FilePath>
             </File>
             <File>
+              <FileName>mutex.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\usr\src\mutex.c</FilePath>
+            </File>
+            <File>
               <FileName>stm32f4xx_hal_msp.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\usr\src\stm32f4xx_hal_msp.c</FilePath>
