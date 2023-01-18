@@ -107,12 +107,14 @@ uint8_t iic_deinit(void)
 static void a_iic_start(void)
 {
     SDA_OUT();
-    IIC_SDA = 1;
     IIC_SCL = 1;
-    delay_us(4);
+    delay_us(15);
     IIC_SDA = 0;
-    delay_us(4);
+    delay_us(15);
     IIC_SCL = 0;
+    delay_us(15);
+    IIC_SDA = 1;
+    delay_us(15);
 }
 
 /**
@@ -122,13 +124,12 @@ static void a_iic_start(void)
 static void a_iic_stop(void)
 {
     SDA_OUT();
-    IIC_SCL = 0;
     IIC_SDA = 0;
-    delay_us(4);
+    delay_us(15);
     IIC_SCL = 1;
-    delay_us(4);
+    delay_us(15);
     IIC_SDA = 1;
-    delay_us(4);
+    delay_us(15);
 }
 
 /**
@@ -144,13 +145,13 @@ static uint8_t a_iic_wait_ack(void)
     
     SDA_IN();
     IIC_SDA = 1; 
-    delay_us(1);
+    delay_us(20);
     IIC_SCL = 1; 
-    delay_us(1);
+    delay_us(20);
     while (READ_SDA != 0)
     {
         uc_err_time++;
-        if (uc_err_time > 250)
+        if (uc_err_time > 500)
         {
             a_iic_stop();
             
@@ -158,6 +159,7 @@ static uint8_t a_iic_wait_ack(void)
         }
     }
     IIC_SCL = 0;
+    delay_us(20);
     
     return 0;
 }
@@ -169,12 +171,14 @@ static uint8_t a_iic_wait_ack(void)
 static void a_iic_ack(void)
 {
     IIC_SCL = 0;
+    delay_us(20);
     SDA_OUT();
     IIC_SDA = 0;
-    delay_us(2);
+    delay_us(20);
     IIC_SCL = 1;
-    delay_us(2);
+    delay_us(20);
     IIC_SCL = 0;
+    delay_us(20);
 }
 
 /**
@@ -184,12 +188,14 @@ static void a_iic_ack(void)
 static void a_iic_nack(void)
 {
     IIC_SCL = 0;
+    delay_us(20);
     SDA_OUT();
     IIC_SDA = 1;
-    delay_us(2);
+    delay_us(20);
     IIC_SCL = 1;
-    delay_us(2);
+    delay_us(20);
     IIC_SCL = 0; 
+    delay_us(20);
 }
 
 /**
@@ -207,11 +213,11 @@ static void a_iic_send_byte(uint8_t txd)
     {
         IIC_SDA = (txd & 0x80) >> 7;
         txd <<= 1;
-        delay_us(2);
+        delay_us(10);
         IIC_SCL = 1;
-        delay_us(2);
+        delay_us(10);
         IIC_SCL = 0;
-        delay_us(2);
+        delay_us(10);
     }
 }
 
@@ -230,14 +236,14 @@ static uint8_t a_iic_read_byte(uint8_t ack)
     for (i = 0; i < 8; i++)
     {
         IIC_SCL = 0;
-        delay_us(2);
+        delay_us(10);
         IIC_SCL = 1;
         receive <<= 1;
         if (READ_SDA != 0)
         {
             receive++;
         }
-        delay_us(1);
+        delay_us(10);
     }
     if (ack != 0)
     {

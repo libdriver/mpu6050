@@ -52,7 +52,7 @@ extern "C"{
  * @brief mpu6050 fifo example default definition
  */
 #define MPU6050_FIFO_DEFAULT_CLOCK_SOURCE                   MPU6050_CLOCK_SOURCE_PLL_X_GYRO           /**< gyro pll x */
-#define MPU6050_FIFO_DEFAULT_RATE                           200                                       /**< 200Hz */
+#define MPU6050_FIFO_DEFAULT_RATE                           50                                        /**< 50Hz */
 #define MPU6050_FIFO_DEFAULT_ACCELEROMETER_RANGE            MPU6050_ACCELEROMETER_RANGE_2G            /**< 2g */
 #define MPU6050_FIFO_DEFAULT_GYROSCOPE_RANGE                MPU6050_GYROSCOPE_RANGE_2000DPS           /**< 2000dps */
 #define MPU6050_FIFO_DEFAULT_LOW_PASS_FILTER                MPU6050_LOW_PASS_FILTER_3                 /**< low pass filter 3 */

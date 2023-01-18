@@ -1769,6 +1769,9 @@
             <name>$PROJ_DIR$\..\usr\src\main.c</name>
         </file>
         <file>
+            <name>$PROJ_DIR$\..\usr\src\mutex.c</name>
+        </file>
+        <file>
             <name>$PROJ_DIR$\..\usr\src\shell.c</name>
         </file>
         <file>

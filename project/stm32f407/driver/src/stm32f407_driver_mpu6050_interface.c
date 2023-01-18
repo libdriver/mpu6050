@@ -77,7 +77,13 @@ uint8_t mpu6050_interface_iic_deinit(void)
  */
 uint8_t mpu6050_interface_iic_read(uint8_t addr, uint8_t reg, uint8_t *buf, uint16_t len)
 {
-    return iic_read(addr, reg, buf, len);
+    uint8_t res;
+    
+    __disable_irq();
+    res = iic_read(addr, reg, buf, len);
+    __enable_irq();
+    
+    return res;
 }
 
 /**
@@ -93,7 +99,13 @@ uint8_t mpu6050_interface_iic_read(uint8_t addr, uint8_t reg, uint8_t *buf, uint
  */
 uint8_t mpu6050_interface_iic_write(uint8_t addr, uint8_t reg, uint8_t *buf, uint16_t len)
 {
-    return iic_write(addr, reg, buf, len);
+    uint8_t res;
+    
+    __disable_irq();
+    res = iic_write(addr, reg, buf, len);
+    __enable_irq();
+    
+    return res;
 }
 
 /**
