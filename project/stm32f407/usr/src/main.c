@@ -252,9 +252,9 @@ static void a_dmp_orient_callback(uint8_t orientation)
  * @param[in] argc is arg numbers
  * @param[in] **argv is the arg address
  * @return    status code
- *             - 0 success
- *             - 1 run failed
- *             - 5 param is invalid
+ *            - 0 success
+ *            - 1 run failed
+ *            - 5 param is invalid
  * @note      none
  */
 uint8_t mpu6050(uint8_t argc, char **argv)
