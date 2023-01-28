@@ -41,6 +41,8 @@ LibDriver MPU6050 ist der voll funktionsfähige Treiber von mpu6050, der von Lib
 
 /project enthält den allgemeinen Beispielcode für Linux- und MCU-Entwicklungsboards. Alle Projekte verwenden das Shell-Skript, um den Treiber zu debuggen, und die detaillierten Anweisungen finden Sie in der README.md jedes Projekts.
 
+/misra enthält die Ergebnisse des LibDriver MISRA Code Scans.
+
 ### Installieren
 
 Verweisen Sie auf eine plattformunabhängige IIC-Schnittstellenvorlage und stellen Sie Ihren Plattform-IIC-Treiber fertig.
