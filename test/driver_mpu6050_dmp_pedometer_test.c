@@ -437,7 +437,7 @@ uint8_t mpu6050_dmp_pedometer_test(mpu6050_address_t addr, uint32_t times)
         return 1;
     }
     
-    /* push pull */
+    /* push-pull */
     res = mpu6050_set_interrupt_pin_type(&gs_handle, MPU6050_PIN_TYPE_PUSH_PULL);
     if (res != 0)
     {

@@ -244,7 +244,7 @@ uint8_t mpu6050(uint8_t argc, char **argv)
         {"times", required_argument, NULL, 2},
         {NULL, 0, NULL, 0},
     };
-    char type[33] = "unknow";
+    char type[33] = "unknown";
     uint32_t times = 3;
     mpu6050_address_t addr = MPU6050_ADDRESS_AD0_LOW;
     
@@ -979,7 +979,7 @@ int main(uint8_t argc, char **argv)
     }
     else
     {
-        mpu6050_interface_debug_print("mpu6050: unknow status code.\n");
+        mpu6050_interface_debug_print("mpu6050: unknown status code.\n");
     }
 
     return 0;

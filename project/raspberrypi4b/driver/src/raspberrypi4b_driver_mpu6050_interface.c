@@ -44,7 +44,7 @@
 #define IIC_DEVICE_NAME "/dev/i2c-1"        /**< iic device name */
 
 /**
- * @brief iic device hanble definition
+ * @brief iic device handle definition
  */
 static int gs_fd;                       /**< iic handle */
 

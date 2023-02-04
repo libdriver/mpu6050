@@ -417,7 +417,7 @@ uint8_t mpu6050_dmp_init(mpu6050_address_t addr_pin,
     
     if (tap_callback != NULL)
     {
-        /* set the default motion theshold */
+        /* set the default motion threshold */
         res = mpu6050_motion_threshold_convert_to_register(&gs_handle, MPU6050_DMP_DEFAULT_MOTION_THRESHOLD, &reg);
         if (res != 0)
         {
