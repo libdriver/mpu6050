@@ -460,7 +460,7 @@ uint8_t mpu6050_register_test(mpu6050_address_t addr)
     }
     mpu6050_interface_debug_print("mpu6050: check clock source %s.\n", clock_source == MPU6050_CLOCK_SOURCE_PLL_Z_GYRO ? "ok" : "error");
     
-    /* pll with y axis gyroscope reference */
+    /* pll y axis gyroscope reference */
     res = mpu6050_set_clock_source(&gs_handle, MPU6050_CLOCK_SOURCE_PLL_Y_GYRO);
     if (res != 0)
     {
@@ -480,7 +480,7 @@ uint8_t mpu6050_register_test(mpu6050_address_t addr)
     }
     mpu6050_interface_debug_print("mpu6050: check clock source %s.\n", clock_source == MPU6050_CLOCK_SOURCE_PLL_Y_GYRO ? "ok" : "error");
     
-    /* pll with x axis gyroscope reference */
+    /* pll x axis gyroscope reference */
     res = mpu6050_set_clock_source(&gs_handle, MPU6050_CLOCK_SOURCE_PLL_X_GYRO);
     if (res != 0)
     {
@@ -986,7 +986,7 @@ uint8_t mpu6050_register_test(mpu6050_address_t addr)
     res = mpu6050_fifo_set(&gs_handle, data, 8);
     if (res != 0)
     {
-        mpu6050_interface_debug_print("mpu6050: fifo wirte failed.\n");
+        mpu6050_interface_debug_print("mpu6050: fifo write failed.\n");
         (void)mpu6050_deinit(&gs_handle);
        
         return 1;
@@ -2047,7 +2047,7 @@ uint8_t mpu6050_register_test(mpu6050_address_t addr)
     /* mpu6050_set_interrupt_pin_type/mpu6050_get_interrupt_pin_type test */
     mpu6050_interface_debug_print("mpu6050: mpu6050_set_interrupt_pin_type/mpu6050_get_interrupt_pin_type test.\n");
     
-    /* push pull */
+    /* push-pull */
     res = mpu6050_set_interrupt_pin_type(&gs_handle, MPU6050_PIN_TYPE_PUSH_PULL);
     if (res != 0)
     {

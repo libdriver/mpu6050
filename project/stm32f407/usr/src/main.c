@@ -273,7 +273,7 @@ uint8_t mpu6050(uint8_t argc, char **argv)
         {"times", required_argument, NULL, 2},
         {NULL, 0, NULL, 0},
     };
-    char type[33] = "unknow";
+    char type[33] = "unknown";
     uint32_t times = 3;
     mpu6050_address_t addr = MPU6050_ADDRESS_AD0_LOW;
     
@@ -998,7 +998,7 @@ int main(void)
     /* uart init */
     uart_init(115200);
     
-    /* shell init && register mpu6050 fuction */
+    /* shell init && register mpu6050 function */
     shell_init();
     shell_register("mpu6050", mpu6050);
     uart_print("mpu6050: welcome to libdriver mpu6050.\n");
@@ -1021,7 +1021,7 @@ int main(void)
             }
             else if (res == 2)
             {
-                uart_print("mpu6050: unknow command.\n");
+                uart_print("mpu6050: unknown command.\n");
             }
             else if (res == 3)
             {
@@ -1037,7 +1037,7 @@ int main(void)
             }
             else
             {
-                uart_print("mpu6050: unknow status code.\n");
+                uart_print("mpu6050: unknown status code.\n");
             }
             uart_flush();
         }
