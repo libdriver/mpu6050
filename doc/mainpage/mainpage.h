@@ -1,6 +1,6 @@
 /**
  * @mainpage  LibDriver MPU6050
- * @brief     libdriver mpu6050 is a full function driver of mpu6050 and it can run in both MCU and Linux platform.
+ * @brief     LibDriver MPU6050 is a full function driver of MPU6050 and it can run in both MCU and Linux platform.
  * @version   1.0.0
  * @author    Shifeng Li
  *
