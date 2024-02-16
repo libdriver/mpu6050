@@ -47,7 +47,7 @@ LibDriver MPU6050是LibDriver推出的MPU6050的全功能驅動，該驅動提�
 
 參考/interface目錄下與平台無關的IIC總線模板，完成指定平台的IIC總線驅動。
 
-將/src目錄，/interface目錄和/example目錄加入工程。
+將/src目錄，您使用平臺的介面驅動和您開發的驅動加入工程，如果您想要使用默認的範例驅動，可以將/example目錄加入您的工程。
 
 ### 使用
 
