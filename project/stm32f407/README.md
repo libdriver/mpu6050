@@ -929,9 +929,9 @@ mpu6050: enable feature send raw accel.
 mpu6050: enable feature send cal gyro.
 mpu6050: enable feature gyro cal.
 mpu6050: fifo 16.
-mpu6050: pitch[0] is 0.51dps.
-mpu6050: roll[0] is 0.86dps.
-mpu6050: yaw[0] is 0.01dps.
+mpu6050: pitch[0] is 0.51deg.
+mpu6050: roll[0] is 0.86deg.
+mpu6050: yaw[0] is 0.01deg.
 mpu6050: acc x[0] is -0.11g.
 mpu6050: acc y[0] is -0.13g.
 mpu6050: acc z[0] is 0.99g.
@@ -939,9 +939,9 @@ mpu6050: gyro x[0] is -0.06dps.
 mpu6050: gyro y[0] is -0.06dps.
 mpu6050: gyro z[0] is -0.06dps.
 mpu6050: fifo 19.
-mpu6050: pitch[0] is 0.48dps.
-mpu6050: roll[0] is 0.81dps.
-mpu6050: yaw[0] is 0.01dps.
+mpu6050: pitch[0] is 0.48deg.
+mpu6050: roll[0] is 0.81deg.
+mpu6050: yaw[0] is 0.01deg.
 mpu6050: acc x[0] is -0.11g.
 mpu6050: acc y[0] is -0.13g.
 mpu6050: acc z[0] is 0.98g.
@@ -949,9 +949,9 @@ mpu6050: gyro x[0] is -0.06dps.
 mpu6050: gyro y[0] is -0.12dps.
 mpu6050: gyro z[0] is -0.06dps.
 mpu6050: fifo 20.
-mpu6050: pitch[0] is 0.45dps.
-mpu6050: roll[0] is 0.74dps.
-mpu6050: yaw[0] is -0.00dps.
+mpu6050: pitch[0] is 0.45deg.
+mpu6050: roll[0] is 0.74deg.
+mpu6050: yaw[0] is -0.00deg.
 mpu6050: acc x[0] is -0.11g.
 mpu6050: acc y[0] is -0.13g.
 mpu6050: acc z[0] is 0.99g.
@@ -1149,9 +1149,9 @@ mpu6050 -e dmp --addr=0 --times=3
 
 mpu6050: 1/3.
 mpu6050: fifo 6.
-mpu6050: pitch[0] is 0.13dps.
-mpu6050: roll[0] is 0.82dps.
-mpu6050: yaw[0] is 0.00dps.
+mpu6050: pitch[0] is 0.13deg.
+mpu6050: roll[0] is 0.82deg.
+mpu6050: yaw[0] is 0.00deg.
 mpu6050: acc x[0] is -0.16g.
 mpu6050: acc y[0] is -0.18g.
 mpu6050: acc z[0] is 0.97g.
@@ -1160,9 +1160,9 @@ mpu6050: gyro y[0] is -0.12dps.
 mpu6050: gyro z[0] is -0.06dps.
 mpu6050: 2/3.
 mpu6050: fifo 6.
-mpu6050: pitch[0] is 0.10dps.
-mpu6050: roll[0] is 0.75dps.
-mpu6050: yaw[0] is -0.00dps.
+mpu6050: pitch[0] is 0.10deg.
+mpu6050: roll[0] is 0.75deg.
+mpu6050: yaw[0] is -0.00deg.
 mpu6050: acc x[0] is -0.16g.
 mpu6050: acc y[0] is -0.18g.
 mpu6050: acc z[0] is 0.97g.
@@ -1171,9 +1171,9 @@ mpu6050: gyro y[0] is -0.18dps.
 mpu6050: gyro z[0] is -0.06dps.
 mpu6050: 3/3.
 mpu6050: fifo 7.
-mpu6050: pitch[0] is 0.07dps.
-mpu6050: roll[0] is 0.68dps.
-mpu6050: yaw[0] is -0.00dps.
+mpu6050: pitch[0] is 0.07deg.
+mpu6050: roll[0] is 0.68deg.
+mpu6050: yaw[0] is -0.00deg.
 mpu6050: acc x[0] is -0.16g.
 mpu6050: acc y[0] is -0.18g.
 mpu6050: acc z[0] is 0.97g.
