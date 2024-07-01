@@ -402,9 +402,9 @@ for (i = 0; i < times; i++)
     /* output */
     mpu6050_interface_debug_print("mpu6050: %d/%d.\n", i + 1, times);
     mpu6050_interface_debug_print("mpu6050: fifo %d.\n", len);
-    mpu6050_interface_debug_print("mpu6050: pitch[0] is %0.2fdps.\n", gs_pitch[0]);
-    mpu6050_interface_debug_print("mpu6050: roll[0] is %0.2fdps.\n", gs_roll[0]);
-    mpu6050_interface_debug_print("mpu6050: yaw[0] is %0.2fdps.\n", gs_yaw[0]);
+    mpu6050_interface_debug_print("mpu6050: pitch[0] is %0.2fdeg.\n", gs_pitch[0]);
+    mpu6050_interface_debug_print("mpu6050: roll[0] is %0.2fdeg.\n", gs_roll[0]);
+    mpu6050_interface_debug_print("mpu6050: yaw[0] is %0.2fdeg.\n", gs_yaw[0]);
     mpu6050_interface_debug_print("mpu6050: acc x[0] is %0.2fg.\n", gs_accel_g[0][0]);
     mpu6050_interface_debug_print("mpu6050: acc y[0] is %0.2fg.\n", gs_accel_g[0][1]);
     mpu6050_interface_debug_print("mpu6050: acc z[0] is %0.2fg.\n", gs_accel_g[0][2]);
