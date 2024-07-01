@@ -1,6 +1,6 @@
 ## 1.0.1 (2024-07-01)
 
-## Bug  Fixes
+## Bug Fixes
 
 - fix some display errors
 
