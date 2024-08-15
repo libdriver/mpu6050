@@ -341,7 +341,7 @@ uint8_t mpu6050_dmp_tap_orient_motion_test(mpu6050_address_t addr)
     }
     
     /* set 50Hz */
-    res = mpu6050_set_sample_rate_divider(&gs_handle, 1000 / (50 - 1));
+    res = mpu6050_set_sample_rate_divider(&gs_handle, (1000 / 50) - 1);
     if (res != 0)
     {
         mpu6050_interface_debug_print("mpu6050: set sample rate divider failed.\n");
