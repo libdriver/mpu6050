@@ -102,7 +102,7 @@ uint8_t mpu6050_basic_init(mpu6050_address_t addr_pin)
     }
     
     /* set the default rate */
-    res = mpu6050_set_sample_rate_divider(&gs_handle, 1000 / (MPU6050_BASIC_DEFAULT_RATE - 1));
+    res = mpu6050_set_sample_rate_divider(&gs_handle, (1000 / MPU6050_BASIC_DEFAULT_RATE) - 1);
     if (res != 0)
     {
         mpu6050_interface_debug_print("mpu6050: set sample rate divider failed.\n");
