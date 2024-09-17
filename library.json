@@ -1,0 +1,37 @@
+{
+  "$schema": "https://raw.githubusercontent.com/platformio/platformio-core/develop/platformio/assets/schema/library.json",
+  "name": "mpu6050",
+  "version": "1.0.3",
+  "description": "MPU6050 full function driver library for general MCU and Linux.",
+  "keywords": [
+    "mpu6050",
+    "driver",
+    "sensor",
+    "dmp"
+  ],
+  "authors": {
+    "name": "LibDriver",
+    "email": "lishifenging@outlook.com",
+    "url": "https://www.libdriver.com"
+  },
+  "repository": {
+    "url": "https://github.com/libdriver/mpu6050.git",
+    "type": "git"
+  },
+  "homepage": "https://www.libdriver.com",
+  "headers": [
+    "driver_mpu6050.h",
+    "driver_mpu6050_interface.h"
+  ],
+  "build": {
+    "includeDir": ".",
+    "srcDir": ".",
+    "flags": [
+      "-I interface",
+      "-I src"
+    ],
+    "srcFilter": [
+      "+<src/*.c>"
+    ]
+  }
+}
