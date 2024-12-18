@@ -1424,7 +1424,7 @@ Functions</h2></td></tr>
 <p>close the chip </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
   </table>
   </dd>
 </dl>
@@ -1459,7 +1459,7 @@ Functions</h2></td></tr>
 <p>reset the chip </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
   </table>
   </dd>
 </dl>
@@ -1509,9 +1509,9 @@ Functions</h2></td></tr>
 <p>fifo read bytes </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*buf</td><td>points to a data buffer </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">len</td><td>is the buffer length </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*buf</td><td>pointer to a data buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">len</td><td>buffer length </td></tr>
   </table>
   </dd>
 </dl>
@@ -1545,7 +1545,7 @@ Functions</h2></td></tr>
 <p>reset the fifo </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
   </table>
   </dd>
 </dl>
@@ -1595,9 +1595,9 @@ Functions</h2></td></tr>
 <p>fifo write bytes </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">*buf</td><td>points to a data buffer </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">len</td><td>is the buffer length </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*buf</td><td>pointer to a data buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">len</td><td>buffer length </td></tr>
   </table>
   </dd>
 </dl>
@@ -1631,7 +1631,7 @@ Functions</h2></td></tr>
 <p>force reset the fifo </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
   </table>
   </dd>
 </dl>
@@ -1675,8 +1675,8 @@ Functions</h2></td></tr>
 <p>get the accelerometer range </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*range</td><td>points to an accelerometer range buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*range</td><td>pointer to an accelerometer range buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -1726,9 +1726,9 @@ Functions</h2></td></tr>
 <p>get the accelerometer test </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">axis</td><td>is the tested axis </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*enable</td><td>points to a bool value buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">axis</td><td>tested axis </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*enable</td><td>pointer to a bool value buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -1772,8 +1772,8 @@ Functions</h2></td></tr>
 <p>get the accelerometer x test </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*data</td><td>points to a set data buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*data</td><td>pointer to a set data buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -1817,8 +1817,8 @@ Functions</h2></td></tr>
 <p>get the accelerometer y test </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*data</td><td>points to a set data buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*data</td><td>pointer to a set data buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -1862,8 +1862,8 @@ Functions</h2></td></tr>
 <p>get the accelerometer z test </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*data</td><td>points to a set data buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*data</td><td>pointer to a set data buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -1907,8 +1907,8 @@ Functions</h2></td></tr>
 <p>get the chip address pin </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*addr_pin</td><td>points to a chip address pin buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*addr_pin</td><td>pointer to a chip address pin buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -1950,8 +1950,8 @@ Functions</h2></td></tr>
 <p>get the chip clock source </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*clock_source</td><td>points to a clock source buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*clock_source</td><td>pointer to a clock source buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -1995,8 +1995,8 @@ Functions</h2></td></tr>
 <p>get the cycle wake up mode status </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*enable</td><td>points to a bool value buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*enable</td><td>pointer to a bool value buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -2040,8 +2040,8 @@ Functions</h2></td></tr>
 <p>get the device reset status </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*enable</td><td>points to a bool value buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*enable</td><td>pointer to a bool value buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -2085,8 +2085,8 @@ Functions</h2></td></tr>
 <p>get the extern sync type </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*sync</td><td>points to an extern sync type buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*sync</td><td>pointer to an extern sync type buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -2130,8 +2130,8 @@ Functions</h2></td></tr>
 <p>get the fifo status </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*enable</td><td>points to a bool value buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*enable</td><td>pointer to a bool value buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -2175,8 +2175,8 @@ Functions</h2></td></tr>
 <p>get the fifo counter value </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*count</td><td>points to a fifo count buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*count</td><td>pointer to a fifo count buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -2226,9 +2226,9 @@ Functions</h2></td></tr>
 <p>get the fifo function status </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">fifo</td><td>is the fifo type </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*enable</td><td>points to a bool value buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">fifo</td><td>fifo type </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*enable</td><td>pointer to a bool value buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -2272,8 +2272,8 @@ Functions</h2></td></tr>
 <p>get the fifo reset status </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*enable</td><td>points to a bool value buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*enable</td><td>pointer to a bool value buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -2317,8 +2317,8 @@ Functions</h2></td></tr>
 <p>get the fsync interrupt status </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*enable</td><td>points to a bool value buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*enable</td><td>pointer to a bool value buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -2362,8 +2362,8 @@ Functions</h2></td></tr>
 <p>get the fsync interrupt level </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*level</td><td>points to a set level buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*level</td><td>pointer to a set level buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -2407,8 +2407,8 @@ Functions</h2></td></tr>
 <p>get the gyroscope range </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*range</td><td>points to a gyroscope range buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*range</td><td>pointer to a gyroscope range buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -2458,9 +2458,9 @@ Functions</h2></td></tr>
 <p>get the gyroscope test </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">axis</td><td>is the tested axis </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*enable</td><td>points to a bool value buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">axis</td><td>tested axis </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*enable</td><td>pointer to a bool value buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -2504,8 +2504,8 @@ Functions</h2></td></tr>
 <p>get the gyroscope x test </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*data</td><td>points to a set data buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*data</td><td>pointer to a set data buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -2549,8 +2549,8 @@ Functions</h2></td></tr>
 <p>get the gyroscope y test </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*data</td><td>points to a set data buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*data</td><td>pointer to a set data buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -2594,8 +2594,8 @@ Functions</h2></td></tr>
 <p>get the gyroscope z test </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*data</td><td>points to a set data buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*data</td><td>pointer to a set data buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -2639,8 +2639,8 @@ Functions</h2></td></tr>
 <p>get the iic4 data in </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*data</td><td>points to a set data buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*data</td><td>pointer to a set data buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -2684,8 +2684,8 @@ Functions</h2></td></tr>
 <p>get the iic4 data out </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*data</td><td>points to a set data buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*data</td><td>pointer to a set data buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -2729,8 +2729,8 @@ Functions</h2></td></tr>
 <p>get the iic4 status </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*enable</td><td>points to a bool value buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*enable</td><td>pointer to a bool value buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -2774,8 +2774,8 @@ Functions</h2></td></tr>
 <p>get the iic4 interrupt status </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*enable</td><td>points to a bool value buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*enable</td><td>pointer to a bool value buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -2819,8 +2819,8 @@ Functions</h2></td></tr>
 <p>get the iic4 transaction mode </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*mode</td><td>points to a transaction mode buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*mode</td><td>pointer to a transaction mode buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -2870,9 +2870,9 @@ Functions</h2></td></tr>
 <p>get the iic address </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">slave</td><td>is the iic slave number </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*addr_7bit</td><td>points to an iic address buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">slave</td><td>iic slave number </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*addr_7bit</td><td>pointer to an iic address buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -2917,8 +2917,8 @@ Functions</h2></td></tr>
 <p>get the iic bypass status </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*enable</td><td>points to a bool value buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*enable</td><td>pointer to a bool value buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -2968,9 +2968,9 @@ Functions</h2></td></tr>
 <p>get the iic byte swap status </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">slave</td><td>is the iic slave number </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*enable</td><td>points to a bool value buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">slave</td><td>iic slave number </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*enable</td><td>pointer to a bool value buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -3015,8 +3015,8 @@ Functions</h2></td></tr>
 <p>get the iic clock </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*clk</td><td>points to an iic clock buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*clk</td><td>pointer to an iic clock buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -3066,9 +3066,9 @@ Functions</h2></td></tr>
 <p>get the iic data out </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">slave</td><td>is the iic slave number </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*data</td><td>points to a set data buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">slave</td><td>iic slave number </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*data</td><td>pointer to a set data buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -3113,8 +3113,8 @@ Functions</h2></td></tr>
 <p>get the iic delay </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*delay</td><td>points to an iic delay buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*delay</td><td>pointer to an iic delay buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -3164,9 +3164,9 @@ Functions</h2></td></tr>
 <p>get the iic delay status </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">delay</td><td>is the iic delay </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*enable</td><td>points to a bool value buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">delay</td><td>iic delay </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*enable</td><td>pointer to a bool value buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -3216,9 +3216,9 @@ Functions</h2></td></tr>
 <p>get the iic status </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">slave</td><td>is the iic slave number </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*enable</td><td>points to a bool value buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">slave</td><td>iic slave number </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*enable</td><td>pointer to a bool value buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -3269,9 +3269,9 @@ Functions</h2></td></tr>
 <p>get the iic fifo status </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">slave</td><td>is the iic slave number </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*enable</td><td>points to a bool value buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">slave</td><td>iic slave number </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*enable</td><td>pointer to a bool value buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -3322,9 +3322,9 @@ Functions</h2></td></tr>
 <p>get the iic group order </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">slave</td><td>is the iic slave number </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*order</td><td>points to a group order buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">slave</td><td>iic slave number </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*order</td><td>pointer to a group order buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -3369,8 +3369,8 @@ Functions</h2></td></tr>
 <p>get the iic master status </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*enable</td><td>points to a bool value buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*enable</td><td>pointer to a bool value buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -3414,8 +3414,8 @@ Functions</h2></td></tr>
 <p>get the iic master reset status </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*enable</td><td>points to a bool value buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*enable</td><td>pointer to a bool value buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -3465,9 +3465,9 @@ Functions</h2></td></tr>
 <p>get the iic mode </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">slave</td><td>is the iic slave number </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*mode</td><td>points to an iic mode buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">slave</td><td>iic slave number </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*mode</td><td>pointer to an iic mode buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -3512,8 +3512,8 @@ Functions</h2></td></tr>
 <p>get the iic multi master status </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*enable</td><td>points to a bool value buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*enable</td><td>pointer to a bool value buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -3557,8 +3557,8 @@ Functions</h2></td></tr>
 <p>get the iic read mode </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*mode</td><td>points to a read mode buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*mode</td><td>pointer to a read mode buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -3608,9 +3608,9 @@ Functions</h2></td></tr>
 <p>get the iic register </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">slave</td><td>is the iic slave number </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*reg</td><td>points to an iic register buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">slave</td><td>iic slave number </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*reg</td><td>pointer to an iic register buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -3655,8 +3655,8 @@ Functions</h2></td></tr>
 <p>get the iic status </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*status</td><td>points to a status buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*status</td><td>pointer to a status buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -3706,9 +3706,9 @@ Functions</h2></td></tr>
 <p>get the iic transaction mode </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">slave</td><td>is the iic slave number </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*mode</td><td>points to an iic transaction mode buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">slave</td><td>iic slave number </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*mode</td><td>pointer to an iic transaction mode buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -3759,9 +3759,9 @@ Functions</h2></td></tr>
 <p>get the iic transferred length </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">slave</td><td>is the iic slave number </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*len</td><td>points to an iic transferred length buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">slave</td><td>iic slave number </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*len</td><td>pointer to an iic transferred length buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -3806,8 +3806,8 @@ Functions</h2></td></tr>
 <p>get the iic wait for external sensor status </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*enable</td><td>points to a bool value buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*enable</td><td>pointer to a bool value buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -3857,9 +3857,9 @@ Functions</h2></td></tr>
 <p>get the interrupt status </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">type</td><td>is the set interrupt type </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*enable</td><td>points to a bool value buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">type</td><td>set interrupt type </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*enable</td><td>pointer to a bool value buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -3903,8 +3903,8 @@ Functions</h2></td></tr>
 <p>get the interrupt latch status </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*enable</td><td>points to a bool value buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*enable</td><td>pointer to a bool value buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -3948,8 +3948,8 @@ Functions</h2></td></tr>
 <p>get the interrupt level </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*level</td><td>points to an interrupt level buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*level</td><td>pointer to an interrupt level buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -3993,8 +3993,8 @@ Functions</h2></td></tr>
 <p>get the interrupt pin type </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*type</td><td>points to a pin type buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*type</td><td>pointer to a pin type buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -4038,8 +4038,8 @@ Functions</h2></td></tr>
 <p>get the interrupt reading clear status </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*enable</td><td>points to a bool value buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*enable</td><td>pointer to a bool value buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -4083,8 +4083,8 @@ Functions</h2></td></tr>
 <p>get the interrupt status </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*status</td><td>points to a status buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*status</td><td>pointer to a status buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -4128,8 +4128,8 @@ Functions</h2></td></tr>
 <p>get the low pass filter </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*filter</td><td>points to a low pass filter buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*filter</td><td>pointer to a low pass filter buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -4173,8 +4173,8 @@ Functions</h2></td></tr>
 <p>get the motion duration </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*duration</td><td>points to a duration buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*duration</td><td>pointer to a duration buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -4218,8 +4218,8 @@ Functions</h2></td></tr>
 <p>get the motion_threshold </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*threshold</td><td>points to a threshold buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*threshold</td><td>pointer to a threshold buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -4263,8 +4263,8 @@ Functions</h2></td></tr>
 <p>get the sample rate divider </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*d</td><td>points to a sample rate divider buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*d</td><td>pointer to a sample rate divider buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -4308,8 +4308,8 @@ Functions</h2></td></tr>
 <p>get the sensor reset status </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*enable</td><td>points to a bool value buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*enable</td><td>pointer to a bool value buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -4353,8 +4353,8 @@ Functions</h2></td></tr>
 <p>get the sleep status </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*enable</td><td>points to a bool value buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*enable</td><td>pointer to a bool value buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -4404,9 +4404,9 @@ Functions</h2></td></tr>
 <p>get the source mode </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">source</td><td>is the input source </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*enable</td><td>points to a bool value buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">source</td><td>input source </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*enable</td><td>pointer to a bool value buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -4450,8 +4450,8 @@ Functions</h2></td></tr>
 <p>get the temperature sensor status </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*enable</td><td>points to a bool value buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*enable</td><td>pointer to a bool value buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -4495,8 +4495,8 @@ Functions</h2></td></tr>
 <p>get the wake up frequency </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*frequency</td><td>points to a wake up frequency buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*frequency</td><td>pointer to a wake up frequency buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -4530,7 +4530,7 @@ Functions</h2></td></tr>
 <p>reset the iic master controller </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
   </table>
   </dd>
 </dl>
@@ -4564,7 +4564,7 @@ Functions</h2></td></tr>
 <p>get the chip's information </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[out]</td><td class="paramname">*info</td><td>points to an mpu6050 info structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*info</td><td>pointer to an mpu6050 info structure </td></tr>
   </table>
   </dd>
 </dl>
@@ -4596,7 +4596,7 @@ Functions</h2></td></tr>
 <p>initialize the chip </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
   </table>
   </dd>
 </dl>
@@ -4632,7 +4632,7 @@ Functions</h2></td></tr>
 <p>irq handler </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
   </table>
   </dd>
 </dl>
@@ -4682,9 +4682,9 @@ Functions</h2></td></tr>
 <p>convert the register raw data to the motion duration </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">reg</td><td>is the register raw data </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*ms</td><td>points to a motion duration buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">reg</td><td>register raw data </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*ms</td><td>pointer to a motion duration buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -4733,9 +4733,9 @@ Functions</h2></td></tr>
 <p>convert the motion duration to the register raw data </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">ms</td><td>is the motion duration </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*reg</td><td>points to a register raw buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ms</td><td>motion duration </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*reg</td><td>pointer to a register raw buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -4784,9 +4784,9 @@ Functions</h2></td></tr>
 <p>convert the register raw data to the motion threshold </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">reg</td><td>is the register raw data </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*mg</td><td>points to a motion threshold buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">reg</td><td>register raw data </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*mg</td><td>pointer to a motion threshold buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -4835,9 +4835,9 @@ Functions</h2></td></tr>
 <p>convert the motion threshold to the register raw data </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">mg</td><td>is the motion threshold </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*reg</td><td>points to a register raw buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mg</td><td>motion threshold </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*reg</td><td>pointer to a register raw buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -4904,12 +4904,12 @@ Functions</h2></td></tr>
 <p>read the data </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">**accel_raw</td><td>points to an accel raw data buffer </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">**accel_g</td><td>points to a converted accel data buffer </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">**gyro_raw</td><td>points to a gyro raw data buffer </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">**gyro_dps</td><td>points to a converted gyro data buffer </td></tr>
-    <tr><td class="paramdir">[in,out]</td><td class="paramname">*len</td><td>points to a length buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">**accel_raw</td><td>pointer to an accel raw data buffer </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">**accel_g</td><td>pointer to a converted accel data buffer </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">**gyro_raw</td><td>pointer to a gyro raw data buffer </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">**gyro_dps</td><td>pointer to a converted gyro data buffer </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">*len</td><td>pointer to a length buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -4962,9 +4962,9 @@ Functions</h2></td></tr>
 <p>read the extern sensor data </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*data</td><td>points to a data buffer </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">len</td><td>is the data length </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*data</td><td>pointer to a data buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">len</td><td>data length </td></tr>
   </table>
   </dd>
 </dl>
@@ -5015,9 +5015,9 @@ Functions</h2></td></tr>
 <p>read the temperature </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*raw</td><td>points to raw data buffer </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*degrees</td><td>points to a converted degrees data buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*raw</td><td>pointer to raw data buffer </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*degrees</td><td>pointer to a converted degrees data buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -5067,9 +5067,9 @@ Functions</h2></td></tr>
 <p>run the self test </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*gyro_offset_raw</td><td>points to a gyro offset raw buffer </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*accel_offset_raw</td><td>points to an accel offset raw buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*gyro_offset_raw</td><td>pointer to a gyro offset raw buffer </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*accel_offset_raw</td><td>pointer to an accel offset raw buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -5103,7 +5103,7 @@ Functions</h2></td></tr>
 <p>reset all sensors </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
   </table>
   </dd>
 </dl>
@@ -5147,8 +5147,8 @@ Functions</h2></td></tr>
 <p>set the accelerometer range </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">range</td><td>is the accelerometer range </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">range</td><td>accelerometer range </td></tr>
   </table>
   </dd>
 </dl>
@@ -5198,9 +5198,9 @@ Functions</h2></td></tr>
 <p>set the accelerometer test </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">axis</td><td>is the tested axis </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">enable</td><td>is a bool value </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">axis</td><td>tested axis </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">enable</td><td>bool value </td></tr>
   </table>
   </dd>
 </dl>
@@ -5244,8 +5244,8 @@ Functions</h2></td></tr>
 <p>set the accelerometer x test </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>is the set data </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>set data </td></tr>
   </table>
   </dd>
 </dl>
@@ -5290,8 +5290,8 @@ Functions</h2></td></tr>
 <p>set the accelerometer y test </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>is the set data </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>set data </td></tr>
   </table>
   </dd>
 </dl>
@@ -5336,8 +5336,8 @@ Functions</h2></td></tr>
 <p>set the accelerometer z test </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>is the set data </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>set data </td></tr>
   </table>
   </dd>
 </dl>
@@ -5382,8 +5382,8 @@ Functions</h2></td></tr>
 <p>set the chip address pin </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">addr_pin</td><td>is the chip address pin </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">addr_pin</td><td>chip address pin </td></tr>
   </table>
   </dd>
 </dl>
@@ -5425,8 +5425,8 @@ Functions</h2></td></tr>
 <p>set the chip clock source </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">clock_source</td><td>is chip main clock source </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">clock_source</td><td>chip main clock source </td></tr>
   </table>
   </dd>
 </dl>
@@ -5470,8 +5470,8 @@ Functions</h2></td></tr>
 <p>enable or disable the cycle wake up mode </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">enable</td><td>is a bool value </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">enable</td><td>bool value </td></tr>
   </table>
   </dd>
 </dl>
@@ -5515,8 +5515,8 @@ Functions</h2></td></tr>
 <p>set the extern sync type </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">sync</td><td>is the extern sync type </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">sync</td><td>extern sync type </td></tr>
   </table>
   </dd>
 </dl>
@@ -5560,8 +5560,8 @@ Functions</h2></td></tr>
 <p>enable or disable fifo </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">enable</td><td>is a bool value </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">enable</td><td>bool value </td></tr>
   </table>
   </dd>
 </dl>
@@ -5611,9 +5611,9 @@ Functions</h2></td></tr>
 <p>enable or disable the fifo function </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">fifo</td><td>is the fifo type </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">enable</td><td>is a bool value </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">fifo</td><td>fifo type </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">enable</td><td>bool value </td></tr>
   </table>
   </dd>
 </dl>
@@ -5657,8 +5657,8 @@ Functions</h2></td></tr>
 <p>enable or disable force accel sample </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">enable</td><td>is a bool value </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">enable</td><td>bool value </td></tr>
   </table>
   </dd>
 </dl>
@@ -5702,8 +5702,8 @@ Functions</h2></td></tr>
 <p>enable or disable the fsync interrupt </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">enable</td><td>is a bool value </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">enable</td><td>bool value </td></tr>
   </table>
   </dd>
 </dl>
@@ -5747,8 +5747,8 @@ Functions</h2></td></tr>
 <p>set the fsync interrupt level </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">level</td><td>is the set level </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">level</td><td>set level </td></tr>
   </table>
   </dd>
 </dl>
@@ -5792,8 +5792,8 @@ Functions</h2></td></tr>
 <p>set the gyroscope range </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">range</td><td>is the gyroscope range </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">range</td><td>gyroscope range </td></tr>
   </table>
   </dd>
 </dl>
@@ -5843,9 +5843,9 @@ Functions</h2></td></tr>
 <p>set the gyroscope test </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">axis</td><td>is the tested axis </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">enable</td><td>is a bool value </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">axis</td><td>tested axis </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">enable</td><td>bool value </td></tr>
   </table>
   </dd>
 </dl>
@@ -5889,8 +5889,8 @@ Functions</h2></td></tr>
 <p>set the gyroscope x test </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>is the set data </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>set data </td></tr>
   </table>
   </dd>
 </dl>
@@ -5935,8 +5935,8 @@ Functions</h2></td></tr>
 <p>set the gyroscope y test </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>is the set data </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>set data </td></tr>
   </table>
   </dd>
 </dl>
@@ -5981,8 +5981,8 @@ Functions</h2></td></tr>
 <p>set the gyroscope z test </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>is the set data </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>set data </td></tr>
   </table>
   </dd>
 </dl>
@@ -6027,8 +6027,8 @@ Functions</h2></td></tr>
 <p>set the iic4 data in </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>is the set data </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>set data </td></tr>
   </table>
   </dd>
 </dl>
@@ -6072,8 +6072,8 @@ Functions</h2></td></tr>
 <p>set the iic4 data out </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>is the set data </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>set data </td></tr>
   </table>
   </dd>
 </dl>
@@ -6117,8 +6117,8 @@ Functions</h2></td></tr>
 <p>enable or disable the iic4 </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">enable</td><td>is a bool value </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">enable</td><td>bool value </td></tr>
   </table>
   </dd>
 </dl>
@@ -6162,8 +6162,8 @@ Functions</h2></td></tr>
 <p>enable or disable the iic4 interrupt </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">enable</td><td>is a bool value </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">enable</td><td>bool value </td></tr>
   </table>
   </dd>
 </dl>
@@ -6207,8 +6207,8 @@ Functions</h2></td></tr>
 <p>set the iic4 transaction mode </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">mode</td><td>is the transaction mode </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mode</td><td>transaction mode </td></tr>
   </table>
   </dd>
 </dl>
@@ -6258,9 +6258,9 @@ Functions</h2></td></tr>
 <p>set the iic address </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">slave</td><td>is the iic slave number </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">addr_7bit</td><td>is the iic address </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">slave</td><td>iic slave number </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">addr_7bit</td><td>iic address </td></tr>
   </table>
   </dd>
 </dl>
@@ -6305,8 +6305,8 @@ Functions</h2></td></tr>
 <p>enable or disable the iic bypass </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">enable</td><td>is a bool value </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">enable</td><td>bool value </td></tr>
   </table>
   </dd>
 </dl>
@@ -6356,9 +6356,9 @@ Functions</h2></td></tr>
 <p>enable or disable the iic byte swap </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">slave</td><td>is the iic slave number </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">enable</td><td>is a bool value </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">slave</td><td>iic slave number </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">enable</td><td>bool value </td></tr>
   </table>
   </dd>
 </dl>
@@ -6403,8 +6403,8 @@ Functions</h2></td></tr>
 <p>set the iic clock </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">clk</td><td>is the iic clock </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">clk</td><td>iic clock </td></tr>
   </table>
   </dd>
 </dl>
@@ -6454,9 +6454,9 @@ Functions</h2></td></tr>
 <p>set the iic data out </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">slave</td><td>is the iic slave number </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>is the set data </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">slave</td><td>iic slave number </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>set data </td></tr>
   </table>
   </dd>
 </dl>
@@ -6501,8 +6501,8 @@ Functions</h2></td></tr>
 <p>set the iic delay </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">delay</td><td>is the iic delay </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">delay</td><td>iic delay </td></tr>
   </table>
   </dd>
 </dl>
@@ -6553,9 +6553,9 @@ Functions</h2></td></tr>
 <p>enable or disable the iic delay </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">delay</td><td>is the iic delay </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">enable</td><td>is a bool value </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">delay</td><td>iic delay </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">enable</td><td>bool value </td></tr>
   </table>
   </dd>
 </dl>
@@ -6605,9 +6605,9 @@ Functions</h2></td></tr>
 <p>enable or disable the iic </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">slave</td><td>is the iic slave number </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">enable</td><td>is a bool value </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">slave</td><td>iic slave number </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">enable</td><td>bool value </td></tr>
   </table>
   </dd>
 </dl>
@@ -6658,9 +6658,9 @@ Functions</h2></td></tr>
 <p>enable or disable the iic fifo </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">slave</td><td>is the iic slave number </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">enable</td><td>is a bool value </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">slave</td><td>iic slave number </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">enable</td><td>bool value </td></tr>
   </table>
   </dd>
 </dl>
@@ -6711,9 +6711,9 @@ Functions</h2></td></tr>
 <p>set the iic group order </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">slave</td><td>is the iic slave number </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">order</td><td>is the group order </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">slave</td><td>iic slave number </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">order</td><td>group order </td></tr>
   </table>
   </dd>
 </dl>
@@ -6758,8 +6758,8 @@ Functions</h2></td></tr>
 <p>enable or disable the iic master mode </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">enable</td><td>is a bool value </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">enable</td><td>bool value </td></tr>
   </table>
   </dd>
 </dl>
@@ -6809,9 +6809,9 @@ Functions</h2></td></tr>
 <p>set the iic mode </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">slave</td><td>is the iic slave number </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">mode</td><td>is the iic mode </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">slave</td><td>iic slave number </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mode</td><td>iic mode </td></tr>
   </table>
   </dd>
 </dl>
@@ -6856,8 +6856,8 @@ Functions</h2></td></tr>
 <p>enable or disable iic multi master </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">enable</td><td>is a bool value </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">enable</td><td>bool value </td></tr>
   </table>
   </dd>
 </dl>
@@ -6901,8 +6901,8 @@ Functions</h2></td></tr>
 <p>set the iic read mode </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">mode</td><td>is the read mode </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mode</td><td>read mode </td></tr>
   </table>
   </dd>
 </dl>
@@ -6952,9 +6952,9 @@ Functions</h2></td></tr>
 <p>set the iic register </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">slave</td><td>is the iic slave number </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">reg</td><td>is the iic register </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">slave</td><td>iic slave number </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">reg</td><td>iic register </td></tr>
   </table>
   </dd>
 </dl>
@@ -7005,9 +7005,9 @@ Functions</h2></td></tr>
 <p>set the iic transaction mode </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">slave</td><td>is the iic slave number </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">mode</td><td>is the iic transaction mode </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">slave</td><td>iic slave number </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mode</td><td>iic transaction mode </td></tr>
   </table>
   </dd>
 </dl>
@@ -7058,9 +7058,9 @@ Functions</h2></td></tr>
 <p>set the iic transferred length </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">slave</td><td>is the iic slave number </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">len</td><td>is the iic transferred length </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">slave</td><td>iic slave number </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">len</td><td>iic transferred length </td></tr>
   </table>
   </dd>
 </dl>
@@ -7106,8 +7106,8 @@ Functions</h2></td></tr>
 <p>enable or disable iic wait for external sensor </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">enable</td><td>is a bool value </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">enable</td><td>bool value </td></tr>
   </table>
   </dd>
 </dl>
@@ -7157,9 +7157,9 @@ Functions</h2></td></tr>
 <p>enable or disable the interrupt </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">type</td><td>is the set interrupt type </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">enable</td><td>is a bool value </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">type</td><td>set interrupt type </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">enable</td><td>bool value </td></tr>
   </table>
   </dd>
 </dl>
@@ -7203,8 +7203,8 @@ Functions</h2></td></tr>
 <p>enable or disable the interrupt latch </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">enable</td><td>is a bool value </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">enable</td><td>bool value </td></tr>
   </table>
   </dd>
 </dl>
@@ -7248,8 +7248,8 @@ Functions</h2></td></tr>
 <p>set the interrupt level </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">level</td><td>is the interrupt level </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">level</td><td>interrupt level </td></tr>
   </table>
   </dd>
 </dl>
@@ -7293,8 +7293,8 @@ Functions</h2></td></tr>
 <p>set the interrupt pin type </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">type</td><td>is the interrupt pin type </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">type</td><td>interrupt pin type </td></tr>
   </table>
   </dd>
 </dl>
@@ -7338,8 +7338,8 @@ Functions</h2></td></tr>
 <p>enable or disable the interrupt reading clear </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">enable</td><td>is a bool value </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">enable</td><td>bool value </td></tr>
   </table>
   </dd>
 </dl>
@@ -7383,8 +7383,8 @@ Functions</h2></td></tr>
 <p>set the low pass filter </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">filter</td><td>is the low pass filter </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">filter</td><td>low pass filter </td></tr>
   </table>
   </dd>
 </dl>
@@ -7428,8 +7428,8 @@ Functions</h2></td></tr>
 <p>set the motion duration </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">duration</td><td>is the set duration </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">duration</td><td>set duration </td></tr>
   </table>
   </dd>
 </dl>
@@ -7473,8 +7473,8 @@ Functions</h2></td></tr>
 <p>set the motion_threshold </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">threshold</td><td>is the set threshold </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">threshold</td><td>set threshold </td></tr>
   </table>
   </dd>
 </dl>
@@ -7518,8 +7518,8 @@ Functions</h2></td></tr>
 <p>set the sample rate divider </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">d</td><td>is the sample rate divider </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">d</td><td>sample rate divider </td></tr>
   </table>
   </dd>
 </dl>
@@ -7563,8 +7563,8 @@ Functions</h2></td></tr>
 <p>set the signal path reset </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">path</td><td>is the signal path </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">path</td><td>signal path </td></tr>
   </table>
   </dd>
 </dl>
@@ -7608,8 +7608,8 @@ Functions</h2></td></tr>
 <p>enable or disable the sleep mode </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">enable</td><td>is a bool value </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">enable</td><td>bool value </td></tr>
   </table>
   </dd>
 </dl>
@@ -7659,9 +7659,9 @@ Functions</h2></td></tr>
 <p>set source into standby mode </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">source</td><td>is the input source </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">enable</td><td>is a bool value </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">source</td><td>input source </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">enable</td><td>bool value </td></tr>
   </table>
   </dd>
 </dl>
@@ -7705,8 +7705,8 @@ Functions</h2></td></tr>
 <p>enable or disable the temperature sensor </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">enable</td><td>is a bool value </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">enable</td><td>bool value </td></tr>
   </table>
   </dd>
 </dl>
@@ -7750,8 +7750,8 @@ Functions</h2></td></tr>
 <p>set the wake up frequency </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">frequency</td><td>is the wake up frequency </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">frequency</td><td>wake up frequency </td></tr>
   </table>
   </dd>
 </dl>

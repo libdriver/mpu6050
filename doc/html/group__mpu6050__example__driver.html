@@ -1507,7 +1507,7 @@ Functions</h2></td></tr>
 <p>basic example init </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">addr_pin</td><td>is the iic device address </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">addr_pin</td><td>iic device address </td></tr>
   </table>
   </dd>
 </dl>
@@ -1549,8 +1549,8 @@ Functions</h2></td></tr>
 <p>basic example read </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[out]</td><td class="paramname">*g</td><td>points to a converted data buffer </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*dps</td><td>points to a converted data buffer </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*g</td><td>pointer to a converted data buffer </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*dps</td><td>pointer to a converted data buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -1582,7 +1582,7 @@ Functions</h2></td></tr>
 <p>basic example read temperature </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[out]</td><td class="paramname">*degrees</td><td>points to a converted data buffer </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*degrees</td><td>pointer to a converted data buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -1640,7 +1640,7 @@ Functions</h2></td></tr>
 <p>dmp example get pedometer counter </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[out]</td><td class="paramname">*cnt</td><td>points to a cnt buffer </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*cnt</td><td>pointer to a cnt buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -1694,10 +1694,10 @@ Functions</h2></td></tr>
 <p>dmp example init </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">addr_pin</td><td>is the iic device address </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">*receive_callback</td><td>points to a receive callback function </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">*tap_callback</td><td>points to a tap callback function </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">*orient_callback</td><td>points to an orient callback function </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">addr_pin</td><td>iic device address </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*receive_callback</td><td>pointer to a receive callback function </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*tap_callback</td><td>pointer to a tap callback function </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*orient_callback</td><td>pointer to an orient callback function </td></tr>
   </table>
   </dd>
 </dl>
@@ -1807,15 +1807,15 @@ Functions</h2></td></tr>
 <p>dmp example read </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[out]</td><td class="paramname">*accel_raw</td><td>points to an accel raw buffer </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*accel_g</td><td>points to an accel g buffer </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*gyro_raw</td><td>points to a gyro raw buffer </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*gyro_dps</td><td>points to a gyro dps buffer </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*quat</td><td>points to a quat buffer </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*pitch</td><td>points to a pitch buffer </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*roll</td><td>points to a roll buffer </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*yaw</td><td>points to a yaw buffer </td></tr>
-    <tr><td class="paramdir">[in,out]</td><td class="paramname">*l</td><td>points to a length buffer </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*accel_raw</td><td>pointer to an accel raw buffer </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*accel_g</td><td>pointer to an accel g buffer </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*gyro_raw</td><td>pointer to a gyro raw buffer </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*gyro_dps</td><td>pointer to a gyro dps buffer </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*quat</td><td>pointer to a quat buffer </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*pitch</td><td>pointer to a pitch buffer </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*roll</td><td>pointer to a roll buffer </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*yaw</td><td>pointer to a yaw buffer </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">*l</td><td>pointer to a length buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -1873,7 +1873,7 @@ Functions</h2></td></tr>
 <p>fifo example init </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">addr_pin</td><td>is the iic device address </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">addr_pin</td><td>iic device address </td></tr>
   </table>
   </dd>
 </dl>
@@ -1959,11 +1959,11 @@ Functions</h2></td></tr>
 <p>fifo example read </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[out]</td><td class="paramname">**accel_raw</td><td>points to an accel raw data buffer </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">**accel_g</td><td>points to a converted accel data buffer </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">**gyro_raw</td><td>points to an gyro raw data buffer </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">**gyro_dps</td><td>points to a converted gyro data buffer </td></tr>
-    <tr><td class="paramdir">[in,out]</td><td class="paramname">*len</td><td>points to a length buffer </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">**accel_raw</td><td>pointer to an accel raw data buffer </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">**accel_g</td><td>pointer to a converted accel data buffer </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">**gyro_raw</td><td>pointer to an gyro raw data buffer </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">**gyro_dps</td><td>pointer to a converted gyro data buffer </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">*len</td><td>pointer to a length buffer </td></tr>
   </table>
   </dd>
 </dl>
