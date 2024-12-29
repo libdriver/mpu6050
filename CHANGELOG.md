@@ -1,3 +1,9 @@
+## 1.0.4 (2024-12-19)
+
+## Bug Fixes
+
+- fix doc errors
+
 ## 1.0.3 (2024-08-15)
 
 ## Bug Fixes

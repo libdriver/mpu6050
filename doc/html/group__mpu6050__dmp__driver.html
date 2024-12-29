@@ -421,8 +421,8 @@ Functions</h2></td></tr>
 <p>dmp get the fifo rate </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*rate</td><td>points to a rate buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*rate</td><td>pointer to a rate buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -467,8 +467,8 @@ Functions</h2></td></tr>
 <p>dmp get the min tap count </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*cnt</td><td>points to a tap counter buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*cnt</td><td>pointer to a tap counter buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -513,8 +513,8 @@ Functions</h2></td></tr>
 <p>dmp get the pedometer step count </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*count</td><td>points to a step count buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*count</td><td>pointer to a step count buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -559,8 +559,8 @@ Functions</h2></td></tr>
 <p>dmp get the pedometer walk time </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*ms</td><td>points to a walk time buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*ms</td><td>pointer to a walk time buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -605,8 +605,8 @@ Functions</h2></td></tr>
 <p>dmp get the shake reject thresh </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*dps</td><td>points to a shake reject thresh dps buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*dps</td><td>pointer to a shake reject thresh dps buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -651,8 +651,8 @@ Functions</h2></td></tr>
 <p>dmp get the shake reject time </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*ms</td><td>points to a shake reject time buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*ms</td><td>pointer to a shake reject time buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -697,8 +697,8 @@ Functions</h2></td></tr>
 <p>dmp get the shake reject timeout </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*ms</td><td>points to a reject timeout buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*ms</td><td>pointer to a reject timeout buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -749,9 +749,9 @@ Functions</h2></td></tr>
 <p>dmp get the tap axes status </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">axis</td><td>is the set axis </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*enable</td><td>points to a bool value buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">axis</td><td>set axis </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*enable</td><td>pointer to a bool value buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -802,9 +802,9 @@ Functions</h2></td></tr>
 <p>dmp get the tap thresh </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">axis</td><td>is the set axis </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*mg_ms</td><td>points to an mg/ms thresh buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">axis</td><td>set axis </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*mg_ms</td><td>pointer to an mg/ms thresh buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -850,8 +850,8 @@ Functions</h2></td></tr>
 <p>dmp get the tap time </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*ms</td><td>points to a tap time buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*ms</td><td>pointer to a tap time buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -896,8 +896,8 @@ Functions</h2></td></tr>
 <p>dmp get max time between taps to register as a multi tap </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*ms</td><td>points to a delay time buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*ms</td><td>pointer to a delay time buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -960,11 +960,11 @@ Functions</h2></td></tr>
 <p>dmp gyro accel raw offset convert </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">*gyro_offset_raw</td><td>points to a gyro offset raw buffer </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">*accel_offset_raw</td><td>points to an accel offset raw buffer </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*gyro_offset</td><td>points to a gyro offset buffer </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*accel_offset</td><td>points to an accel offset buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*gyro_offset_raw</td><td>pointer to a gyro offset raw buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*accel_offset_raw</td><td>pointer to an accel offset raw buffer </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*gyro_offset</td><td>pointer to a gyro offset buffer </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*accel_offset</td><td>pointer to an accel offset buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -999,7 +999,7 @@ Functions</h2></td></tr>
 <p>load the dmp firmware </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
   </table>
   </dd>
 </dl>
@@ -1094,16 +1094,16 @@ Functions</h2></td></tr>
 <p>dmp read the data </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*accel_raw</td><td>points to an accel raw buffer </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*accel_g</td><td>points to an accel g buffer </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*gyro_raw</td><td>points to a gyro raw buffer </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*gyro_dps</td><td>points to a gyro dps buffer </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*quat</td><td>points to a quat buffer </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*pitch</td><td>points to a pitch buffer </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*roll</td><td>points to a roll buffer </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*yaw</td><td>points to a yaw buffer </td></tr>
-    <tr><td class="paramdir">[in,out]</td><td class="paramname">*l</td><td>points to a length buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*accel_raw</td><td>pointer to an accel raw buffer </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*accel_g</td><td>pointer to an accel g buffer </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*gyro_raw</td><td>pointer to a gyro raw buffer </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*gyro_dps</td><td>pointer to a gyro dps buffer </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*quat</td><td>pointer to a quat buffer </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*pitch</td><td>pointer to a pitch buffer </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*roll</td><td>pointer to a roll buffer </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*yaw</td><td>pointer to a yaw buffer </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">*l</td><td>pointer to a length buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -1152,8 +1152,8 @@ Functions</h2></td></tr>
 <p>dmp enable or disable generate 3 axis quaternions from dmp </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">enable</td><td>is a bool value </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">enable</td><td>bool value </td></tr>
   </table>
   </dd>
 </dl>
@@ -1198,8 +1198,8 @@ Functions</h2></td></tr>
 <p>dmp enable or disable generate 6 axis quaternions from dmp </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">enable</td><td>is a bool value </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">enable</td><td>bool value </td></tr>
   </table>
   </dd>
 </dl>
@@ -1244,8 +1244,8 @@ Functions</h2></td></tr>
 <p>dmp set the accel bias </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">*bias</td><td>points to a bias buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*bias</td><td>pointer to a bias buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -1290,8 +1290,8 @@ Functions</h2></td></tr>
 <p>enable or disable the dmp </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">enable</td><td>is a bool value </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">enable</td><td>bool value </td></tr>
   </table>
   </dd>
 </dl>
@@ -1336,8 +1336,8 @@ Functions</h2></td></tr>
 <p>dmp enable or disable the dmp feature </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">mask</td><td>is the set mask </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mask</td><td>set mask </td></tr>
   </table>
   </dd>
 </dl>
@@ -1382,8 +1382,8 @@ Functions</h2></td></tr>
 <p>dmp set the fifo rate </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">rate</td><td>is the set rate </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">rate</td><td>set rate </td></tr>
   </table>
   </dd>
 </dl>
@@ -1429,8 +1429,8 @@ Functions</h2></td></tr>
 <p>dmp set the gyro bias </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">*bias</td><td>points to a bias buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*bias</td><td>pointer to a bias buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -1475,8 +1475,8 @@ Functions</h2></td></tr>
 <p>dmp enable or disable gyro calibrate </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">enable</td><td>is a bool value </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">enable</td><td>bool value </td></tr>
   </table>
   </dd>
 </dl>
@@ -1521,8 +1521,8 @@ Functions</h2></td></tr>
 <p>dmp set the interrupt mode </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">mode</td><td>is the dmp interrupt mode </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mode</td><td>dmp interrupt mode </td></tr>
   </table>
   </dd>
 </dl>
@@ -1567,8 +1567,8 @@ Functions</h2></td></tr>
 <p>dmp set the min tap count </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">cnt</td><td>is the tap counter </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cnt</td><td>tap counter </td></tr>
   </table>
   </dd>
 </dl>
@@ -1614,8 +1614,8 @@ Functions</h2></td></tr>
 <p>dmp set the orient callback </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">*callback</td><td>points to a callback function address </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*callback</td><td>pointer to a callback function address </td></tr>
   </table>
   </dd>
 </dl>
@@ -1660,8 +1660,8 @@ Functions</h2></td></tr>
 <p>dmp set the orientation </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">*mat</td><td>points to an orientation matrix buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*mat</td><td>pointer to an orientation matrix buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -1706,8 +1706,8 @@ Functions</h2></td></tr>
 <p>dmp set the pedometer step count </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">count</td><td>is the step count </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">count</td><td>step count </td></tr>
   </table>
   </dd>
 </dl>
@@ -1752,8 +1752,8 @@ Functions</h2></td></tr>
 <p>dmp set the pedometer walk time </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">ms</td><td>is the walk time </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ms</td><td>walk time </td></tr>
   </table>
   </dd>
 </dl>
@@ -1798,8 +1798,8 @@ Functions</h2></td></tr>
 <p>dmp set the shake reject thresh </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">dps</td><td>is the shake reject thresh </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">dps</td><td>shake reject thresh </td></tr>
   </table>
   </dd>
 </dl>
@@ -1844,8 +1844,8 @@ Functions</h2></td></tr>
 <p>dmp set the shake reject time </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">ms</td><td>is the shake reject time </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ms</td><td>shake reject time </td></tr>
   </table>
   </dd>
 </dl>
@@ -1890,8 +1890,8 @@ Functions</h2></td></tr>
 <p>dmp set the shake reject timeout </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">ms</td><td>is the reject timeout </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ms</td><td>reject timeout </td></tr>
   </table>
   </dd>
 </dl>
@@ -1942,9 +1942,9 @@ Functions</h2></td></tr>
 <p>dmp enable or disable the tap axes </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">axis</td><td>is the set axis </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">enable</td><td>is a bool value </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">axis</td><td>set axis </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">enable</td><td>bool value </td></tr>
   </table>
   </dd>
 </dl>
@@ -1989,8 +1989,8 @@ Functions</h2></td></tr>
 <p>dmp set the tap callback </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">*callback</td><td>points to a callback function address </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*callback</td><td>pointer to a callback function address </td></tr>
   </table>
   </dd>
 </dl>
@@ -2041,9 +2041,9 @@ Functions</h2></td></tr>
 <p>dmp set the tap thresh </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">axis</td><td>is the set axis </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">mg_ms</td><td>is the set thresh </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">axis</td><td>set axis </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mg_ms</td><td>set thresh </td></tr>
   </table>
   </dd>
 </dl>
@@ -2090,8 +2090,8 @@ Functions</h2></td></tr>
 <p>dmp set the tap time </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">ms</td><td>is the tap time </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ms</td><td>tap time </td></tr>
   </table>
   </dd>
 </dl>
@@ -2136,8 +2136,8 @@ Functions</h2></td></tr>
 <p>dmp set max time between taps to register as a multi tap </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to an mpu6050 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">ms</td><td>is the delay time </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to an mpu6050 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ms</td><td>delay time </td></tr>
   </table>
   </dd>
 </dl>

@@ -454,64 +454,64 @@ typedef struct mpu6050_info_s
 
 /**
  * @brief     initialize mpu6050_handle_t structure
- * @param[in] HANDLE points to an mpu6050 handle structure
- * @param[in] STRUCTURE is mpu6050_handle_t
+ * @param[in] HANDLE pointer to an mpu6050 handle structure
+ * @param[in] STRUCTURE mpu6050_handle_t
  * @note      none
  */
 #define DRIVER_MPU6050_LINK_INIT(HANDLE, STRUCTURE)         memset(HANDLE, 0, sizeof(STRUCTURE))
 
 /**
  * @brief     link iic_init function
- * @param[in] HANDLE points to an mpu6050 handle structure
- * @param[in] FUC points to an iic_init function address
+ * @param[in] HANDLE pointer to an mpu6050 handle structure
+ * @param[in] FUC pointer to an iic_init function address
  * @note      none
  */
 #define DRIVER_MPU6050_LINK_IIC_INIT(HANDLE, FUC)           (HANDLE)->iic_init = FUC
 
 /**
  * @brief     link iic_deinit function
- * @param[in] HANDLE points to an mpu6050 handle structure
- * @param[in] FUC points to an iic_deinit function address
+ * @param[in] HANDLE pointer to an mpu6050 handle structure
+ * @param[in] FUC pointer to an iic_deinit function address
  * @note      none
  */
 #define DRIVER_MPU6050_LINK_IIC_DEINIT(HANDLE, FUC)         (HANDLE)->iic_deinit = FUC
 
 /**
  * @brief     link iic_read function
- * @param[in] HANDLE points to an mpu6050 handle structure
- * @param[in] FUC points to an iic_read function address
+ * @param[in] HANDLE pointer to an mpu6050 handle structure
+ * @param[in] FUC pointer to an iic_read function address
  * @note      none
  */
 #define DRIVER_MPU6050_LINK_IIC_READ(HANDLE, FUC)           (HANDLE)->iic_read = FUC
 
 /**
  * @brief     link iic_write function
- * @param[in] HANDLE points to an mpu6050 handle structure
- * @param[in] FUC points to an iic_write function address
+ * @param[in] HANDLE pointer to an mpu6050 handle structure
+ * @param[in] FUC pointer to an iic_write function address
  * @note      none
  */
 #define DRIVER_MPU6050_LINK_IIC_WRITE(HANDLE, FUC)          (HANDLE)->iic_write = FUC
 
 /**
  * @brief     link delay_ms function
- * @param[in] HANDLE points to an mpu6050 handle structure
- * @param[in] FUC points to a delay_ms function address
+ * @param[in] HANDLE pointer to an mpu6050 handle structure
+ * @param[in] FUC pointer to a delay_ms function address
  * @note      none
  */
 #define DRIVER_MPU6050_LINK_DELAY_MS(HANDLE, FUC)           (HANDLE)->delay_ms = FUC
 
 /**
  * @brief     link debug_print function
- * @param[in] HANDLE points to an mpu6050 handle structure
- * @param[in] FUC points to a debug_print function address
+ * @param[in] HANDLE pointer to an mpu6050 handle structure
+ * @param[in] FUC pointer to a debug_print function address
  * @note      none
  */
 #define DRIVER_MPU6050_LINK_DEBUG_PRINT(HANDLE, FUC)        (HANDLE)->debug_print = FUC
 
 /**
  * @brief     link receive_callback function
- * @param[in] HANDLE points to an mpu6050 handle structure
- * @param[in] FUC points to a receive_callback function address
+ * @param[in] HANDLE pointer to an mpu6050 handle structure
+ * @param[in] FUC pointer to a receive_callback function address
  * @note      none
  */
 #define DRIVER_MPU6050_LINK_RECEIVE_CALLBACK(HANDLE, FUC)   (HANDLE)->receive_callback = FUC
@@ -529,7 +529,7 @@ typedef struct mpu6050_info_s
 
 /**
  * @brief      get the chip's information
- * @param[out] *info points to an mpu6050 info structure
+ * @param[out] *info pointer to an mpu6050 info structure
  * @return     status code
  *             - 0 success
  *             - 2 handle is NULL
@@ -539,8 +539,8 @@ uint8_t mpu6050_info(mpu6050_info_t *info);
 
 /**
  * @brief     set the chip address pin
- * @param[in] *handle points to an mpu6050 handle structure
- * @param[in] addr_pin is the chip address pin
+ * @param[in] *handle pointer to an mpu6050 handle structure
+ * @param[in] addr_pin chip address pin
  * @return    status code
  *            - 0 success
  *            - 2 handle is NULL
@@ -550,8 +550,8 @@ uint8_t mpu6050_set_addr_pin(mpu6050_handle_t *handle, mpu6050_address_t addr_pi
 
 /**
  * @brief      get the chip address pin
- * @param[in]  *handle points to an mpu6050 handle structure
- * @param[out] *addr_pin points to a chip address pin buffer
+ * @param[in]  *handle pointer to an mpu6050 handle structure
+ * @param[out] *addr_pin pointer to a chip address pin buffer
  * @return     status code
  *             - 0 success
  *             - 2 handle is NULL
@@ -561,7 +561,7 @@ uint8_t mpu6050_get_addr_pin(mpu6050_handle_t *handle, mpu6050_address_t *addr_p
 
 /**
  * @brief     irq handler
- * @param[in] *handle points to an mpu6050 handle structure
+ * @param[in] *handle pointer to an mpu6050 handle structure
  * @return    status code
  *            - 0 success
  *            - 1 run failed
@@ -573,7 +573,7 @@ uint8_t mpu6050_irq_handler(mpu6050_handle_t *handle);
 
 /**
  * @brief     initialize the chip
- * @param[in] *handle points to an mpu6050 handle structure
+ * @param[in] *handle pointer to an mpu6050 handle structure
  * @return    status code
  *            - 0 success
  *            - 1 iic initialization failed
@@ -587,7 +587,7 @@ uint8_t mpu6050_init(mpu6050_handle_t *handle);
 
 /**
  * @brief     close the chip
- * @param[in] *handle points to an mpu6050 handle structure
+ * @param[in] *handle pointer to an mpu6050 handle structure
  * @return    status code
  *            - 0 success
  *            - 1 iic deinit failed
@@ -600,12 +600,12 @@ uint8_t mpu6050_deinit(mpu6050_handle_t *handle);
 
 /**
  * @brief         read the data
- * @param[in]     *handle points to an mpu6050 handle structure
- * @param[out]    **accel_raw points to an accel raw data buffer
- * @param[out]    **accel_g points to a converted accel data buffer
- * @param[out]    **gyro_raw points to a gyro raw data buffer
- * @param[out]    **gyro_dps points to a converted gyro data buffer
- * @param[in,out] *len points to a length buffer
+ * @param[in]     *handle pointer to an mpu6050 handle structure
+ * @param[out]    **accel_raw pointer to an accel raw data buffer
+ * @param[out]    **accel_g pointer to a converted accel data buffer
+ * @param[out]    **gyro_raw pointer to a gyro raw data buffer
+ * @param[out]    **gyro_dps pointer to a converted gyro data buffer
+ * @param[in,out] *len pointer to a length buffer
  * @return        status code
  *                - 0 success
  *                - 1 read failed
@@ -621,9 +621,9 @@ uint8_t mpu6050_read(mpu6050_handle_t *handle, int16_t (*accel_raw)[3], float (*
 
 /**
  * @brief      read the temperature
- * @param[in]  *handle points to an mpu6050 handle structure
- * @param[out] *raw points to raw data buffer
- * @param[out] *degrees points to a converted degrees data buffer
+ * @param[in]  *handle pointer to an mpu6050 handle structure
+ * @param[out] *raw pointer to raw data buffer
+ * @param[out] *degrees pointer to a converted degrees data buffer
  * @return     status code
  *             - 0 success
  *             - 1 read failed
@@ -635,8 +635,8 @@ uint8_t mpu6050_read_temperature(mpu6050_handle_t *handle, int16_t (*raw), float
 
 /**
  * @brief     enable or disable fifo
- * @param[in] *handle points to an mpu6050 handle structure
- * @param[in] enable is a bool value
+ * @param[in] *handle pointer to an mpu6050 handle structure
+ * @param[in] enable bool value
  * @return    status code
  *            - 0 success
  *            - 1 set fifo failed
@@ -648,8 +648,8 @@ uint8_t mpu6050_set_fifo(mpu6050_handle_t *handle, mpu6050_bool_t enable);
 
 /**
  * @brief      get the fifo status
- * @param[in]  *handle points to an mpu6050 handle structure
- * @param[out] *enable points to a bool value buffer
+ * @param[in]  *handle pointer to an mpu6050 handle structure
+ * @param[out] *enable pointer to a bool value buffer
  * @return     status code
  *             - 0 success
  *             - 1 get fifo failed
@@ -661,7 +661,7 @@ uint8_t mpu6050_get_fifo(mpu6050_handle_t *handle, mpu6050_bool_t *enable);
 
 /**
  * @brief     force reset the fifo
- * @param[in] *handle points to an mpu6050 handle structure
+ * @param[in] *handle pointer to an mpu6050 handle structure
  * @return    status code
  *            - 0 success
  *            - 1 force fifo reset failed
@@ -673,8 +673,8 @@ uint8_t mpu6050_force_fifo_reset(mpu6050_handle_t *handle);
 
 /**
  * @brief     enable or disable the iic master mode
- * @param[in] *handle points to an mpu6050 handle structure
- * @param[in] enable is a bool value
+ * @param[in] *handle pointer to an mpu6050 handle structure
+ * @param[in] enable bool value
  * @return    status code
  *            - 0 success
  *            - 1 set iic master failed
@@ -686,8 +686,8 @@ uint8_t mpu6050_set_iic_master(mpu6050_handle_t *handle, mpu6050_bool_t enable);
 
 /**
  * @brief      get the iic master status
- * @param[in]  *handle points to an mpu6050 handle structure
- * @param[out] *enable points to a bool value buffer
+ * @param[in]  *handle pointer to an mpu6050 handle structure
+ * @param[out] *enable pointer to a bool value buffer
  * @return     status code
  *             - 0 success
  *             - 1 get iic master failed
@@ -699,7 +699,7 @@ uint8_t mpu6050_get_iic_master(mpu6050_handle_t *handle, mpu6050_bool_t *enable)
 
 /**
  * @brief     reset the fifo
- * @param[in] *handle points to an mpu6050 handle structure
+ * @param[in] *handle pointer to an mpu6050 handle structure
  * @return    status code
  *            - 0 success
  *            - 1 fifo reset failed
@@ -711,8 +711,8 @@ uint8_t mpu6050_fifo_reset(mpu6050_handle_t *handle);
 
 /**
  * @brief      get the fifo reset status
- * @param[in]  *handle points to an mpu6050 handle structure
- * @param[out] *enable points to a bool value buffer
+ * @param[in]  *handle pointer to an mpu6050 handle structure
+ * @param[out] *enable pointer to a bool value buffer
  * @return     status code
  *             - 0 success
  *             - 1 get fifo reset failed
@@ -724,7 +724,7 @@ uint8_t mpu6050_get_fifo_reset(mpu6050_handle_t *handle, mpu6050_bool_t *enable)
 
 /**
  * @brief     reset the iic master controller
- * @param[in] *handle points to an mpu6050 handle structure
+ * @param[in] *handle pointer to an mpu6050 handle structure
  * @return    status code
  *            - 0 success
  *            - 1 iic master reset failed
@@ -736,8 +736,8 @@ uint8_t mpu6050_iic_master_reset(mpu6050_handle_t *handle);
 
 /**
  * @brief      get the iic master reset status
- * @param[in]  *handle points to an mpu6050 handle structure
- * @param[out] *enable points to a bool value buffer
+ * @param[in]  *handle pointer to an mpu6050 handle structure
+ * @param[out] *enable pointer to a bool value buffer
  * @return     status code
  *             - 0 success
  *             - 1 get iic master reset failed
@@ -749,7 +749,7 @@ uint8_t mpu6050_get_iic_master_reset(mpu6050_handle_t *handle, mpu6050_bool_t *e
 
 /**
  * @brief     reset all sensors
- * @param[in] *handle points to an mpu6050 handle structure
+ * @param[in] *handle pointer to an mpu6050 handle structure
  * @return    status code
  *            - 0 success
  *            - 1 sensor reset failed
@@ -761,8 +761,8 @@ uint8_t mpu6050_sensor_reset(mpu6050_handle_t *handle);
 
 /**
  * @brief      get the sensor reset status
- * @param[in]  *handle points to an mpu6050 handle structure
- * @param[out] *enable points to a bool value buffer
+ * @param[in]  *handle pointer to an mpu6050 handle structure
+ * @param[out] *enable pointer to a bool value buffer
  * @return     status code
  *             - 0 success
  *             - 1 get sensor reset failed
@@ -774,7 +774,7 @@ uint8_t mpu6050_get_sensor_reset(mpu6050_handle_t *handle, mpu6050_bool_t *enabl
 
 /**
  * @brief     reset the chip
- * @param[in] *handle points to an mpu6050 handle structure
+ * @param[in] *handle pointer to an mpu6050 handle structure
  * @return    status code
  *            - 0 success
  *            - 1 device reset failed
@@ -786,8 +786,8 @@ uint8_t mpu6050_device_reset(mpu6050_handle_t *handle);
 
 /**
  * @brief      get the device reset status
- * @param[in]  *handle points to an mpu6050 handle structure
- * @param[out] *enable points to a bool value buffer
+ * @param[in]  *handle pointer to an mpu6050 handle structure
+ * @param[out] *enable pointer to a bool value buffer
  * @return     status code
  *             - 0 success
  *             - 1 get device reset failed
@@ -799,8 +799,8 @@ uint8_t mpu6050_get_device_reset(mpu6050_handle_t *handle, mpu6050_bool_t *enabl
 
 /**
  * @brief     set the chip clock source
- * @param[in] *handle points to an mpu6050 handle structure
- * @param[in] clock_source is chip main clock source
+ * @param[in] *handle pointer to an mpu6050 handle structure
+ * @param[in] clock_source chip main clock source
  * @return    status code
  *            - 0 success
  *            - 1 set clock source failed
@@ -812,8 +812,8 @@ uint8_t mpu6050_set_clock_source(mpu6050_handle_t *handle, mpu6050_clock_source_
 
 /**
  * @brief      get the chip clock source
- * @param[in]  *handle points to an mpu6050 handle structure
- * @param[out] *clock_source points to a clock source buffer
+ * @param[in]  *handle pointer to an mpu6050 handle structure
+ * @param[out] *clock_source pointer to a clock source buffer
  * @return     status code
  *             - 0 success
  *             - 1 get clock source failed
@@ -825,8 +825,8 @@ uint8_t mpu6050_get_clock_source(mpu6050_handle_t *handle, mpu6050_clock_source_
 
 /**
  * @brief     enable or disable the temperature sensor 
- * @param[in] *handle points to an mpu6050 handle structure
- * @param[in] enable is a bool value
+ * @param[in] *handle pointer to an mpu6050 handle structure
+ * @param[in] enable bool value
  * @return    status code
  *            - 0 success
  *            - 1 set temperature sensor failed
@@ -838,8 +838,8 @@ uint8_t mpu6050_set_temperature_sensor(mpu6050_handle_t *handle, mpu6050_bool_t 
 
 /**
  * @brief      get the temperature sensor status
- * @param[in]  *handle points to an mpu6050 handle structure
- * @param[out] *enable points to a bool value buffer
+ * @param[in]  *handle pointer to an mpu6050 handle structure
+ * @param[out] *enable pointer to a bool value buffer
  * @return     status code
  *             - 0 success
  *             - 1 get temperature sensor failed
@@ -851,8 +851,8 @@ uint8_t mpu6050_get_temperature_sensor(mpu6050_handle_t *handle, mpu6050_bool_t 
 
 /**
  * @brief     enable or disable the cycle wake up mode
- * @param[in] *handle points to an mpu6050 handle structure
- * @param[in] enable is a bool value
+ * @param[in] *handle pointer to an mpu6050 handle structure
+ * @param[in] enable bool value
  * @return    status code
  *            - 0 success
  *            - 1 set cycle wake up failed
@@ -864,8 +864,8 @@ uint8_t mpu6050_set_cycle_wake_up(mpu6050_handle_t *handle, mpu6050_bool_t enabl
 
 /**
  * @brief      get the cycle wake up mode status
- * @param[in]  *handle points to an mpu6050 handle structure
- * @param[out] *enable points to a bool value buffer
+ * @param[in]  *handle pointer to an mpu6050 handle structure
+ * @param[out] *enable pointer to a bool value buffer
  * @return     status code
  *             - 0 success
  *             - 1 get cycle wake up failed
@@ -877,8 +877,8 @@ uint8_t mpu6050_get_cycle_wake_up(mpu6050_handle_t *handle, mpu6050_bool_t *enab
 
 /**
  * @brief     enable or disable the sleep mode
- * @param[in] *handle points to an mpu6050 handle structure
- * @param[in] enable is a bool value
+ * @param[in] *handle pointer to an mpu6050 handle structure
+ * @param[in] enable bool value
  * @return    status code
  *            - 0 success
  *            - 1 set sleep failed
@@ -890,8 +890,8 @@ uint8_t mpu6050_set_sleep(mpu6050_handle_t *handle, mpu6050_bool_t enable);
 
 /**
  * @brief      get the sleep status
- * @param[in]  *handle points to an mpu6050 handle structure
- * @param[out] *enable points to a bool value buffer
+ * @param[in]  *handle pointer to an mpu6050 handle structure
+ * @param[out] *enable pointer to a bool value buffer
  * @return     status code
  *             - 0 success
  *             - 1 get sleep failed
@@ -903,9 +903,9 @@ uint8_t mpu6050_get_sleep(mpu6050_handle_t *handle, mpu6050_bool_t *enable);
 
 /**
  * @brief     set source into standby mode
- * @param[in] *handle points to an mpu6050 handle structure
- * @param[in] source is the input source
- * @param[in] enable is a bool value
+ * @param[in] *handle pointer to an mpu6050 handle structure
+ * @param[in] source input source
+ * @param[in] enable bool value
  * @return    status code
  *            - 0 success
  *            - 1 set standby mode failed
@@ -917,9 +917,9 @@ uint8_t mpu6050_set_standby_mode(mpu6050_handle_t *handle, mpu6050_source_t sour
 
 /**
  * @brief      get the source mode
- * @param[in]  *handle points to an mpu6050 handle structure
- * @param[in]  source is the input source
- * @param[out] *enable points to a bool value buffer
+ * @param[in]  *handle pointer to an mpu6050 handle structure
+ * @param[in]  source input source
+ * @param[out] *enable pointer to a bool value buffer
  * @return     status code
  *             - 0 success
  *             - 1 get standby mode failed
@@ -931,8 +931,8 @@ uint8_t mpu6050_get_standby_mode(mpu6050_handle_t *handle, mpu6050_source_t sour
 
 /**
  * @brief     set the wake up frequency
- * @param[in] *handle points to an mpu6050 handle structure
- * @param[in] frequency is the wake up frequency
+ * @param[in] *handle pointer to an mpu6050 handle structure
+ * @param[in] frequency wake up frequency
  * @return    status code
  *            - 0 success
  *            - 1 set wake up frequency failed
@@ -944,8 +944,8 @@ uint8_t mpu6050_set_wake_up_frequency(mpu6050_handle_t *handle, mpu6050_wake_up_
 
 /**
  * @brief      get the wake up frequency
- * @param[in]  *handle points to an mpu6050 handle structure
- * @param[out] *frequency points to a wake up frequency buffer
+ * @param[in]  *handle pointer to an mpu6050 handle structure
+ * @param[out] *frequency pointer to a wake up frequency buffer
  * @return     status code
  *             - 0 success
  *             - 1 get wake up frequency failed
@@ -957,8 +957,8 @@ uint8_t mpu6050_get_wake_up_frequency(mpu6050_handle_t *handle, mpu6050_wake_up_
 
 /**
  * @brief      get the fifo counter value
- * @param[in]  *handle points to an mpu6050 handle structure
- * @param[out] *count points to a fifo count buffer
+ * @param[in]  *handle pointer to an mpu6050 handle structure
+ * @param[out] *count pointer to a fifo count buffer
  * @return     status code
  *             - 0 success
  *             - 1 get fifo count failed
@@ -970,9 +970,9 @@ uint8_t mpu6050_get_fifo_count(mpu6050_handle_t *handle, uint16_t* count);
 
 /**
  * @brief      fifo read bytes
- * @param[in]  *handle points to an mpu6050 handle structure
- * @param[out] *buf points to a data buffer
- * @param[in]  len is the buffer length
+ * @param[in]  *handle pointer to an mpu6050 handle structure
+ * @param[out] *buf pointer to a data buffer
+ * @param[in]  len buffer length
  * @return     status code
  *             - 0 success
  *             - 1 fifo read failed
@@ -984,9 +984,9 @@ uint8_t mpu6050_fifo_get(mpu6050_handle_t *handle, uint8_t *buf, uint16_t len);
 
 /**
  * @brief     fifo write bytes
- * @param[in] *handle points to an mpu6050 handle structure
- * @param[in] *buf points to a data buffer
- * @param[in] len is the buffer length
+ * @param[in] *handle pointer to an mpu6050 handle structure
+ * @param[in] *buf pointer to a data buffer
+ * @param[in] len buffer length
  * @return    status code
  *            - 0 success
  *            - 1 fifo write failed
@@ -998,8 +998,8 @@ uint8_t mpu6050_fifo_set(mpu6050_handle_t *handle, uint8_t *buf, uint16_t len);
 
 /**
  * @brief     set the signal path reset
- * @param[in] *handle points to an mpu6050 handle structure
- * @param[in] path is the signal path
+ * @param[in] *handle pointer to an mpu6050 handle structure
+ * @param[in] path signal path
  * @return    status code
  *            - 0 success
  *            - 1 set signal path reset failed
@@ -1011,8 +1011,8 @@ uint8_t mpu6050_set_signal_path_reset(mpu6050_handle_t *handle, mpu6050_signal_p
 
 /**
  * @brief     set the sample rate divider
- * @param[in] *handle points to an mpu6050 handle structure
- * @param[in] d is the sample rate divider
+ * @param[in] *handle pointer to an mpu6050 handle structure
+ * @param[in] d sample rate divider
  * @return    status code
  *            - 0 success
  *            - 1 set sample rate divider failed
@@ -1024,8 +1024,8 @@ uint8_t mpu6050_set_sample_rate_divider(mpu6050_handle_t *handle, uint8_t d);
 
 /**
  * @brief      get the sample rate divider
- * @param[in]  *handle points to an mpu6050 handle structure
- * @param[out] *d points to a sample rate divider buffer
+ * @param[in]  *handle pointer to an mpu6050 handle structure
+ * @param[out] *d pointer to a sample rate divider buffer
  * @return     status code
  *             - 0 success
  *             - 1 get sample rate divider failed
@@ -1037,8 +1037,8 @@ uint8_t mpu6050_get_sample_rate_divider(mpu6050_handle_t *handle, uint8_t *d);
 
 /**
  * @brief     set the extern sync type
- * @param[in] *handle points to an mpu6050 handle structure
- * @param[in] sync is the extern sync type
+ * @param[in] *handle pointer to an mpu6050 handle structure
+ * @param[in] sync extern sync type
  * @return    status code
  *            - 0 success
  *            - 1 set extern sync failed
@@ -1050,8 +1050,8 @@ uint8_t mpu6050_set_extern_sync(mpu6050_handle_t *handle, mpu6050_extern_sync_t 
 
 /**
  * @brief      get the extern sync type
- * @param[in]  *handle points to an mpu6050 handle structure
- * @param[out] *sync points to an extern sync type buffer
+ * @param[in]  *handle pointer to an mpu6050 handle structure
+ * @param[out] *sync pointer to an extern sync type buffer
  * @return     status code
  *             - 0 success
  *             - 1 get extern sync failed
@@ -1063,8 +1063,8 @@ uint8_t mpu6050_get_extern_sync(mpu6050_handle_t *handle, mpu6050_extern_sync_t 
 
 /**
  * @brief     set the low pass filter
- * @param[in] *handle points to an mpu6050 handle structure
- * @param[in] filter is the low pass filter
+ * @param[in] *handle pointer to an mpu6050 handle structure
+ * @param[in] filter low pass filter
  * @return    status code
  *            - 0 success
  *            - 1 set low pass filter failed
@@ -1076,8 +1076,8 @@ uint8_t mpu6050_set_low_pass_filter(mpu6050_handle_t *handle, mpu6050_low_pass_f
 
 /**
  * @brief      get the low pass filter
- * @param[in]  *handle points to an mpu6050 handle structure
- * @param[out] *filter points to a low pass filter buffer
+ * @param[in]  *handle pointer to an mpu6050 handle structure
+ * @param[out] *filter pointer to a low pass filter buffer
  * @return     status code
  *             - 0 success
  *             - 1 get low pass filter failed
@@ -1089,9 +1089,9 @@ uint8_t mpu6050_get_low_pass_filter(mpu6050_handle_t *handle, mpu6050_low_pass_f
 
 /**
  * @brief     set the gyroscope test
- * @param[in] *handle points to an mpu6050 handle structure
- * @param[in] axis is the tested axis
- * @param[in] enable is a bool value
+ * @param[in] *handle pointer to an mpu6050 handle structure
+ * @param[in] axis tested axis
+ * @param[in] enable bool value
  * @return    status code
  *            - 0 success
  *            - 1 set gyroscope test failed
@@ -1103,9 +1103,9 @@ uint8_t mpu6050_set_gyroscope_test(mpu6050_handle_t *handle, mpu6050_axis_t axis
 
 /**
  * @brief      get the gyroscope test
- * @param[in]  *handle points to an mpu6050 handle structure
- * @param[in]  axis is the tested axis
- * @param[out] *enable points to a bool value buffer
+ * @param[in]  *handle pointer to an mpu6050 handle structure
+ * @param[in]  axis tested axis
+ * @param[out] *enable pointer to a bool value buffer
  * @return     status code
  *             - 0 success
  *             - 1 get gyroscope test failed
@@ -1117,8 +1117,8 @@ uint8_t mpu6050_get_gyroscope_test(mpu6050_handle_t *handle, mpu6050_axis_t axis
 
 /**
  * @brief     set the gyroscope range
- * @param[in] *handle points to an mpu6050 handle structure
- * @param[in] range is the gyroscope range
+ * @param[in] *handle pointer to an mpu6050 handle structure
+ * @param[in] range gyroscope range
  * @return    status code
  *            - 0 success
  *            - 1 set gyroscope range failed
@@ -1130,8 +1130,8 @@ uint8_t mpu6050_set_gyroscope_range(mpu6050_handle_t *handle, mpu6050_gyroscope_
 
 /**
  * @brief      get the gyroscope range
- * @param[in]  *handle points to an mpu6050 handle structure
- * @param[out] *range points to a gyroscope range buffer
+ * @param[in]  *handle pointer to an mpu6050 handle structure
+ * @param[out] *range pointer to a gyroscope range buffer
  * @return     status code
  *             - 0 success
  *             - 1 get gyroscope range failed
@@ -1143,9 +1143,9 @@ uint8_t mpu6050_get_gyroscope_range(mpu6050_handle_t *handle, mpu6050_gyroscope_
 
 /**
  * @brief     set the accelerometer test
- * @param[in] *handle points to an mpu6050 handle structure
- * @param[in] axis is the tested axis
- * @param[in] enable is a bool value
+ * @param[in] *handle pointer to an mpu6050 handle structure
+ * @param[in] axis tested axis
+ * @param[in] enable bool value
  * @return    status code
  *            - 0 success
  *            - 1 set accelerometer test failed
@@ -1157,9 +1157,9 @@ uint8_t mpu6050_set_accelerometer_test(mpu6050_handle_t *handle, mpu6050_axis_t 
 
 /**
  * @brief      get the accelerometer test
- * @param[in]  *handle points to an mpu6050 handle structure
- * @param[in]  axis is the tested axis
- * @param[out] *enable points to a bool value buffer
+ * @param[in]  *handle pointer to an mpu6050 handle structure
+ * @param[in]  axis tested axis
+ * @param[out] *enable pointer to a bool value buffer
  * @return     status code
  *             - 0 success
  *             - 1 get accelerometer test failed
@@ -1171,8 +1171,8 @@ uint8_t mpu6050_get_accelerometer_test(mpu6050_handle_t *handle, mpu6050_axis_t 
 
 /**
  * @brief     set the accelerometer range
- * @param[in] *handle points to an mpu6050 handle structure
- * @param[in] range is the accelerometer range
+ * @param[in] *handle pointer to an mpu6050 handle structure
+ * @param[in] range accelerometer range
  * @return    status code
  *            - 0 success
  *            - 1 set accelerometer range failed
@@ -1184,8 +1184,8 @@ uint8_t mpu6050_set_accelerometer_range(mpu6050_handle_t *handle, mpu6050_accele
 
 /**
  * @brief      get the accelerometer range
- * @param[in]  *handle points to an mpu6050 handle structure
- * @param[out] *range points to an accelerometer range buffer
+ * @param[in]  *handle pointer to an mpu6050 handle structure
+ * @param[out] *range pointer to an accelerometer range buffer
  * @return     status code
  *             - 0 success
  *             - 1 get accelerometer range failed
@@ -1197,9 +1197,9 @@ uint8_t mpu6050_get_accelerometer_range(mpu6050_handle_t *handle, mpu6050_accele
 
 /**
  * @brief     enable or disable the fifo function
- * @param[in] *handle points to an mpu6050 handle structure
- * @param[in] fifo is the fifo type
- * @param[in] enable is a bool value
+ * @param[in] *handle pointer to an mpu6050 handle structure
+ * @param[in] fifo fifo type
+ * @param[in] enable bool value
  * @return    status code
  *            - 0 success
  *            - 1 set fifo enable failed
@@ -1211,9 +1211,9 @@ uint8_t mpu6050_set_fifo_enable(mpu6050_handle_t *handle, mpu6050_fifo_t fifo, m
 
 /**
  * @brief      get the fifo function status
- * @param[in]  *handle points to an mpu6050 handle structure
- * @param[in]  fifo is the fifo type
- * @param[out] *enable points to a bool value buffer
+ * @param[in]  *handle pointer to an mpu6050 handle structure
+ * @param[in]  fifo fifo type
+ * @param[out] *enable pointer to a bool value buffer
  * @return     status code
  *             - 0 success
  *             - 1 get fifo enable failed
@@ -1225,8 +1225,8 @@ uint8_t mpu6050_get_fifo_enable(mpu6050_handle_t *handle, mpu6050_fifo_t fifo, m
 
 /**
  * @brief     set the interrupt level
- * @param[in] *handle points to an mpu6050 handle structure
- * @param[in] level is the interrupt level
+ * @param[in] *handle pointer to an mpu6050 handle structure
+ * @param[in] level interrupt level
  * @return    status code
  *            - 0 success
  *            - 1 set interrupt level failed
@@ -1238,8 +1238,8 @@ uint8_t mpu6050_set_interrupt_level(mpu6050_handle_t *handle, mpu6050_pin_level_
 
 /**
  * @brief      get the interrupt level
- * @param[in]  *handle points to an mpu6050 handle structure
- * @param[out] *level points to an interrupt level buffer
+ * @param[in]  *handle pointer to an mpu6050 handle structure
+ * @param[out] *level pointer to an interrupt level buffer
  * @return     status code
  *             - 0 success
  *             - 1 get interrupt level failed
@@ -1251,8 +1251,8 @@ uint8_t mpu6050_get_interrupt_level(mpu6050_handle_t *handle, mpu6050_pin_level_
 
 /**
  * @brief     set the interrupt pin type
- * @param[in] *handle points to an mpu6050 handle structure
- * @param[in] type is the interrupt pin type
+ * @param[in] *handle pointer to an mpu6050 handle structure
+ * @param[in] type interrupt pin type
  * @return    status code
  *            - 0 success
  *            - 1 set interrupt pin type failed
@@ -1264,8 +1264,8 @@ uint8_t mpu6050_set_interrupt_pin_type(mpu6050_handle_t *handle, mpu6050_pin_typ
 
 /**
  * @brief      get the interrupt pin type
- * @param[in]  *handle points to an mpu6050 handle structure
- * @param[out] *type points to a pin type buffer
+ * @param[in]  *handle pointer to an mpu6050 handle structure
+ * @param[out] *type pointer to a pin type buffer
  * @return     status code
  *             - 0 success
  *             - 1 get interrupt pin type failed
@@ -1277,8 +1277,8 @@ uint8_t mpu6050_get_interrupt_pin_type(mpu6050_handle_t *handle, mpu6050_pin_typ
 
 /**
  * @brief     enable or disable the interrupt latch
- * @param[in] *handle points to an mpu6050 handle structure
- * @param[in] enable is a bool value
+ * @param[in] *handle pointer to an mpu6050 handle structure
+ * @param[in] enable bool value
  * @return    status code
  *            - 0 success
  *            - 1 set interrupt latch failed
@@ -1290,8 +1290,8 @@ uint8_t mpu6050_set_interrupt_latch(mpu6050_handle_t *handle, mpu6050_bool_t ena
 
 /**
  * @brief      get the interrupt latch status
- * @param[in]  *handle points to an mpu6050 handle structure
- * @param[out] *enable points to a bool value buffer
+ * @param[in]  *handle pointer to an mpu6050 handle structure
+ * @param[out] *enable pointer to a bool value buffer
  * @return     status code
  *             - 0 success
  *             - 1 get interrupt latch failed
@@ -1303,8 +1303,8 @@ uint8_t mpu6050_get_interrupt_latch(mpu6050_handle_t *handle, mpu6050_bool_t *en
 
 /**
  * @brief     enable or disable the interrupt reading clear
- * @param[in] *handle points to an mpu6050 handle structure
- * @param[in] enable is a bool value
+ * @param[in] *handle pointer to an mpu6050 handle structure
+ * @param[in] enable bool value
  * @return    status code
  *            - 0 success
  *            - 1 set interrupt read clear failed
@@ -1316,8 +1316,8 @@ uint8_t mpu6050_set_interrupt_read_clear(mpu6050_handle_t *handle, mpu6050_bool_
 
 /**
  * @brief      get the interrupt reading clear status
- * @param[in]  *handle points to an mpu6050 handle structure
- * @param[out] *enable points to a bool value buffer
+ * @param[in]  *handle pointer to an mpu6050 handle structure
+ * @param[out] *enable pointer to a bool value buffer
  * @return     status code
  *             - 0 success
  *             - 1 get interrupt read clear failed
@@ -1329,8 +1329,8 @@ uint8_t mpu6050_get_interrupt_read_clear(mpu6050_handle_t *handle, mpu6050_bool_
 
 /**
  * @brief     set the fsync interrupt level
- * @param[in] *handle points to an mpu6050 handle structure
- * @param[in] level is the set level
+ * @param[in] *handle pointer to an mpu6050 handle structure
+ * @param[in] level set level
  * @return    status code
  *            - 0 success
  *            - 1 set fsync interrupt level failed
@@ -1342,8 +1342,8 @@ uint8_t mpu6050_set_fsync_interrupt_level(mpu6050_handle_t *handle, mpu6050_pin_
 
 /**
  * @brief      get the fsync interrupt level
- * @param[in]  *handle points to an mpu6050 handle structure
- * @param[out] *level points to a set level buffer
+ * @param[in]  *handle pointer to an mpu6050 handle structure
+ * @param[out] *level pointer to a set level buffer
  * @return     status code
  *             - 0 success
  *             - 1 get fsync interrupt level failed
@@ -1355,8 +1355,8 @@ uint8_t mpu6050_get_fsync_interrupt_level(mpu6050_handle_t *handle, mpu6050_pin_
 
 /**
  * @brief     enable or disable the fsync interrupt
- * @param[in] *handle points to an mpu6050 handle structure
- * @param[in] enable is a bool value
+ * @param[in] *handle pointer to an mpu6050 handle structure
+ * @param[in] enable bool value
  * @return    status code
  *            - 0 success
  *            - 1 set fsync interrupt failed
@@ -1368,8 +1368,8 @@ uint8_t mpu6050_set_fsync_interrupt(mpu6050_handle_t *handle, mpu6050_bool_t ena
 
 /**
  * @brief      get the fsync interrupt status
- * @param[in]  *handle points to an mpu6050 handle structure
- * @param[out] *enable points to a bool value buffer
+ * @param[in]  *handle pointer to an mpu6050 handle structure
+ * @param[out] *enable pointer to a bool value buffer
  * @return     status code
  *             - 0 success
  *             - 1 get fsync interrupt failed
@@ -1381,8 +1381,8 @@ uint8_t mpu6050_get_fsync_interrupt(mpu6050_handle_t *handle, mpu6050_bool_t *en
 
 /**
  * @brief     enable or disable the iic bypass
- * @param[in] *handle points to an mpu6050 handle structure
- * @param[in] enable is a bool value
+ * @param[in] *handle pointer to an mpu6050 handle structure
+ * @param[in] enable bool value
  * @return    status code
  *            - 0 success
  *            - 1 set iic bypass failed
@@ -1394,8 +1394,8 @@ uint8_t mpu6050_set_iic_bypass(mpu6050_handle_t *handle, mpu6050_bool_t enable);
 
 /**
  * @brief      get the iic bypass status
- * @param[in]  *handle points to an mpu6050 handle structure
- * @param[out] *enable points to a bool value buffer
+ * @param[in]  *handle pointer to an mpu6050 handle structure
+ * @param[out] *enable pointer to a bool value buffer
  * @return     status code
  *             - 0 success
  *             - 1 get iic bypass failed
@@ -1407,9 +1407,9 @@ uint8_t mpu6050_get_iic_bypass(mpu6050_handle_t *handle, mpu6050_bool_t *enable)
 
 /**
  * @brief     enable or disable the interrupt
- * @param[in] *handle points to an mpu6050 handle structure
- * @param[in] type is the set interrupt type
- * @param[in] enable is a bool value
+ * @param[in] *handle pointer to an mpu6050 handle structure
+ * @param[in] type set interrupt type
+ * @param[in] enable bool value
  * @return    status code
  *            - 0 success
  *            - 1 set interrupt failed
@@ -1421,9 +1421,9 @@ uint8_t mpu6050_set_interrupt(mpu6050_handle_t *handle, mpu6050_interrupt_t type
 
 /**
  * @brief      get the interrupt status
- * @param[in]  *handle points to an mpu6050 handle structure
- * @param[in]  type is the set interrupt type
- * @param[out] *enable points to a bool value buffer
+ * @param[in]  *handle pointer to an mpu6050 handle structure
+ * @param[in]  type set interrupt type
+ * @param[out] *enable pointer to a bool value buffer
  * @return     status code
  *             - 0 success
  *             - 1 get interrupt failed
@@ -1435,8 +1435,8 @@ uint8_t mpu6050_get_interrupt(mpu6050_handle_t *handle, mpu6050_interrupt_t type
 
 /**
  * @brief      get the interrupt status
- * @param[in]  *handle points to an mpu6050 handle structure
- * @param[out] *status points to a status buffer
+ * @param[in]  *handle pointer to an mpu6050 handle structure
+ * @param[out] *status pointer to a status buffer
  * @return     status code
  *             - 0 success
  *             - 1 get interrupt status failed
@@ -1448,8 +1448,8 @@ uint8_t mpu6050_get_interrupt_status(mpu6050_handle_t *handle, uint8_t *status);
 
 /**
  * @brief     set the gyroscope x test
- * @param[in] *handle points to an mpu6050 handle structure
- * @param[in] data is the set data
+ * @param[in] *handle pointer to an mpu6050 handle structure
+ * @param[in] data set data
  * @return    status code
  *            - 0 success
  *            - 1 set gyroscope x test failed
@@ -1462,8 +1462,8 @@ uint8_t mpu6050_set_gyroscope_x_test(mpu6050_handle_t *handle, uint8_t data);
 
 /**
  * @brief      get the gyroscope x test
- * @param[in]  *handle points to an mpu6050 handle structure
- * @param[out] *data points to a set data buffer
+ * @param[in]  *handle pointer to an mpu6050 handle structure
+ * @param[out] *data pointer to a set data buffer
  * @return     status code
  *             - 0 success
  *             - 1 get gyroscope x test failed
@@ -1475,8 +1475,8 @@ uint8_t mpu6050_get_gyroscope_x_test(mpu6050_handle_t *handle, uint8_t *data);
 
 /**
  * @brief     set the gyroscope y test
- * @param[in] *handle points to an mpu6050 handle structure
- * @param[in] data is the set data
+ * @param[in] *handle pointer to an mpu6050 handle structure
+ * @param[in] data set data
  * @return    status code
  *            - 0 success
  *            - 1 set gyroscope y test failed
@@ -1489,8 +1489,8 @@ uint8_t mpu6050_set_gyroscope_y_test(mpu6050_handle_t *handle, uint8_t data);
 
 /**
  * @brief      get the gyroscope y test
- * @param[in]  *handle points to an mpu6050 handle structure
- * @param[out] *data points to a set data buffer
+ * @param[in]  *handle pointer to an mpu6050 handle structure
+ * @param[out] *data pointer to a set data buffer
  * @return     status code
  *             - 0 success
  *             - 1 get gyroscope y test failed
@@ -1502,8 +1502,8 @@ uint8_t mpu6050_get_gyroscope_y_test(mpu6050_handle_t *handle, uint8_t *data);
 
 /**
  * @brief     set the gyroscope z test
- * @param[in] *handle points to an mpu6050 handle structure
- * @param[in] data is the set data
+ * @param[in] *handle pointer to an mpu6050 handle structure
+ * @param[in] data set data
  * @return    status code
  *            - 0 success
  *            - 1 set gyroscope z test failed
@@ -1516,8 +1516,8 @@ uint8_t mpu6050_set_gyroscope_z_test(mpu6050_handle_t *handle, uint8_t data);
 
 /**
  * @brief      get the gyroscope z test
- * @param[in]  *handle points to an mpu6050 handle structure
- * @param[out] *data points to a set data buffer
+ * @param[in]  *handle pointer to an mpu6050 handle structure
+ * @param[out] *data pointer to a set data buffer
  * @return     status code
  *             - 0 success
  *             - 1 get gyroscope z test failed
@@ -1529,8 +1529,8 @@ uint8_t mpu6050_get_gyroscope_z_test(mpu6050_handle_t *handle, uint8_t *data);
 
 /**
  * @brief     set the accelerometer x test
- * @param[in] *handle points to an mpu6050 handle structure
- * @param[in] data is the set data
+ * @param[in] *handle pointer to an mpu6050 handle structure
+ * @param[in] data set data
  * @return    status code
  *            - 0 success
  *            - 1 set accelerometer x test failed
@@ -1543,8 +1543,8 @@ uint8_t mpu6050_set_accelerometer_x_test(mpu6050_handle_t *handle, uint8_t data)
 
 /**
  * @brief      get the accelerometer x test
- * @param[in]  *handle points to an mpu6050 handle structure
- * @param[out] *data points to a set data buffer
+ * @param[in]  *handle pointer to an mpu6050 handle structure
+ * @param[out] *data pointer to a set data buffer
  * @return     status code
  *             - 0 success
  *             - 1 get accelerometer x test failed
@@ -1556,8 +1556,8 @@ uint8_t mpu6050_get_accelerometer_x_test(mpu6050_handle_t *handle, uint8_t *data
 
 /**
  * @brief     set the accelerometer y test
- * @param[in] *handle points to an mpu6050 handle structure
- * @param[in] data is the set data
+ * @param[in] *handle pointer to an mpu6050 handle structure
+ * @param[in] data set data
  * @return    status code
  *            - 0 success
  *            - 1 set accelerometer y test failed
@@ -1570,8 +1570,8 @@ uint8_t mpu6050_set_accelerometer_y_test(mpu6050_handle_t *handle, uint8_t data)
 
 /**
  * @brief      get the accelerometer y test
- * @param[in]  *handle points to an mpu6050 handle structure
- * @param[out] *data points to a set data buffer
+ * @param[in]  *handle pointer to an mpu6050 handle structure
+ * @param[out] *data pointer to a set data buffer
  * @return     status code
  *             - 0 success
  *             - 1 get accelerometer y test failed
@@ -1583,8 +1583,8 @@ uint8_t mpu6050_get_accelerometer_y_test(mpu6050_handle_t *handle, uint8_t *data
 
 /**
  * @brief     set the accelerometer z test
- * @param[in] *handle points to an mpu6050 handle structure
- * @param[in] data is the set data
+ * @param[in] *handle pointer to an mpu6050 handle structure
+ * @param[in] data set data
  * @return    status code
  *            - 0 success
  *            - 1 set accelerometer z test failed
@@ -1597,8 +1597,8 @@ uint8_t mpu6050_set_accelerometer_z_test(mpu6050_handle_t *handle, uint8_t data)
 
 /**
  * @brief      get the accelerometer z test
- * @param[in]  *handle points to an mpu6050 handle structure
- * @param[out] *data points to a set data buffer
+ * @param[in]  *handle pointer to an mpu6050 handle structure
+ * @param[out] *data pointer to a set data buffer
  * @return     status code
  *             - 0 success
  *             - 1 get accelerometer z test failed
@@ -1610,8 +1610,8 @@ uint8_t mpu6050_get_accelerometer_z_test(mpu6050_handle_t *handle, uint8_t *data
 
 /**
  * @brief     set the motion_threshold
- * @param[in] *handle points to an mpu6050 handle structure
- * @param[in] threshold is the set threshold
+ * @param[in] *handle pointer to an mpu6050 handle structure
+ * @param[in] threshold set threshold
  * @return    status code
  *            - 0 success
  *            - 1 set motion threshold failed
@@ -1623,8 +1623,8 @@ uint8_t mpu6050_set_motion_threshold(mpu6050_handle_t *handle, uint8_t threshold
 
 /**
  * @brief      get the motion_threshold
- * @param[in]  *handle points to an mpu6050 handle structure
- * @param[out] *threshold points to a threshold buffer
+ * @param[in]  *handle pointer to an mpu6050 handle structure
+ * @param[out] *threshold pointer to a threshold buffer
  * @return     status code
  *             - 0 success
  *             - 1 get motion threshold failed
@@ -1636,9 +1636,9 @@ uint8_t mpu6050_get_motion_threshold(mpu6050_handle_t *handle, uint8_t *threshol
 
 /**
  * @brief      convert the motion threshold to the register raw data
- * @param[in]  *handle points to an mpu6050 handle structure
- * @param[in]  mg is the motion threshold
- * @param[out] *reg points to a register raw buffer
+ * @param[in]  *handle pointer to an mpu6050 handle structure
+ * @param[in]  mg motion threshold
+ * @param[out] *reg pointer to a register raw buffer
  * @return     status code
  *             - 0 success
  *             - 2 handle is NULL
@@ -1649,9 +1649,9 @@ uint8_t mpu6050_motion_threshold_convert_to_register(mpu6050_handle_t *handle, f
 
 /**
  * @brief      convert the register raw data to the motion threshold
- * @param[in]  *handle points to an mpu6050 handle structure
- * @param[in]  reg is the register raw data
- * @param[out] *mg points to a motion threshold buffer
+ * @param[in]  *handle pointer to an mpu6050 handle structure
+ * @param[in]  reg register raw data
+ * @param[out] *mg pointer to a motion threshold buffer
  * @return     status code
  *             - 0 success
  *             - 2 handle is NULL
@@ -1662,8 +1662,8 @@ uint8_t mpu6050_motion_threshold_convert_to_data(mpu6050_handle_t *handle, uint8
 
 /**
  * @brief     set the motion duration
- * @param[in] *handle points to an mpu6050 handle structure
- * @param[in] duration is the set duration
+ * @param[in] *handle pointer to an mpu6050 handle structure
+ * @param[in] duration set duration
  * @return    status code
  *            - 0 success
  *            - 1 set motion duration failed
@@ -1675,8 +1675,8 @@ uint8_t mpu6050_set_motion_duration(mpu6050_handle_t *handle, uint8_t duration);
 
 /**
  * @brief      get the motion duration
- * @param[in]  *handle points to an mpu6050 handle structure
- * @param[out] *duration points to a duration buffer
+ * @param[in]  *handle pointer to an mpu6050 handle structure
+ * @param[out] *duration pointer to a duration buffer
  * @return     status code
  *             - 0 success
  *             - 1 get motion duration failed
@@ -1688,9 +1688,9 @@ uint8_t mpu6050_get_motion_duration(mpu6050_handle_t *handle, uint8_t *duration)
 
 /**
  * @brief      convert the motion duration to the register raw data
- * @param[in]  *handle points to an mpu6050 handle structure
- * @param[in]  ms is the motion duration
- * @param[out] *reg points to a register raw buffer
+ * @param[in]  *handle pointer to an mpu6050 handle structure
+ * @param[in]  ms motion duration
+ * @param[out] *reg pointer to a register raw buffer
  * @return     status code
  *             - 0 success
  *             - 2 handle is NULL
@@ -1701,9 +1701,9 @@ uint8_t mpu6050_motion_duration_convert_to_register(mpu6050_handle_t *handle, ui
 
 /**
  * @brief      convert the register raw data to the motion duration
- * @param[in]  *handle points to an mpu6050 handle structure
- * @param[in]  reg is the register raw data
- * @param[out] *ms points to a motion duration buffer
+ * @param[in]  *handle pointer to an mpu6050 handle structure
+ * @param[in]  reg register raw data
+ * @param[out] *ms pointer to a motion duration buffer
  * @return     status code
  *             - 0 success
  *             - 2 handle is NULL
@@ -1714,8 +1714,8 @@ uint8_t mpu6050_motion_duration_convert_to_data(mpu6050_handle_t *handle, uint8_
 
 /**
  * @brief     enable or disable force accel sample
- * @param[in] *handle points to an mpu6050 handle structure
- * @param[in] enable is a bool value
+ * @param[in] *handle pointer to an mpu6050 handle structure
+ * @param[in] enable bool value
  * @return    status code
  *            - 0 success
  *            - 1 set force accel sample failed
@@ -1727,9 +1727,9 @@ uint8_t mpu6050_set_force_accel_sample(mpu6050_handle_t *handle, mpu6050_bool_t 
 
 /**
  * @brief      run the self test
- * @param[in]  *handle points to an mpu6050 handle structure
- * @param[out] *gyro_offset_raw points to a gyro offset raw buffer
- * @param[out] *accel_offset_raw points to an accel offset raw buffer
+ * @param[in]  *handle pointer to an mpu6050 handle structure
+ * @param[out] *gyro_offset_raw pointer to a gyro offset raw buffer
+ * @param[out] *accel_offset_raw pointer to an accel offset raw buffer
  * @return     status code
  *             - 0 success
  *             - 1 self test failed
@@ -1741,8 +1741,8 @@ uint8_t mpu6050_self_test(mpu6050_handle_t *handle, int32_t gyro_offset_raw[3], 
 
 /**
  * @brief     set the iic clock
- * @param[in] *handle points to an mpu6050 handle structure
- * @param[in] clk is the iic clock
+ * @param[in] *handle pointer to an mpu6050 handle structure
+ * @param[in] clk iic clock
  * @return    status code
  *            - 0 success
  *            - 1 set iic clock failed
@@ -1754,8 +1754,8 @@ uint8_t mpu6050_set_iic_clock(mpu6050_handle_t *handle, mpu6050_iic_clock_t clk)
 
 /**
  * @brief      get the iic clock
- * @param[in]  *handle points to an mpu6050 handle structure
- * @param[out] *clk points to an iic clock buffer
+ * @param[in]  *handle pointer to an mpu6050 handle structure
+ * @param[out] *clk pointer to an iic clock buffer
  * @return     status code
  *             - 0 success
  *             - 1 get iic clock failed
@@ -1767,8 +1767,8 @@ uint8_t mpu6050_get_iic_clock(mpu6050_handle_t *handle, mpu6050_iic_clock_t *clk
 
 /**
  * @brief     enable or disable iic multi master
- * @param[in] *handle points to an mpu6050 handle structure
- * @param[in] enable is a bool value
+ * @param[in] *handle pointer to an mpu6050 handle structure
+ * @param[in] enable bool value
  * @return    status code
  *            - 0 success
  *            - 1 set iic multi master failed
@@ -1780,8 +1780,8 @@ uint8_t mpu6050_set_iic_multi_master(mpu6050_handle_t *handle, mpu6050_bool_t en
 
 /**
  * @brief      get the iic multi master status
- * @param[in]  *handle points to an mpu6050 handle structure
- * @param[out] *enable points to a bool value buffer
+ * @param[in]  *handle pointer to an mpu6050 handle structure
+ * @param[out] *enable pointer to a bool value buffer
  * @return     status code
  *             - 0 success
  *             - 1 get iic multi master failed
@@ -1793,8 +1793,8 @@ uint8_t mpu6050_get_iic_multi_master(mpu6050_handle_t *handle, mpu6050_bool_t *e
 
 /**
  * @brief     enable or disable iic wait for external sensor
- * @param[in] *handle points to an mpu6050 handle structure
- * @param[in] enable is a bool value
+ * @param[in] *handle pointer to an mpu6050 handle structure
+ * @param[in] enable bool value
  * @return    status code
  *            - 0 success
  *            - 1 set iic wait for external sensor failed
@@ -1806,8 +1806,8 @@ uint8_t mpu6050_set_iic_wait_for_external_sensor(mpu6050_handle_t *handle, mpu60
 
 /**
  * @brief      get the iic wait for external sensor status
- * @param[in]  *handle points to an mpu6050 handle structure
- * @param[out] *enable points to a bool value buffer
+ * @param[in]  *handle pointer to an mpu6050 handle structure
+ * @param[out] *enable pointer to a bool value buffer
  * @return     status code
  *             - 0 success
  *             - 1 get iic wait for external sensor failed
@@ -1819,8 +1819,8 @@ uint8_t mpu6050_get_iic_wait_for_external_sensor(mpu6050_handle_t *handle, mpu60
 
 /**
  * @brief     set the iic read mode
- * @param[in] *handle points to an mpu6050 handle structure
- * @param[in] mode is the read mode
+ * @param[in] *handle pointer to an mpu6050 handle structure
+ * @param[in] mode read mode
  * @return    status code
  *            - 0 success
  *            - 1 set iic read mode failed
@@ -1832,8 +1832,8 @@ uint8_t mpu6050_set_iic_read_mode(mpu6050_handle_t *handle, mpu6050_iic_read_mod
 
 /**
  * @brief      get the iic read mode
- * @param[in]  *handle points to an mpu6050 handle structure
- * @param[out] *mode points to a read mode buffer
+ * @param[in]  *handle pointer to an mpu6050 handle structure
+ * @param[out] *mode pointer to a read mode buffer
  * @return     status code
  *             - 0 success
  *             - 1 get iic read mode failed
@@ -1845,9 +1845,9 @@ uint8_t mpu6050_get_iic_read_mode(mpu6050_handle_t *handle, mpu6050_iic_read_mod
 
 /**
  * @brief     enable or disable the iic fifo
- * @param[in] *handle points to an mpu6050 handle structure
- * @param[in] slave is the iic slave number
- * @param[in] enable is a bool value
+ * @param[in] *handle pointer to an mpu6050 handle structure
+ * @param[in] slave iic slave number
+ * @param[in] enable bool value
  * @return    status code
  *            - 0 success
  *            - 1 set iic fifo enable failed
@@ -1860,9 +1860,9 @@ uint8_t mpu6050_set_iic_fifo_enable(mpu6050_handle_t *handle, mpu6050_iic_slave_
 
 /**
  * @brief      get the iic fifo status
- * @param[in]  *handle points to an mpu6050 handle structure
- * @param[in]  slave is the iic slave number
- * @param[out] *enable points to a bool value buffer
+ * @param[in]  *handle pointer to an mpu6050 handle structure
+ * @param[in]  slave iic slave number
+ * @param[out] *enable pointer to a bool value buffer
  * @return     status code
  *             - 0 success
  *             - 1 get iic fifo enable failed
@@ -1875,9 +1875,9 @@ uint8_t mpu6050_get_iic_fifo_enable(mpu6050_handle_t *handle, mpu6050_iic_slave_
 
 /**
  * @brief     set the iic mode
- * @param[in] *handle points to an mpu6050 handle structure
- * @param[in] slave is the iic slave number
- * @param[in] mode is the iic mode
+ * @param[in] *handle pointer to an mpu6050 handle structure
+ * @param[in] slave iic slave number
+ * @param[in] mode iic mode
  * @return    status code
  *            - 0 success
  *            - 1 set iic mode failed
@@ -1890,9 +1890,9 @@ uint8_t mpu6050_set_iic_mode(mpu6050_handle_t *handle, mpu6050_iic_slave_t slave
 
 /**
  * @brief      get the iic mode
- * @param[in]  *handle points to an mpu6050 handle structure
- * @param[in]  slave is the iic slave number
- * @param[out] *mode points to an iic mode buffer
+ * @param[in]  *handle pointer to an mpu6050 handle structure
+ * @param[in]  slave iic slave number
+ * @param[out] *mode pointer to an iic mode buffer
  * @return     status code
  *             - 0 success
  *             - 1 get iic mode failed
@@ -1905,9 +1905,9 @@ uint8_t mpu6050_get_iic_mode(mpu6050_handle_t *handle, mpu6050_iic_slave_t slave
 
 /**
  * @brief     set the iic address
- * @param[in] *handle points to an mpu6050 handle structure
- * @param[in] slave is the iic slave number
- * @param[in] addr_7bit is the iic address
+ * @param[in] *handle pointer to an mpu6050 handle structure
+ * @param[in] slave iic slave number
+ * @param[in] addr_7bit iic address
  * @return    status code
  *            - 0 success
  *            - 1 set iic address failed
@@ -1920,9 +1920,9 @@ uint8_t mpu6050_set_iic_address(mpu6050_handle_t *handle, mpu6050_iic_slave_t sl
 
 /**
  * @brief      get the iic address
- * @param[in]  *handle points to an mpu6050 handle structure
- * @param[in]  slave is the iic slave number
- * @param[out] *addr_7bit points to an iic address buffer
+ * @param[in]  *handle pointer to an mpu6050 handle structure
+ * @param[in]  slave iic slave number
+ * @param[out] *addr_7bit pointer to an iic address buffer
  * @return     status code
  *             - 0 success
  *             - 1 get iic address failed
@@ -1935,9 +1935,9 @@ uint8_t mpu6050_get_iic_address(mpu6050_handle_t *handle, mpu6050_iic_slave_t sl
 
 /**
  * @brief     set the iic register
- * @param[in] *handle points to an mpu6050 handle structure
- * @param[in] slave is the iic slave number
- * @param[in] reg is the iic register
+ * @param[in] *handle pointer to an mpu6050 handle structure
+ * @param[in] slave iic slave number
+ * @param[in] reg iic register
  * @return    status code
  *            - 0 success
  *            - 1 set iic register failed
@@ -1950,9 +1950,9 @@ uint8_t mpu6050_set_iic_register(mpu6050_handle_t *handle, mpu6050_iic_slave_t s
 
 /**
  * @brief      get the iic register
- * @param[in]  *handle points to an mpu6050 handle structure
- * @param[in]  slave is the iic slave number
- * @param[out] *reg points to an iic register buffer
+ * @param[in]  *handle pointer to an mpu6050 handle structure
+ * @param[in]  slave iic slave number
+ * @param[out] *reg pointer to an iic register buffer
  * @return     status code
  *             - 0 success
  *             - 1 get iic register failed
@@ -1965,9 +1965,9 @@ uint8_t mpu6050_get_iic_register(mpu6050_handle_t *handle, mpu6050_iic_slave_t s
 
 /**
  * @brief     set the iic data out
- * @param[in] *handle points to an mpu6050 handle structure
- * @param[in] slave is the iic slave number
- * @param[in] data is the set data
+ * @param[in] *handle pointer to an mpu6050 handle structure
+ * @param[in] slave iic slave number
+ * @param[in] data set data
  * @return    status code
  *            - 0 success
  *            - 1 set iic data out failed
@@ -1980,9 +1980,9 @@ uint8_t mpu6050_set_iic_data_out(mpu6050_handle_t *handle, mpu6050_iic_slave_t s
 
 /**
  * @brief      get the iic data out
- * @param[in]  *handle points to an mpu6050 handle structure
- * @param[in]  slave is the iic slave number
- * @param[out] *data points to a set data buffer
+ * @param[in]  *handle pointer to an mpu6050 handle structure
+ * @param[in]  slave iic slave number
+ * @param[out] *data pointer to a set data buffer
  * @return     status code
  *             - 0 success
  *             - 1 get iic data out failed
@@ -1995,9 +1995,9 @@ uint8_t mpu6050_get_iic_data_out(mpu6050_handle_t *handle, mpu6050_iic_slave_t s
 
 /**
  * @brief     enable or disable the iic
- * @param[in] *handle points to an mpu6050 handle structure
- * @param[in] slave is the iic slave number
- * @param[in] enable is a bool value
+ * @param[in] *handle pointer to an mpu6050 handle structure
+ * @param[in] slave iic slave number
+ * @param[in] enable bool value
  * @return    status code
  *            - 0 success
  *            - 1 set iic enable failed
@@ -2010,9 +2010,9 @@ uint8_t mpu6050_set_iic_enable(mpu6050_handle_t *handle, mpu6050_iic_slave_t sla
 
 /**
  * @brief      get the iic status
- * @param[in]  *handle points to an mpu6050 handle structure
- * @param[in]  slave is the iic slave number
- * @param[out] *enable points to a bool value buffer
+ * @param[in]  *handle pointer to an mpu6050 handle structure
+ * @param[in]  slave iic slave number
+ * @param[out] *enable pointer to a bool value buffer
  * @return     status code
  *             - 0 success
  *             - 1 get iic enable failed
@@ -2025,9 +2025,9 @@ uint8_t mpu6050_get_iic_enable(mpu6050_handle_t *handle, mpu6050_iic_slave_t sla
 
 /**
  * @brief     enable or disable the iic byte swap
- * @param[in] *handle points to an mpu6050 handle structure
- * @param[in] slave is the iic slave number
- * @param[in] enable is a bool value
+ * @param[in] *handle pointer to an mpu6050 handle structure
+ * @param[in] slave iic slave number
+ * @param[in] enable bool value
  * @return    status code
  *            - 0 success
  *            - 1 set iic byte swap failed
@@ -2040,9 +2040,9 @@ uint8_t mpu6050_set_iic_byte_swap(mpu6050_handle_t *handle, mpu6050_iic_slave_t 
 
 /**
  * @brief      get the iic byte swap status
- * @param[in]  *handle points to an mpu6050 handle structure
- * @param[in]  slave is the iic slave number
- * @param[out] *enable points to a bool value buffer
+ * @param[in]  *handle pointer to an mpu6050 handle structure
+ * @param[in]  slave iic slave number
+ * @param[out] *enable pointer to a bool value buffer
  * @return     status code
  *             - 0 success
  *             - 1 get iic byte swap failed
@@ -2055,9 +2055,9 @@ uint8_t mpu6050_get_iic_byte_swap(mpu6050_handle_t *handle, mpu6050_iic_slave_t 
 
 /**
  * @brief     set the iic transaction mode
- * @param[in] *handle points to an mpu6050 handle structure
- * @param[in] slave is the iic slave number
- * @param[in] mode is the iic transaction mode
+ * @param[in] *handle pointer to an mpu6050 handle structure
+ * @param[in] slave iic slave number
+ * @param[in] mode iic transaction mode
  * @return    status code
  *            - 0 success
  *            - 1 set iic transaction mode failed
@@ -2070,9 +2070,9 @@ uint8_t mpu6050_set_iic_transaction_mode(mpu6050_handle_t *handle, mpu6050_iic_s
 
 /**
  * @brief      get the iic transaction mode
- * @param[in]  *handle points to an mpu6050 handle structure
- * @param[in]  slave is the iic slave number
- * @param[out] *mode points to an iic transaction mode buffer
+ * @param[in]  *handle pointer to an mpu6050 handle structure
+ * @param[in]  slave iic slave number
+ * @param[out] *mode pointer to an iic transaction mode buffer
  * @return     status code
  *             - 0 success
  *             - 1 get iic transaction mode failed
@@ -2085,9 +2085,9 @@ uint8_t mpu6050_get_iic_transaction_mode(mpu6050_handle_t *handle, mpu6050_iic_s
 
 /**
  * @brief     set the iic group order
- * @param[in] *handle points to an mpu6050 handle structure
- * @param[in] slave is the iic slave number
- * @param[in] order is the group order
+ * @param[in] *handle pointer to an mpu6050 handle structure
+ * @param[in] slave iic slave number
+ * @param[in] order group order
  * @return    status code
  *            - 0 success
  *            - 1 set iic group order failed
@@ -2100,9 +2100,9 @@ uint8_t mpu6050_set_iic_group_order(mpu6050_handle_t *handle, mpu6050_iic_slave_
 
 /**
  * @brief      get the iic group order
- * @param[in]  *handle points to an mpu6050 handle structure
- * @param[in]  slave is the iic slave number
- * @param[out] *order points to a group order buffer
+ * @param[in]  *handle pointer to an mpu6050 handle structure
+ * @param[in]  slave iic slave number
+ * @param[out] *order pointer to a group order buffer
  * @return     status code
  *             - 0 success
  *             - 1 get iic group order failed
@@ -2115,9 +2115,9 @@ uint8_t mpu6050_get_iic_group_order(mpu6050_handle_t *handle, mpu6050_iic_slave_
 
 /**
  * @brief     set the iic transferred length
- * @param[in] *handle points to an mpu6050 handle structure
- * @param[in] slave is the iic slave number
- * @param[in] len is the iic transferred length
+ * @param[in] *handle pointer to an mpu6050 handle structure
+ * @param[in] slave iic slave number
+ * @param[in] len iic transferred length
  * @return    status code
  *            - 0 success
  *            - 1 set iic transferred len failed
@@ -2131,9 +2131,9 @@ uint8_t mpu6050_set_iic_transferred_len(mpu6050_handle_t *handle, mpu6050_iic_sl
 
 /**
  * @brief      get the iic transferred length
- * @param[in]  *handle points to an mpu6050 handle structure
- * @param[in]  slave is the iic slave number
- * @param[out] *len points to an iic transferred length buffer
+ * @param[in]  *handle pointer to an mpu6050 handle structure
+ * @param[in]  slave iic slave number
+ * @param[out] *len pointer to an iic transferred length buffer
  * @return     status code
  *             - 0 success
  *             - 1 get iic transferred len failed
@@ -2146,8 +2146,8 @@ uint8_t mpu6050_get_iic_transferred_len(mpu6050_handle_t *handle, mpu6050_iic_sl
 
 /**
  * @brief      get the iic status
- * @param[in]  *handle points to an mpu6050 handle structure
- * @param[out] *status points to a status buffer
+ * @param[in]  *handle pointer to an mpu6050 handle structure
+ * @param[out] *status pointer to a status buffer
  * @return     status code
  *             - 0 success
  *             - 1 get iic status failed
@@ -2159,9 +2159,9 @@ uint8_t mpu6050_get_iic_status(mpu6050_handle_t *handle, uint8_t *status);
 
 /**
  * @brief     enable or disable the iic delay
- * @param[in] *handle points to an mpu6050 handle structure
- * @param[in] delay is the iic delay
- * @param[in] enable is a bool value
+ * @param[in] *handle pointer to an mpu6050 handle structure
+ * @param[in] delay iic delay
+ * @param[in] enable bool value
  * @return    status code
  *            - 0 success
  *            - 1 set iic delay enable failed
@@ -2173,9 +2173,9 @@ uint8_t mpu6050_set_iic_delay_enable(mpu6050_handle_t *handle, mpu6050_iic_delay
 
 /**
  * @brief      get the iic delay status
- * @param[in]  *handle points to an mpu6050 handle structure
- * @param[in]  delay is the iic delay
- * @param[out] *enable points to a bool value buffer
+ * @param[in]  *handle pointer to an mpu6050 handle structure
+ * @param[in]  delay iic delay
+ * @param[out] *enable pointer to a bool value buffer
  * @return     status code
  *             - 0 success
  *             - 1 get iic delay enable failed
@@ -2187,8 +2187,8 @@ uint8_t mpu6050_get_iic_delay_enable(mpu6050_handle_t *handle, mpu6050_iic_delay
 
 /**
  * @brief     enable or disable the iic4
- * @param[in] *handle points to an mpu6050 handle structure
- * @param[in] enable is a bool value
+ * @param[in] *handle pointer to an mpu6050 handle structure
+ * @param[in] enable bool value
  * @return    status code
  *            - 0 success
  *            - 1 set iic4 enable failed
@@ -2200,8 +2200,8 @@ uint8_t mpu6050_set_iic4_enable(mpu6050_handle_t *handle, mpu6050_bool_t enable)
 
 /**
  * @brief      get the iic4 status
- * @param[in]  *handle points to an mpu6050 handle structure
- * @param[out] *enable points to a bool value buffer
+ * @param[in]  *handle pointer to an mpu6050 handle structure
+ * @param[out] *enable pointer to a bool value buffer
  * @return     status code
  *             - 0 success
  *             - 1 get iic4 enable failed
@@ -2213,8 +2213,8 @@ uint8_t mpu6050_get_iic4_enable(mpu6050_handle_t *handle, mpu6050_bool_t *enable
 
 /**
  * @brief     enable or disable the iic4 interrupt
- * @param[in] *handle points to an mpu6050 handle structure
- * @param[in] enable is a bool value
+ * @param[in] *handle pointer to an mpu6050 handle structure
+ * @param[in] enable bool value
  * @return    status code
  *            - 0 success
  *            - 1 set iic4 interrupt failed
@@ -2226,8 +2226,8 @@ uint8_t mpu6050_set_iic4_interrupt(mpu6050_handle_t *handle, mpu6050_bool_t enab
 
 /**
  * @brief      get the iic4 interrupt status
- * @param[in]  *handle points to an mpu6050 handle structure
- * @param[out] *enable points to a bool value buffer
+ * @param[in]  *handle pointer to an mpu6050 handle structure
+ * @param[out] *enable pointer to a bool value buffer
  * @return     status code
  *             - 0 success
  *             - 1 get iic4 interrupt failed
@@ -2239,8 +2239,8 @@ uint8_t mpu6050_get_iic4_interrupt(mpu6050_handle_t *handle, mpu6050_bool_t *ena
 
 /**
  * @brief     set the iic4 transaction mode
- * @param[in] *handle points to an mpu6050 handle structure
- * @param[in] mode is the transaction mode
+ * @param[in] *handle pointer to an mpu6050 handle structure
+ * @param[in] mode transaction mode
  * @return    status code
  *            - 0 success
  *            - 1 set iic4 transaction mode failed
@@ -2252,8 +2252,8 @@ uint8_t mpu6050_set_iic4_transaction_mode(mpu6050_handle_t *handle, mpu6050_iic4
 
 /**
  * @brief      get the iic4 transaction mode
- * @param[in]  *handle points to an mpu6050 handle structure
- * @param[out] *mode points to a transaction mode buffer
+ * @param[in]  *handle pointer to an mpu6050 handle structure
+ * @param[out] *mode pointer to a transaction mode buffer
  * @return     status code
  *             - 0 success
  *             - 1 get iic4 transaction mode failed
@@ -2265,8 +2265,8 @@ uint8_t mpu6050_get_iic4_transaction_mode(mpu6050_handle_t *handle, mpu6050_iic4
 
 /**
  * @brief     set the iic delay
- * @param[in] *handle points to an mpu6050 handle structure
- * @param[in] delay is the iic delay
+ * @param[in] *handle pointer to an mpu6050 handle structure
+ * @param[in] delay iic delay
  * @return    status code
  *            - 0 success
  *            - 1 set iic delay failed
@@ -2279,8 +2279,8 @@ uint8_t mpu6050_set_iic_delay(mpu6050_handle_t *handle, uint8_t delay);
 
 /**
  * @brief      get the iic delay
- * @param[in]  *handle points to an mpu6050 handle structure
- * @param[out] *delay points to an iic delay buffer
+ * @param[in]  *handle pointer to an mpu6050 handle structure
+ * @param[out] *delay pointer to an iic delay buffer
  * @return     status code
  *             - 0 success
  *             - 1 get iic delay failed
@@ -2292,8 +2292,8 @@ uint8_t mpu6050_get_iic_delay(mpu6050_handle_t *handle, uint8_t *delay);
 
 /**
  * @brief     set the iic4 data out
- * @param[in] *handle points to an mpu6050 handle structure
- * @param[in] data is the set data
+ * @param[in] *handle pointer to an mpu6050 handle structure
+ * @param[in] data set data
  * @return    status code
  *            - 0 success
  *            - 1 set iic4 data out failed
@@ -2305,8 +2305,8 @@ uint8_t mpu6050_set_iic4_data_out(mpu6050_handle_t *handle, uint8_t data);
 
 /**
  * @brief      get the iic4 data out
- * @param[in]  *handle points to an mpu6050 handle structure
- * @param[out] *data points to a set data buffer
+ * @param[in]  *handle pointer to an mpu6050 handle structure
+ * @param[out] *data pointer to a set data buffer
  * @return     status code
  *             - 0 success
  *             - 1 get iic4 data out failed
@@ -2318,8 +2318,8 @@ uint8_t mpu6050_get_iic4_data_out(mpu6050_handle_t *handle, uint8_t *data);
 
 /**
  * @brief     set the iic4 data in
- * @param[in] *handle points to an mpu6050 handle structure
- * @param[in] data is the set data
+ * @param[in] *handle pointer to an mpu6050 handle structure
+ * @param[in] data set data
  * @return    status code
  *            - 0 success
  *            - 1 set iic4 data in failed
@@ -2331,8 +2331,8 @@ uint8_t mpu6050_set_iic4_data_in(mpu6050_handle_t *handle, uint8_t data);
 
 /**
  * @brief      get the iic4 data in
- * @param[in]  *handle points to an mpu6050 handle structure
- * @param[out] *data points to a set data buffer
+ * @param[in]  *handle pointer to an mpu6050 handle structure
+ * @param[out] *data pointer to a set data buffer
  * @return     status code
  *             - 0 success
  *             - 1 get iic4 data in failed
@@ -2344,9 +2344,9 @@ uint8_t mpu6050_get_iic4_data_in(mpu6050_handle_t *handle, uint8_t *data);
 
 /**
  * @brief      read the extern sensor data
- * @param[in]  *handle points to an mpu6050 handle structure
- * @param[out] *data points to a data buffer
- * @param[in]  len is the data length
+ * @param[in]  *handle pointer to an mpu6050 handle structure
+ * @param[out] *data pointer to a data buffer
+ * @param[in]  len data length
  * @return     status code
  *             - 0 success
  *             - 1 read extern sensor data failed
@@ -2370,7 +2370,7 @@ uint8_t mpu6050_read_extern_sensor_data(mpu6050_handle_t *handle, uint8_t *data,
 
 /**
  * @brief     load the dmp firmware
- * @param[in] *handle points to an mpu6050 handle structure
+ * @param[in] *handle pointer to an mpu6050 handle structure
  * @return    status code
  *            - 0 success
  *            - 1 load firmware failed
@@ -2385,8 +2385,8 @@ uint8_t mpu6050_dmp_load_firmware(mpu6050_handle_t *handle);
 
 /**
  * @brief     dmp set the pedometer walk time
- * @param[in] *handle points to an mpu6050 handle structure
- * @param[in] ms is the walk time
+ * @param[in] *handle pointer to an mpu6050 handle structure
+ * @param[in] ms walk time
  * @return    status code
  *            - 0 success
  *            - 1 dmp set pedometer walk time failed
@@ -2399,8 +2399,8 @@ uint8_t mpu6050_dmp_set_pedometer_walk_time(mpu6050_handle_t *handle, uint32_t m
 
 /**
  * @brief      dmp get the pedometer walk time
- * @param[in]  *handle points to an mpu6050 handle structure
- * @param[out] *ms points to a walk time buffer
+ * @param[in]  *handle pointer to an mpu6050 handle structure
+ * @param[out] *ms pointer to a walk time buffer
  * @return     status code
  *             - 0 success
  *             - 1 dmp get pedometer walk time failed
@@ -2413,8 +2413,8 @@ uint8_t mpu6050_dmp_get_pedometer_walk_time(mpu6050_handle_t *handle, uint32_t *
 
 /**
  * @brief     dmp set the pedometer step count
- * @param[in] *handle points to an mpu6050 handle structure
- * @param[in] count is the step count
+ * @param[in] *handle pointer to an mpu6050 handle structure
+ * @param[in] count step count
  * @return    status code
  *            - 0 success
  *            - 1 dmp set pedometer step count failed
@@ -2427,8 +2427,8 @@ uint8_t mpu6050_dmp_set_pedometer_step_count(mpu6050_handle_t *handle, uint32_t 
 
 /**
  * @brief      dmp get the pedometer step count
- * @param[in]  *handle points to an mpu6050 handle structure
- * @param[out] *count points to a step count buffer
+ * @param[in]  *handle pointer to an mpu6050 handle structure
+ * @param[out] *count pointer to a step count buffer
  * @return     status code
  *             - 0 success
  *             - 1 dmp get pedometer step count failed
@@ -2441,8 +2441,8 @@ uint8_t mpu6050_dmp_get_pedometer_step_count(mpu6050_handle_t *handle, uint32_t 
 
 /**
  * @brief     dmp set the shake reject timeout
- * @param[in] *handle points to an mpu6050 handle structure
- * @param[in] ms is the reject timeout
+ * @param[in] *handle pointer to an mpu6050 handle structure
+ * @param[in] ms reject timeout
  * @return    status code
  *            - 0 success
  *            - 1 dmp set shake reject timeout failed
@@ -2455,8 +2455,8 @@ uint8_t mpu6050_dmp_set_shake_reject_timeout(mpu6050_handle_t *handle, uint16_t 
 
 /**
  * @brief      dmp get the shake reject timeout
- * @param[in]  *handle points to an mpu6050 handle structure
- * @param[out] *ms points to a reject timeout buffer
+ * @param[in]  *handle pointer to an mpu6050 handle structure
+ * @param[out] *ms pointer to a reject timeout buffer
  * @return     status code
  *             - 0 success
  *             - 1 dmp get shake reject timeout failed
@@ -2469,8 +2469,8 @@ uint8_t mpu6050_dmp_get_shake_reject_timeout(mpu6050_handle_t *handle, uint16_t 
 
 /**
  * @brief     dmp set the shake reject time
- * @param[in] *handle points to an mpu6050 handle structure
- * @param[in] ms is the shake reject time
+ * @param[in] *handle pointer to an mpu6050 handle structure
+ * @param[in] ms shake reject time
  * @return    status code
  *            - 0 success
  *            - 1 dmp set shake reject time failed
@@ -2483,8 +2483,8 @@ uint8_t mpu6050_dmp_set_shake_reject_time(mpu6050_handle_t *handle, uint16_t ms)
 
 /**
  * @brief      dmp get the shake reject time
- * @param[in]  *handle points to an mpu6050 handle structure
- * @param[out] *ms points to a shake reject time buffer
+ * @param[in]  *handle pointer to an mpu6050 handle structure
+ * @param[out] *ms pointer to a shake reject time buffer
  * @return     status code
  *             - 0 success
  *             - 1 dmp get shake reject time failed
@@ -2497,8 +2497,8 @@ uint8_t mpu6050_dmp_get_shake_reject_time(mpu6050_handle_t *handle, uint16_t *ms
 
 /**
  * @brief     dmp set the shake reject thresh
- * @param[in] *handle points to an mpu6050 handle structure
- * @param[in] dps is the shake reject thresh
+ * @param[in] *handle pointer to an mpu6050 handle structure
+ * @param[in] dps shake reject thresh
  * @return    status code
  *            - 0 success
  *            - 1 dmp set shake reject thresh failed
@@ -2511,8 +2511,8 @@ uint8_t mpu6050_dmp_set_shake_reject_thresh(mpu6050_handle_t *handle, uint16_t d
 
 /**
  * @brief      dmp get the shake reject thresh
- * @param[in]  *handle points to an mpu6050 handle structure
- * @param[out] *dps points to a shake reject thresh dps buffer
+ * @param[in]  *handle pointer to an mpu6050 handle structure
+ * @param[out] *dps pointer to a shake reject thresh dps buffer
  * @return     status code
  *             - 0 success
  *             - 1 dmp get shake reject thresh failed
@@ -2525,8 +2525,8 @@ uint8_t mpu6050_dmp_get_shake_reject_thresh(mpu6050_handle_t *handle, uint16_t *
 
 /**
  * @brief     dmp set max time between taps to register as a multi tap
- * @param[in] *handle points to an mpu6050 handle structure
- * @param[in] ms is the delay time
+ * @param[in] *handle pointer to an mpu6050 handle structure
+ * @param[in] ms delay time
  * @return    status code
  *            - 0 success
  *            - 1 dmp set tap time multi failed
@@ -2539,8 +2539,8 @@ uint8_t mpu6050_dmp_set_tap_time_multi(mpu6050_handle_t *handle, uint16_t ms);
 
 /**
  * @brief      dmp get max time between taps to register as a multi tap
- * @param[in]  *handle points to an mpu6050 handle structure
- * @param[out] *ms points to a delay time buffer
+ * @param[in]  *handle pointer to an mpu6050 handle structure
+ * @param[out] *ms pointer to a delay time buffer
  * @return     status code
  *             - 0 success
  *             - 1 dmp get tap time multi failed
@@ -2553,8 +2553,8 @@ uint8_t mpu6050_dmp_get_tap_time_multi(mpu6050_handle_t *handle, uint16_t *ms);
 
 /**
  * @brief     dmp set the tap time
- * @param[in] *handle points to an mpu6050 handle structure
- * @param[in] ms is the tap time
+ * @param[in] *handle pointer to an mpu6050 handle structure
+ * @param[in] ms tap time
  * @return    status code
  *            - 0 success
  *            - 1 dmp set tap time failed
@@ -2567,8 +2567,8 @@ uint8_t mpu6050_dmp_set_tap_time(mpu6050_handle_t *handle, uint16_t ms);
 
 /**
  * @brief      dmp get the tap time
- * @param[in]  *handle points to an mpu6050 handle structure
- * @param[out] *ms points to a tap time buffer
+ * @param[in]  *handle pointer to an mpu6050 handle structure
+ * @param[out] *ms pointer to a tap time buffer
  * @return     status code
  *             - 0 success
  *             - 1 dmp get tap time failed
@@ -2581,8 +2581,8 @@ uint8_t mpu6050_dmp_get_tap_time(mpu6050_handle_t *handle, uint16_t *ms);
 
 /**
  * @brief     dmp set the min tap count
- * @param[in] *handle points to an mpu6050 handle structure
- * @param[in] cnt is the tap counter
+ * @param[in] *handle pointer to an mpu6050 handle structure
+ * @param[in] cnt tap counter
  * @return    status code
  *            - 0 success
  *            - 1 dmp set min tap count failed
@@ -2596,8 +2596,8 @@ uint8_t mpu6050_dmp_set_min_tap_count(mpu6050_handle_t *handle, uint8_t cnt);
 
 /**
  * @brief      dmp get the min tap count
- * @param[in]  *handle points to an mpu6050 handle structure
- * @param[out] *cnt points to a tap counter buffer
+ * @param[in]  *handle pointer to an mpu6050 handle structure
+ * @param[out] *cnt pointer to a tap counter buffer
  * @return     status code
  *             - 0 success
  *             - 1 dmp get min tap count failed
@@ -2610,9 +2610,9 @@ uint8_t mpu6050_dmp_get_min_tap_count(mpu6050_handle_t *handle, uint8_t *cnt);
 
 /**
  * @brief     dmp enable or disable the tap axes
- * @param[in] *handle points to an mpu6050 handle structure
- * @param[in] axis is the set axis
- * @param[in] enable is a bool value
+ * @param[in] *handle pointer to an mpu6050 handle structure
+ * @param[in] axis set axis
+ * @param[in] enable bool value
  * @return    status code
  *            - 0 success
  *            - 1 dmp set tap axes failed
@@ -2625,9 +2625,9 @@ uint8_t mpu6050_dmp_set_tap_axes(mpu6050_handle_t *handle, mpu6050_axis_t axis, 
 
 /**
  * @brief      dmp get the tap axes status
- * @param[in]  *handle points to an mpu6050 handle structure
- * @param[in]  axis is the set axis
- * @param[out] *enable points to a bool value buffer
+ * @param[in]  *handle pointer to an mpu6050 handle structure
+ * @param[in]  axis set axis
+ * @param[out] *enable pointer to a bool value buffer
  * @return     status code
  *             - 0 success
  *             - 1 dmp get tap axes failed
@@ -2640,9 +2640,9 @@ uint8_t mpu6050_dmp_get_tap_axes(mpu6050_handle_t *handle, mpu6050_axis_t axis, 
 
 /**
  * @brief     dmp set the tap thresh
- * @param[in] *handle points to an mpu6050 handle structure
- * @param[in] axis is the set axis
- * @param[in] mg_ms is the set thresh
+ * @param[in] *handle pointer to an mpu6050 handle structure
+ * @param[in] axis set axis
+ * @param[in] mg_ms set thresh
  * @return    status code
  *            - 0 success
  *            - 1 dmp set tap thresh failed
@@ -2657,9 +2657,9 @@ uint8_t mpu6050_dmp_set_tap_thresh(mpu6050_handle_t *handle, mpu6050_axis_t axis
 
 /**
  * @brief      dmp get the tap thresh
- * @param[in]  *handle points to an mpu6050 handle structure
- * @param[in]  axis is the set axis
- * @param[out] *mg_ms points to an mg/ms thresh buffer
+ * @param[in]  *handle pointer to an mpu6050 handle structure
+ * @param[in]  axis set axis
+ * @param[out] *mg_ms pointer to an mg/ms thresh buffer
  * @return     status code
  *             - 0 success
  *             - 1 dmp get tap thresh failed
@@ -2673,8 +2673,8 @@ uint8_t mpu6050_dmp_get_tap_thresh(mpu6050_handle_t *handle, mpu6050_axis_t axis
 
 /**
  * @brief     dmp set the fifo rate
- * @param[in] *handle points to an mpu6050 handle structure
- * @param[in] rate is the set rate
+ * @param[in] *handle pointer to an mpu6050 handle structure
+ * @param[in] rate set rate
  * @return    status code
  *            - 0 success
  *            - 1 dmp set fifo rate failed
@@ -2688,8 +2688,8 @@ uint8_t mpu6050_dmp_set_fifo_rate(mpu6050_handle_t *handle, uint16_t rate);
 
 /**
  * @brief      dmp get the fifo rate
- * @param[in]  *handle points to an mpu6050 handle structure
- * @param[out] *rate points to a rate buffer
+ * @param[in]  *handle pointer to an mpu6050 handle structure
+ * @param[out] *rate pointer to a rate buffer
  * @return     status code
  *             - 0 success
  *             - 1 dmp get fifo rate failed
@@ -2702,8 +2702,8 @@ uint8_t mpu6050_dmp_get_fifo_rate(mpu6050_handle_t *handle, uint16_t *rate);
 
 /**
  * @brief     dmp enable or disable gyro calibrate
- * @param[in] *handle points to an mpu6050 handle structure
- * @param[in] enable is a bool value
+ * @param[in] *handle pointer to an mpu6050 handle structure
+ * @param[in] enable bool value
  * @return    status code
  *            - 0 success
  *            - 1 dmp set gyro calibrate failed
@@ -2716,8 +2716,8 @@ uint8_t mpu6050_dmp_set_gyro_calibrate(mpu6050_handle_t *handle, mpu6050_bool_t 
 
 /**
  * @brief     dmp enable or disable generate 3 axis quaternions from dmp
- * @param[in] *handle points to an mpu6050 handle structure
- * @param[in] enable is a bool value
+ * @param[in] *handle pointer to an mpu6050 handle structure
+ * @param[in] enable bool value
  * @return    status code
  *            - 0 success
  *            - 1 dmp set 3x quaternion failed
@@ -2730,8 +2730,8 @@ uint8_t mpu6050_dmp_set_3x_quaternion(mpu6050_handle_t *handle, mpu6050_bool_t e
 
 /**
  * @brief     dmp enable or disable generate 6 axis quaternions from dmp
- * @param[in] *handle points to an mpu6050 handle structure
- * @param[in] enable is a bool value
+ * @param[in] *handle pointer to an mpu6050 handle structure
+ * @param[in] enable bool value
  * @return    status code
  *            - 0 success
  *            - 1 dmp set 6x quaternion failed
@@ -2744,8 +2744,8 @@ uint8_t mpu6050_dmp_set_6x_quaternion(mpu6050_handle_t *handle, mpu6050_bool_t e
 
 /**
  * @brief     dmp set the interrupt mode
- * @param[in] *handle points to an mpu6050 handle structure
- * @param[in] mode is the dmp interrupt mode
+ * @param[in] *handle pointer to an mpu6050 handle structure
+ * @param[in] mode dmp interrupt mode
  * @return    status code
  *            - 0 success
  *            - 1 dmp set interrupt mode failed
@@ -2758,8 +2758,8 @@ uint8_t mpu6050_dmp_set_interrupt_mode(mpu6050_handle_t *handle, mpu6050_dmp_int
 
 /**
  * @brief     dmp set the gyro bias
- * @param[in] *handle points to an mpu6050 handle structure
- * @param[in] *bias points to a bias buffer
+ * @param[in] *handle pointer to an mpu6050 handle structure
+ * @param[in] *bias pointer to a bias buffer
  * @return    status code
  *            - 0 success
  *            - 1 dmp set gyro bias failed
@@ -2772,8 +2772,8 @@ uint8_t mpu6050_dmp_set_gyro_bias(mpu6050_handle_t *handle, int32_t bias[3]);
 
 /**
  * @brief     dmp set the accel bias
- * @param[in] *handle points to an mpu6050 handle structure
- * @param[in] *bias points to a bias buffer
+ * @param[in] *handle pointer to an mpu6050 handle structure
+ * @param[in] *bias pointer to a bias buffer
  * @return    status code
  *            - 0 success
  *            - 1 dmp set accel bias failed
@@ -2786,8 +2786,8 @@ uint8_t mpu6050_dmp_set_accel_bias(mpu6050_handle_t *handle, int32_t bias[3]);
 
 /**
  * @brief     dmp set the orientation
- * @param[in] *handle points to an mpu6050 handle structure
- * @param[in] *mat points to an orientation matrix buffer
+ * @param[in] *handle pointer to an mpu6050 handle structure
+ * @param[in] *mat pointer to an orientation matrix buffer
  * @return    status code
  *            - 0 success
  *            - 1 dmp set orientation failed
@@ -2800,8 +2800,8 @@ uint8_t mpu6050_dmp_set_orientation(mpu6050_handle_t *handle, int8_t mat[9]);
 
 /**
  * @brief     dmp enable or disable the dmp feature
- * @param[in] *handle points to an mpu6050 handle structure
- * @param[in] mask is the set mask
+ * @param[in] *handle pointer to an mpu6050 handle structure
+ * @param[in] mask set mask
  * @return    status code
  *            - 0 success
  *            - 1 dmp set feature failed
@@ -2818,16 +2818,16 @@ uint8_t mpu6050_dmp_set_feature(mpu6050_handle_t *handle, uint16_t mask);
 
 /**
  * @brief         dmp read the data
- * @param[in]     *handle points to an mpu6050 handle structure
- * @param[out]    *accel_raw points to an accel raw buffer
- * @param[out]    *accel_g points to an accel g buffer
- * @param[out]    *gyro_raw points to a gyro raw buffer
- * @param[out]    *gyro_dps points to a gyro dps buffer
- * @param[out]    *quat points to a quat buffer
- * @param[out]    *pitch points to a pitch buffer
- * @param[out]    *roll points to a roll buffer
- * @param[out]    *yaw points to a yaw buffer
- * @param[in,out] *l points to a length buffer
+ * @param[in]     *handle pointer to an mpu6050 handle structure
+ * @param[out]    *accel_raw pointer to an accel raw buffer
+ * @param[out]    *accel_g pointer to an accel g buffer
+ * @param[out]    *gyro_raw pointer to a gyro raw buffer
+ * @param[out]    *gyro_dps pointer to a gyro dps buffer
+ * @param[out]    *quat pointer to a quat buffer
+ * @param[out]    *pitch pointer to a pitch buffer
+ * @param[out]    *roll pointer to a roll buffer
+ * @param[out]    *yaw pointer to a yaw buffer
+ * @param[in,out] *l pointer to a length buffer
  * @return        status code
  *                - 0 success
  *                - 1 dmp get fifo rate failed
@@ -2850,8 +2850,8 @@ uint8_t mpu6050_dmp_read(mpu6050_handle_t *handle,
 
 /**
  * @brief     dmp set the tap callback
- * @param[in] *handle points to an mpu6050 handle structure
- * @param[in] *callback points to a callback function address
+ * @param[in] *handle pointer to an mpu6050 handle structure
+ * @param[in] *callback pointer to a callback function address
  * @return    status code
  *            - 0 success
  *            - 1 dmp set tap callback failed
@@ -2864,8 +2864,8 @@ uint8_t mpu6050_dmp_set_tap_callback(mpu6050_handle_t *handle, void (*callback)(
 
 /**
  * @brief     dmp set the orient callback
- * @param[in] *handle points to an mpu6050 handle structure
- * @param[in] *callback points to a callback function address
+ * @param[in] *handle pointer to an mpu6050 handle structure
+ * @param[in] *callback pointer to a callback function address
  * @return    status code
  *            - 0 success
  *            - 1 dmp set orient callback failed
@@ -2878,8 +2878,8 @@ uint8_t mpu6050_dmp_set_orient_callback(mpu6050_handle_t *handle, void (*callbac
 
 /**
  * @brief     enable or disable the dmp
- * @param[in] *handle points to an mpu6050 handle structure
- * @param[in] enable is a bool value
+ * @param[in] *handle pointer to an mpu6050 handle structure
+ * @param[in] enable bool value
  * @return    status code
  *            - 0 success
  *            - 1 dmp set enable failed
@@ -2892,11 +2892,11 @@ uint8_t mpu6050_dmp_set_enable(mpu6050_handle_t *handle, mpu6050_bool_t enable);
 
 /**
  * @brief      dmp gyro accel raw offset convert
- * @param[in]  *handle points to an mpu6050 handle structure
- * @param[in]  *gyro_offset_raw points to a gyro offset raw buffer
- * @param[in]  *accel_offset_raw points to an accel offset raw buffer
- * @param[out] *gyro_offset points to a gyro offset buffer
- * @param[out] *accel_offset points to an accel offset buffer
+ * @param[in]  *handle pointer to an mpu6050 handle structure
+ * @param[in]  *gyro_offset_raw pointer to a gyro offset raw buffer
+ * @param[in]  *accel_offset_raw pointer to an accel offset raw buffer
+ * @param[out] *gyro_offset pointer to a gyro offset buffer
+ * @param[out] *accel_offset pointer to an accel offset buffer
  * @return     status code
  *             - 0 success
  *             - 1 dmp set enable failed
@@ -2922,10 +2922,10 @@ uint8_t mpu6050_dmp_gyro_accel_raw_offset_convert(mpu6050_handle_t *handle,
 
 /**
  * @brief     set the chip register
- * @param[in] *handle points to an mpu6050 handle structure
- * @param[in] reg is the register address
- * @param[in] *buf points to a data buffer
- * @param[in] len is the data buffer length
+ * @param[in] *handle pointer to an mpu6050 handle structure
+ * @param[in] reg register address
+ * @param[in] *buf pointer to a data buffer
+ * @param[in] len data buffer length
  * @return    status code
  *            - 0 success
  *            - 1 write failed
@@ -2937,10 +2937,10 @@ uint8_t mpu6050_set_reg(mpu6050_handle_t *handle, uint8_t reg, uint8_t *buf, uin
 
 /**
  * @brief      get the chip register
- * @param[in]  *handle points to an mpu6050 handle structure
- * @param[in]  reg is the register address
- * @param[out] *buf points to a data buffer
- * @param[in]  len is the data buffer length
+ * @param[in]  *handle pointer to an mpu6050 handle structure
+ * @param[in]  reg register address
+ * @param[out] *buf pointer to a data buffer
+ * @param[in]  len data buffer length
  * @return     status code
  *             - 0 success
  *             - 1 read failed

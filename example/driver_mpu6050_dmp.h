@@ -98,10 +98,10 @@ uint8_t mpu6050_dmp_irq_handler(void);
 
 /**
  * @brief     dmp example init
- * @param[in] addr_pin is the iic device address
- * @param[in] *receive_callback points to a receive callback function
- * @param[in] *tap_callback points to a tap callback function
- * @param[in] *orient_callback points to an orient callback function
+ * @param[in] addr_pin iic device address
+ * @param[in] *receive_callback pointer to a receive callback function
+ * @param[in] *tap_callback pointer to a tap callback function
+ * @param[in] *orient_callback pointer to an orient callback function
  * @return    status code
  *            - 0 success
  *            - 1 init failed
@@ -124,15 +124,15 @@ uint8_t mpu6050_dmp_deinit(void);
 
 /**
  * @brief         dmp example read
- * @param[out]    *accel_raw points to an accel raw buffer
- * @param[out]    *accel_g points to an accel g buffer
- * @param[out]    *gyro_raw points to a gyro raw buffer
- * @param[out]    *gyro_dps points to a gyro dps buffer
- * @param[out]    *quat points to a quat buffer
- * @param[out]    *pitch points to a pitch buffer
- * @param[out]    *roll points to a roll buffer
- * @param[out]    *yaw points to a yaw buffer
- * @param[in,out] *l points to a length buffer
+ * @param[out]    *accel_raw pointer to an accel raw buffer
+ * @param[out]    *accel_g pointer to an accel g buffer
+ * @param[out]    *gyro_raw pointer to a gyro raw buffer
+ * @param[out]    *gyro_dps pointer to a gyro dps buffer
+ * @param[out]    *quat pointer to a quat buffer
+ * @param[out]    *pitch pointer to a pitch buffer
+ * @param[out]    *roll pointer to a roll buffer
+ * @param[out]    *yaw pointer to a yaw buffer
+ * @param[in,out] *l pointer to a length buffer
  * @return        status code
  *                - 0 success
  *                - 1 read failed
@@ -147,7 +147,7 @@ uint8_t mpu6050_dmp_read_all(int16_t (*accel_raw)[3], float (*accel_g)[3],
 
 /**
  * @brief      dmp example get pedometer counter
- * @param[out] *cnt points to a cnt buffer
+ * @param[out] *cnt pointer to a cnt buffer
  * @return     status code
  *             - 0 success
  *             - 1 get pedometer counter failed
