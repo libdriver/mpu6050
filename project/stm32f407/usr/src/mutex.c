@@ -98,7 +98,7 @@ uint8_t mutex_unlock(void)
 
 /**
  * @brief     mutex irq
- * @param[in] *irq points to an interrupt funtion
+ * @param[in] *irq pointer to an interrupt funtion
  * @note      none
  */
 void mutex_irq(uint8_t (*irq)(void))
