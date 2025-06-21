@@ -3799,6 +3799,7 @@ uint8_t mpu6050_init(mpu6050_handle_t *handle)
     timeout = 100;                                                                  /* set the timeout 1000 ms */
     while (timeout != 0)                                                            /* check the timeout */
     {
+        handle->delay_ms(10);                                                       /* delay 10 ms */
         res = a_mpu6050_iic_read(handle, MPU6050_REG_PWR_MGMT_1, &prev, 1);         /* read pwr mgmt 1 */
         if (res != 0)                                                               /* check the result */
         {
@@ -3814,7 +3815,6 @@ uint8_t mpu6050_init(mpu6050_handle_t *handle)
 
             return 0;                                                               /* success return 0 */
         }
-        handle->delay_ms(10);                                                       /* delay 10 ms */
         timeout--;                                                                  /* timeout-- */
     }
 
@@ -3856,6 +3856,7 @@ uint8_t mpu6050_deinit(mpu6050_handle_t *handle)
 
         return 4;                                                                   /* return error */
     }
+    handle->delay_ms(10);                                                           /* delay 10 ms */
     res = handle->iic_deinit();                                                     /* iic deinit */
     if (res != 0)                                                                   /* check the result */
     {
@@ -4709,7 +4710,8 @@ uint8_t mpu6050_device_reset(mpu6050_handle_t *handle)
 
         return 1;                                                                        /* return error */
     }
-
+    handle->delay_ms(10);                                                                /* delay 10 ms */
+    
     return 0;                                                                            /* success return 0 */
 }
 

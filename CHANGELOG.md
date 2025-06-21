@@ -1,3 +1,9 @@
+## 1.0.9 (2025-06-21)
+
+## Bug Fixes
+
+- fix i2c 400khz delay errors
+
 ## 1.0.8 (2025-04-16)
 
 ## Bug Fixes
