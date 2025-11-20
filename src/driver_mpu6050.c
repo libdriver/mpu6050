@@ -3971,7 +3971,11 @@ uint8_t mpu6050_read(mpu6050_handle_t *handle, int16_t (*accel_raw)[3], float (*
       
         uint8_t packet_size = accel_fifo_en*6 + (zg_fifo_en + yg_fifo_en + xg_fifo_en + temp_fifo_en)*2; // packet size to be read from fifo
        
-
+        if(packet_size ==0){
+            handle->debug_print("mpu6050: divison by zero error, packet_size=0, check fifo configuration or disable fifo.\n");
+          return 1;
+          
+        }
         res = a_mpu6050_iic_read(handle, MPU6050_REG_FIFO_COUNTH, (uint8_t *)buf, 2);              /* read fifo count */
         if (res != 0)                                                                              /* check result */
         {
