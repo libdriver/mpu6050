@@ -3954,12 +3954,23 @@ uint8_t mpu6050_read(mpu6050_handle_t *handle, int16_t (*accel_raw)[3], float (*
 
             return 1;                                                                              /* return error */
         }
-        if (conf != 0x78)                                                                          /* check the conf */
+
+       // assume no slave writes to fifo FIFO_EN = 0bXXXXX000
+       if (conf&0x07)                                                                          /* check the conf */
         {
             handle->debug_print("mpu6050: fifo conf is error.\n");                                 /* fifo conf is error */
 
             return 6;                                                                              /* return error */
         }
+
+        uint8_t accel_fifo_en = conf & 0x08;
+        uint8_t zg_fifo_en = conf & 0x10;
+        uint8_t yg_fifo_en = conf & 0x20;
+        uint8_t xg_fifo_en = conf & 0x40;
+        uint8_t temp_fifo_en = conf & 0x80;
+      
+        uint8_t packet_size = accel_fifo_en*4 + (zg_fifo_en + yg_fifo_en + xg_fifo_en + temp_fifo_en)*2; // packet size to be read from fifo
+       
 
         res = a_mpu6050_iic_read(handle, MPU6050_REG_FIFO_COUNTH, (uint8_t *)buf, 2);              /* read fifo count */
         if (res != 0)                                                                              /* check result */
@@ -3970,9 +3981,9 @@ uint8_t mpu6050_read(mpu6050_handle_t *handle, int16_t (*accel_raw)[3], float (*
         }
         count = (uint16_t)(((uint16_t)buf[0] << 8) | buf[1]);                                      /* set count */
         count = (count < 1024) ? count : 1024;                                                     /* just the counter */
-        count = (count < ((*len) * 12)) ? count : ((*len) * 12);                                   /* just outer buffer size */
-        count = (count / 12) * 12;                                                                 /* 12 times */
-        *len = count / 12;                                                                         /* set the output length */
+        count = (count < ((*len) * packet_size)) ? count : ((*len) * packet_size);                                   /* just outer buffer size */
+        count -= count%packet_size;                                                                 /* 12 times */
+        *len = count / packet_size;                                                                         /* set the output length */
         res = a_mpu6050_iic_read(handle, MPU6050_REG_R_W, handle->buf, count);                     /* read data */
         if (res != 0)                                                                              /* check result */
         {
@@ -3982,19 +3993,61 @@ uint8_t mpu6050_read(mpu6050_handle_t *handle, int16_t (*accel_raw)[3], float (*
         }
         for (i = 0; i < (*len); i++)                                                               /* *len times */
         {
-            accel_raw[i][0] = (int16_t)((uint16_t)handle->buf[i * 12 + 0] << 8) |
-                                         handle->buf[i * 12 + 1];                                  /* set raw accel x */
-            accel_raw[i][1] = (int16_t)((uint16_t)handle->buf[i * 12 + 2] << 8) |
-                                         handle->buf[i * 12 + 3];                                  /* set raw accel y */
-            accel_raw[i][2] = (int16_t)((uint16_t)handle->buf[i * 12 + 4] << 8) |
-                                         handle->buf[i * 12 + 5];                                  /* set raw accel z */
-            gyro_raw[i][0] = (int16_t)((uint16_t)handle->buf[i * 12 + 6] << 8) |
-                                        handle->buf[i * 12 + 7];                                   /* set raw gyro x */
-            gyro_raw[i][1] = (int16_t)((uint16_t)handle->buf[i * 12 + 8] << 8) |
-                                        handle->buf[i * 12 + 9];                                   /* set raw gyro y */
-            gyro_raw[i][2] = (int16_t)((uint16_t)handle->buf[i * 12 + 10] << 8) |
-                                        handle->buf[i * 12 + 11];                                  /* set raw gyro z */
+          uint8_t offset = 0;
 
+          if(accel_fifo_en) {
+            
+            accel_raw[i][0] = (int16_t)((uint16_t)handle->buf[i * 12 + 0] << 8) |
+                                         handle->buf[i * packet_size + 1];                                  /* set raw accel x */
+            accel_raw[i][1] = (int16_t)((uint16_t)handle->buf[i * 12 + 2] << 8) |
+                                         handle->buf[i * packet_size + 3];                                  /* set raw accel y */
+            accel_raw[i][2] = (int16_t)((uint16_t)handle->buf[i * 12 + 4] << 8) |
+                                         handle->buf[i * packet_size + 5];                                  /* set raw accel z */
+            offset += 4;
+            
+          }else {
+            accel_raw[i][0] = 0;                                  /* set raw accel x */
+            accel_raw[i][1] = 0;                                  /* set raw accel y */
+            accel_raw[i][2] = 0;                                  /* set raw accel z */
+          }
+          if(temp_fifo_en){
+            // temperature read from fifo
+            offset +=2;
+          }else {
+
+            
+          }
+          if(xg_fifo_en){
+             gyro_raw[i][0] = (int16_t)((uint16_t)handle->buf[i * 12 + offset] << 8) |
+                                        handle->buf[i * packet_size + offset+1];                                   /* set raw gyro x */
+                        offset +=2;
+
+          }else{
+            gyro_raw[i][0] = 0;
+          }
+          if(yg_fifo_en){
+            gyro_raw[i][1] = (int16_t)((uint16_t)handle->buf[i * 12 + offset] << 8) |
+                                        handle->buf[i * packet_size + offset+1];                                   /* set raw gyro y */
+                        offset +=2;
+
+          }else{
+            gyro_raw[i][1] = 0;
+          }
+          if(zg_fifo_en){
+            gyro_raw[i][2] = (int16_t)((uint16_t)handle->buf[i * 12 + offset] << 8) |
+                                        handle->buf[i * packet_size + offset+1];                                  /* set raw gyro z */
+                        offset +=2;
+
+
+          }else{
+             gyro_raw[i][2] = 0;
+          }
+          
+          
+          
+           
+            
+            
             if (accel_conf == 0)                                                                   /* ±2g */
             {
                 accel_g[i][0] = (float)(accel_raw[i][0]) / 16384.0f;                               /* set accel x */
