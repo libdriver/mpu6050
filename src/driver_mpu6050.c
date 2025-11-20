@@ -3963,13 +3963,13 @@ uint8_t mpu6050_read(mpu6050_handle_t *handle, int16_t (*accel_raw)[3], float (*
             return 6;                                                                              /* return error */
         }
 
-        uint8_t accel_fifo_en = conf & 0x08 >> 3;
-        uint8_t zg_fifo_en = conf & 0x10 >>4;
-        uint8_t yg_fifo_en = conf & 0x20 >> 5;
-        uint8_t xg_fifo_en = conf & 0x40 >> 6;
-        uint8_t temp_fifo_en = conf & 0x80 >> 7;
+        uint8_t accel_fifo_en = (conf & 0x08) >> 3; // accel fifo enabled?
+        uint8_t zg_fifo_en = (conf & 0x10) >>4; // gyro z axis enabled?
+        uint8_t yg_fifo_en = (conf & 0x20) >> 5; // gyro y axis enabled?
+        uint8_t xg_fifo_en = (conf & 0x40) >> 6; // gyro x axis enabled?
+        uint8_t temp_fifo_en = (conf & 0x80) >> 7; // temp enabled?
       
-        uint8_t packet_size = accel_fifo_en*4 + (zg_fifo_en + yg_fifo_en + xg_fifo_en + temp_fifo_en)*2; // packet size to be read from fifo
+        uint8_t packet_size = accel_fifo_en*6 + (zg_fifo_en + yg_fifo_en + xg_fifo_en + temp_fifo_en)*2; // packet size to be read from fifo
        
 
         res = a_mpu6050_iic_read(handle, MPU6050_REG_FIFO_COUNTH, (uint8_t *)buf, 2);              /* read fifo count */
