@@ -3963,11 +3963,11 @@ uint8_t mpu6050_read(mpu6050_handle_t *handle, int16_t (*accel_raw)[3], float (*
             return 6;                                                                              /* return error */
         }
 
-        uint8_t accel_fifo_en = conf & 0x08;
-        uint8_t zg_fifo_en = conf & 0x10;
-        uint8_t yg_fifo_en = conf & 0x20;
-        uint8_t xg_fifo_en = conf & 0x40;
-        uint8_t temp_fifo_en = conf & 0x80;
+        uint8_t accel_fifo_en = conf & 0x08 >> 3;
+        uint8_t zg_fifo_en = conf & 0x10 >>4;
+        uint8_t yg_fifo_en = conf & 0x20 >> 5;
+        uint8_t xg_fifo_en = conf & 0x40 >> 6;
+        uint8_t temp_fifo_en = conf & 0x80 >> 7;
       
         uint8_t packet_size = accel_fifo_en*4 + (zg_fifo_en + yg_fifo_en + xg_fifo_en + temp_fifo_en)*2; // packet size to be read from fifo
        
@@ -3994,16 +3994,17 @@ uint8_t mpu6050_read(mpu6050_handle_t *handle, int16_t (*accel_raw)[3], float (*
         for (i = 0; i < (*len); i++)                                                               /* *len times */
         {
           uint8_t offset = 0;
+          uint16_t base_idx = i * packet_size;
 
           if(accel_fifo_en) {
             
-            accel_raw[i][0] = (int16_t)((uint16_t)handle->buf[i * 12 + 0] << 8) |
-                                         handle->buf[i * packet_size + 1];                                  /* set raw accel x */
-            accel_raw[i][1] = (int16_t)((uint16_t)handle->buf[i * 12 + 2] << 8) |
-                                         handle->buf[i * packet_size + 3];                                  /* set raw accel y */
-            accel_raw[i][2] = (int16_t)((uint16_t)handle->buf[i * 12 + 4] << 8) |
-                                         handle->buf[i * packet_size + 5];                                  /* set raw accel z */
-            offset += 4;
+            accel_raw[i][0] = (int16_t)((uint16_t)handle->buf[base_idx ] << 8) |
+                                         handle->buf[base_idx + 1];                                  /* set raw accel x */
+            accel_raw[i][1] = (int16_t)((uint16_t)handle->buf[base_idx+ 2] << 8) |
+                                         handle->buf[base_idx + 3];                                  /* set raw accel y */
+            accel_raw[i][2] = (int16_t)((uint16_t)handle->buf[base_idx + 4] << 8) |
+                                         handle->buf[base_idx + 5];                                  /* set raw accel z */
+            offset += 6;
             
           }else {
             accel_raw[i][0] = 0;                                  /* set raw accel x */
@@ -4018,24 +4019,24 @@ uint8_t mpu6050_read(mpu6050_handle_t *handle, int16_t (*accel_raw)[3], float (*
             
           }
           if(xg_fifo_en){
-             gyro_raw[i][0] = (int16_t)((uint16_t)handle->buf[i * 12 + offset] << 8) |
-                                        handle->buf[i * packet_size + offset+1];                                   /* set raw gyro x */
+             gyro_raw[i][0] = (int16_t)((uint16_t)handle->buf[base_idx + offset] << 8) |
+                                        handle->buf[base_idx + offset+1];                                   /* set raw gyro x */
                         offset +=2;
 
           }else{
             gyro_raw[i][0] = 0;
           }
           if(yg_fifo_en){
-            gyro_raw[i][1] = (int16_t)((uint16_t)handle->buf[i * 12 + offset] << 8) |
-                                        handle->buf[i * packet_size + offset+1];                                   /* set raw gyro y */
+            gyro_raw[i][1] = (int16_t)((uint16_t)handle->buf[base_idx + offset] << 8) |
+                                        handle->buf[base_idx + offset+1];                                   /* set raw gyro y */
                         offset +=2;
 
           }else{
             gyro_raw[i][1] = 0;
           }
           if(zg_fifo_en){
-            gyro_raw[i][2] = (int16_t)((uint16_t)handle->buf[i * 12 + offset] << 8) |
-                                        handle->buf[i * packet_size + offset+1];                                  /* set raw gyro z */
+            gyro_raw[i][2] = (int16_t)((uint16_t)handle->buf[base_idx + offset] << 8) |
+                                        handle->buf[base_idx + offset+1];                                  /* set raw gyro z */
                         offset +=2;
 
 
