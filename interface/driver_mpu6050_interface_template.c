@@ -62,10 +62,10 @@ uint8_t mpu6050_interface_iic_deinit(void)
 
 /**
  * @brief      interface iic bus read
- * @param[in]  addr is the iic device write address
- * @param[in]  reg is the iic register address
- * @param[out] *buf points to a data buffer
- * @param[in]  len is the length of the data buffer
+ * @param[in]  addr iic device write address
+ * @param[in]  reg iic register address
+ * @param[out] *buf pointer to a data buffer
+ * @param[in]  len length of the data buffer
  * @return     status code
  *             - 0 success
  *             - 1 read failed
@@ -78,10 +78,10 @@ uint8_t mpu6050_interface_iic_read(uint8_t addr, uint8_t reg, uint8_t *buf, uint
 
 /**
  * @brief     interface iic bus write
- * @param[in] addr is the iic device write address
- * @param[in] reg is the iic register address
- * @param[in] *buf points to a data buffer
- * @param[in] len is the length of the data buffer
+ * @param[in] addr iic device write address
+ * @param[in] reg iic register address
+ * @param[in] *buf pointer to a data buffer
+ * @param[in] len length of the data buffer
  * @return    status code
  *            - 0 success
  *            - 1 write failed
@@ -94,7 +94,7 @@ uint8_t mpu6050_interface_iic_write(uint8_t addr, uint8_t reg, uint8_t *buf, uin
 
 /**
  * @brief     interface delay ms
- * @param[in] ms
+ * @param[in] ms time
  * @note      none
  */
 void mpu6050_interface_delay_ms(uint32_t ms)
@@ -104,7 +104,7 @@ void mpu6050_interface_delay_ms(uint32_t ms)
 
 /**
  * @brief     interface print format data
- * @param[in] fmt is the format data
+ * @param[in] fmt format data
  * @note      none
  */
 void mpu6050_interface_debug_print(const char *const fmt, ...)
@@ -114,7 +114,7 @@ void mpu6050_interface_debug_print(const char *const fmt, ...)
 
 /**
  * @brief     interface receive callback
- * @param[in] type is the irq type
+ * @param[in] type irq type
  * @note      none
  */
 void mpu6050_interface_receive_callback(uint8_t type)
@@ -162,8 +162,8 @@ void mpu6050_interface_receive_callback(uint8_t type)
 
 /**
  * @brief     interface dmp tap callback
- * @param[in] count is the tap count
- * @param[in] direction is the tap direction
+ * @param[in] count tap count
+ * @param[in] direction tap direction
  * @note      none
  */
 void mpu6050_interface_dmp_tap_callback(uint8_t count, uint8_t direction)
@@ -217,7 +217,7 @@ void mpu6050_interface_dmp_tap_callback(uint8_t count, uint8_t direction)
 
 /**
  * @brief     interface dmp orient callback
- * @param[in] orientation is the dmp orientation
+ * @param[in] orientation dmp orientation
  * @note      none
  */
 void mpu6050_interface_dmp_orient_callback(uint8_t orientation)

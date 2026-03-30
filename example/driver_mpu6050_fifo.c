@@ -59,7 +59,7 @@ uint8_t mpu6050_fifo_irq_handler(void)
 
 /**
  * @brief     fifo example init
- * @param[in] addr_pin is the iic device address
+ * @param[in] addr_pin iic device address
  * @return    status code
  *            - 0 success
  *            - 1 init failed
@@ -525,11 +525,11 @@ uint8_t mpu6050_fifo_init(mpu6050_address_t addr_pin)
 
 /**
  * @brief         fifo example read
- * @param[out]    **accel_raw points to an accel raw data buffer
- * @param[out]    **accel_g points to a converted accel data buffer
- * @param[out]    **gyro_raw points to an gyro raw data buffer
- * @param[out]    **gyro_dps points to a converted gyro data buffer
- * @param[in,out] *len points to a length buffer
+ * @param[out]    **accel_raw pointer to an accel raw data buffer
+ * @param[out]    **accel_g pointer to a converted accel data buffer
+ * @param[out]    **gyro_raw pointer to an gyro raw data buffer
+ * @param[out]    **gyro_dps pointer to a converted gyro data buffer
+ * @param[in,out] *len pointer to a length buffer
  * @return        status code
  *                - 0 success
  *                - 1 read failed

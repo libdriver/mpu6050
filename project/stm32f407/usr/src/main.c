@@ -79,7 +79,7 @@ void EXTI0_IRQHandler(void)
 
 /**
  * @brief     gpio exti callback
- * @param[in] pin is the gpio pin
+ * @param[in] pin gpio pin
  * @note      none
  */
 void HAL_GPIO_EXTI_Callback(uint16_t pin)
@@ -93,7 +93,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t pin)
 
 /**
  * @brief     interface receive callback
- * @param[in] type is the irq type
+ * @param[in] type irq type
  * @note      none
  */
 static void a_receive_callback(uint8_t type)
@@ -142,8 +142,8 @@ static void a_receive_callback(uint8_t type)
 
 /**
  * @brief     interface dmp tap callback
- * @param[in] count is the tap count
- * @param[in] direction is the tap direction
+ * @param[in] count tap count
+ * @param[in] direction tap direction
  * @note      none
  */
 static void a_dmp_tap_callback(uint8_t count, uint8_t direction)
@@ -203,7 +203,7 @@ static void a_dmp_tap_callback(uint8_t count, uint8_t direction)
 
 /**
  * @brief     interface dmp orient callback
- * @param[in] orient is the dmp orient
+ * @param[in] orient dmp orient
  * @note      none
  */
 static void a_dmp_orient_callback(uint8_t orientation)
@@ -249,8 +249,8 @@ static void a_dmp_orient_callback(uint8_t orientation)
 
 /**
  * @brief     mpu6050 full function
- * @param[in] argc is arg numbers
- * @param[in] **argv is the arg address
+ * @param[in] argc arg numbers
+ * @param[in] **argv arg address
  * @return    status code
  *            - 0 success
  *            - 1 run failed

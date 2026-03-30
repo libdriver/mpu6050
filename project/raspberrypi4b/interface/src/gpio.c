@@ -59,7 +59,7 @@ extern uint8_t (*g_gpio_irq)(void);       /**< gpio irq */
 
 /**
  * @brief  gpio interrupt pthread
- * @param  *p ponts to an args buffer
+ * @param  *p pointer to an args buffer
  * @return NULL
  * @note   none
  */
