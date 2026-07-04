@@ -2836,7 +2836,7 @@ uint8_t mpu6050_dmp_set_feature(mpu6050_handle_t *handle, uint16_t mask);
  *                - 4 dmp is not inited
  *                - 5 quat check error
  *                - 6 fifo overflow
- *                - 7 fifo data is too little
+ *                - 7 fifo data is not enough
  *                - 8 no data
  * @note          none
  */
