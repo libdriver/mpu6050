@@ -91,8 +91,8 @@ var driver__mpu6050_8h =
       [ "MPU6050_GYROSCOPE_RANGE_2000DPS", "group__mpu6050__basic__driver.html#gga334608694ff39953897e2b6f008f15d0a4cd35dc28b0eb372c0eb62c07df98254", null ]
     ] ],
     [ "mpu6050_iic4_transaction_mode_t", "group__mpu6050__basic__driver.html#gae5211e61d3ffd9a2b6b023c0df563322", [
-      [ "MPU6050_IIC4_TRANSACTION_MODE_DATA", "group__mpu6050__basic__driver.html#ggae5211e61d3ffd9a2b6b023c0df563322aaeecf2c30af2716878db258326a80107", null ],
-      [ "MPU6050_IIC4_TRANSACTION_MODE_REG", "group__mpu6050__basic__driver.html#ggae5211e61d3ffd9a2b6b023c0df563322a9351149579b2841fbbc55d469a165200", null ]
+      [ "MPU6050_IIC4_TRANSACTION_MODE_REG", "group__mpu6050__basic__driver.html#ggae5211e61d3ffd9a2b6b023c0df563322a9351149579b2841fbbc55d469a165200", null ],
+      [ "MPU6050_IIC4_TRANSACTION_MODE_DATA", "group__mpu6050__basic__driver.html#ggae5211e61d3ffd9a2b6b023c0df563322aaeecf2c30af2716878db258326a80107", null ]
     ] ],
     [ "mpu6050_iic_clock_t", "group__mpu6050__basic__driver.html#ga1cf6080fba857183c64aa2b32bb43902", [
       [ "MPU6050_IIC_CLOCK_348_KHZ", "group__mpu6050__basic__driver.html#gga1cf6080fba857183c64aa2b32bb43902a3bf7b358c6f1dab5d1b55713597fbd75", null ],
@@ -150,8 +150,8 @@ var driver__mpu6050_8h =
       [ "MPU6050_IIC_STATUS_IIC_SLV0_NACK", "group__mpu6050__basic__driver.html#ggaf03f9e13f116a87843073cb3503eaecaa07ddea3bdcafb3c903cdc47e430b87e8", null ]
     ] ],
     [ "mpu6050_iic_transaction_mode_t", "group__mpu6050__basic__driver.html#gaaefe66b48239b17d82d3904b3ab78636", [
-      [ "MPU6050_IIC_TRANSACTION_MODE_DATA", "group__mpu6050__basic__driver.html#ggaaefe66b48239b17d82d3904b3ab78636a3621236b0b5cb2320a6a29adedb828e3", null ],
-      [ "MPU6050_IIC_TRANSACTION_MODE_REG_DATA", "group__mpu6050__basic__driver.html#ggaaefe66b48239b17d82d3904b3ab78636a546c627ee476b3d571d7ed294703d7b8", null ]
+      [ "MPU6050_IIC_TRANSACTION_MODE_REG_DATA", "group__mpu6050__basic__driver.html#ggaaefe66b48239b17d82d3904b3ab78636a546c627ee476b3d571d7ed294703d7b8", null ],
+      [ "MPU6050_IIC_TRANSACTION_MODE_DATA", "group__mpu6050__basic__driver.html#ggaaefe66b48239b17d82d3904b3ab78636a3621236b0b5cb2320a6a29adedb828e3", null ]
     ] ],
     [ "mpu6050_interrupt_t", "group__mpu6050__basic__driver.html#gaa776c016fbb2bb3dcbbce1145877965b", [
       [ "MPU6050_INTERRUPT_MOTION", "group__mpu6050__basic__driver.html#ggaa776c016fbb2bb3dcbbce1145877965bae1b0361eeb0d58308c5046b2af43d5e2", null ],
