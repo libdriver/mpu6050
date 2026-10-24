@@ -283,8 +283,8 @@ typedef enum
  */
 typedef enum  
 {
-    MPU6050_IIC_TRANSACTION_MODE_DATA     = 0x00,        /**< data only */
-    MPU6050_IIC_TRANSACTION_MODE_REG_DATA = 0x01,        /**< write a register address prior to reading or writing data */
+    MPU6050_IIC_TRANSACTION_MODE_REG_DATA = 0x00,        /**< write a register address prior to reading or writing data */
+    MPU6050_IIC_TRANSACTION_MODE_DATA     = 0x01,        /**< data only */
 } mpu6050_iic_transaction_mode_t;
 
 /**
@@ -292,8 +292,8 @@ typedef enum
  */
 typedef enum  
 {
-    MPU6050_IIC4_TRANSACTION_MODE_DATA = 0x00,        /**< data only */
-    MPU6050_IIC4_TRANSACTION_MODE_REG  = 0x01,        /**< register only */
+    MPU6050_IIC4_TRANSACTION_MODE_REG  = 0x00,        /**< register only */
+    MPU6050_IIC4_TRANSACTION_MODE_DATA = 0x01,        /**< data only */
 } mpu6050_iic4_transaction_mode_t;
 
 /**
@@ -2845,8 +2845,7 @@ uint8_t mpu6050_dmp_read(mpu6050_handle_t *handle,
                          int16_t (*gyro_raw)[3], float (*gyro_dps)[3],
                          int32_t (*quat)[4],
                          float *pitch, float *roll, float *yaw,
-                         uint16_t *l
-                        );
+                         uint16_t *l);
 
 /**
  * @brief     dmp set the tap callback

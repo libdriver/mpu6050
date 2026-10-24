@@ -727,11 +727,11 @@ static uint8_t a_mpu6050_get_st_biases(mpu6050_handle_t *handle,
     }
     if (hw_test_enable != 0)                                                                        /* if enable */
     {
-        data[0] = 0x18 | 0xE0;                                                                      /* enable 2g and test */
+        data[0] = 0x10 | 0xE0;                                                                      /* enable 8g and test */
     }
     else
     {
-        data[0] = 0x18;                                                                             /* enable 2g */
+        data[0] = 0x10;                                                                             /* enable 8g */
     }
     res = a_mpu6050_iic_write(handle, MPU6050_REG_ACCEL_CONFIG, data, 1);                           /* read the accel config */
     if (res != 0)                                                                                   /* check the result */
@@ -770,6 +770,12 @@ static uint8_t a_mpu6050_get_st_biases(mpu6050_handle_t *handle,
     }
     cnt = ((uint16_t)data[0] << 8) | data[1];                                                       /* set the counter */
     pack_cnt = cnt / 12;                                                                            /* set the packet counter */
+    if (pack_cnt == 0)                                                                              /* protect against divide by zero */
+    {
+        handle->debug_print("mpu6050: not enough fifo data for self test.\n");                      /* not enough fifo data for self test */
+
+        return 1;                                                                                   /* return error */
+    }
 
     gyro_offset[0] = 0;                                                                             /* gyro offset 0 */
     gyro_offset[1] = 0;                                                                             /* gyro offset 1 */
@@ -805,9 +811,9 @@ static uint8_t a_mpu6050_get_st_biases(mpu6050_handle_t *handle,
     gyro_offset[0] = (int32_t)(((int64_t)gyro_offset[0] << 16) / (32768 / 250) / pack_cnt);         /* set the gyro offset 0 */
     gyro_offset[1] = (int32_t)(((int64_t)gyro_offset[1] << 16) / (32768 / 250) / pack_cnt);         /* set the gyro offset 1 */
     gyro_offset[2] = (int32_t)(((int64_t)gyro_offset[2] << 16) / (32768 / 250) / pack_cnt);         /* set the gyro offset 2 */
-    accel_offset[0] = (int32_t)(((int64_t)accel_offset[0] << 16) / (32768 / 16) / pack_cnt);        /* set the accel offset 0 */
-    accel_offset[1] = (int32_t)(((int64_t)accel_offset[1] << 16) / (32768 / 16) / pack_cnt);        /* set the accel offset 1 */
-    accel_offset[2] = (int32_t)(((int64_t)accel_offset[2] << 16) / (32768 / 16) / pack_cnt);        /* set the accel offset 2 */
+    accel_offset[0] = (int32_t)(((int64_t)accel_offset[0] << 16) / (32768 / 8) / pack_cnt);         /* set the accel offset 0 */
+    accel_offset[1] = (int32_t)(((int64_t)accel_offset[1] << 16) / (32768 / 8) / pack_cnt);         /* set the accel offset 1 */
+    accel_offset[2] = (int32_t)(((int64_t)accel_offset[2] << 16) / (32768 / 8) / pack_cnt);         /* set the accel offset 2 */
     if (accel_offset[2] > 0L)                                                                       /* check the accel offset */
     {
         accel_offset[2] -= 65536L;                                                                  /* -65536 */
@@ -3181,17 +3187,16 @@ uint8_t mpu6050_dmp_read(mpu6050_handle_t *handle,
                          int16_t (*gyro_raw)[3], float (*gyro_dps)[3],
                          int32_t (*quat)[4],
                          float *pitch, float *roll, float *yaw,
-                         uint16_t *l
-                        )
+                         uint16_t *l)
 {
     uint8_t res;
-    uint8_t i = 0;
     uint16_t len;
     uint8_t buf[2];
     uint8_t prev;
     uint16_t count;
     uint16_t j;
-
+    uint8_t i = 0;
+    
     if (handle == NULL)                                                                                                   /* check handle */
     {
         return 2;                                                                                                         /* return error */
@@ -6247,7 +6252,7 @@ uint8_t mpu6050_set_interrupt_latch(mpu6050_handle_t *handle, mpu6050_bool_t ena
         return 1;                                                                           /* return error */
     }
     prev &= ~(1 << 5);                                                                      /* clear config */
-    prev |= (!enable) << 5;                                                                 /* set config */
+    prev |= enable << 5;                                                                    /* set config */
     res = a_mpu6050_iic_write(handle, MPU6050_REG_INT_PIN_CFG, (uint8_t *)&prev, 1);        /* write interrupt pin */
     if (res != 0)                                                                           /* check result */
     {
@@ -6291,7 +6296,7 @@ uint8_t mpu6050_get_interrupt_latch(mpu6050_handle_t *handle, mpu6050_bool_t *en
 
         return 1;                                                                           /* return error */
     }
-    *enable = (mpu6050_bool_t)(!((prev >> 5) & 0x01));                                      /* get the bool */
+    *enable = (mpu6050_bool_t)((prev >> 5) & 0x01);                                         /* get the bool */
 
     return 0;                                                                               /* success return 0 */
 }
@@ -7429,18 +7434,18 @@ uint8_t mpu6050_get_motion_threshold(mpu6050_handle_t *handle, uint8_t *threshol
  */
 uint8_t mpu6050_motion_threshold_convert_to_register(mpu6050_handle_t *handle, float mg, uint8_t *reg)
 {
-    if (handle == NULL)                  /* check handle */
+    if (handle == NULL)                 /* check handle */
     {
-        return 2;                        /* return error */
+        return 2;                       /* return error */
     }
-    if (handle->inited != 1)             /* check handle initialization */
+    if (handle->inited != 1)            /* check handle initialization */
     {
-        return 3;                        /* return error */
+        return 3;                       /* return error */
     }
 
-    *reg = (uint8_t)(mg / 32.0f);        /* convert real data to register data */
+    *reg = (uint8_t)(mg / 32.0f);       /* convert real data to register data */
 
-    return 0;                            /* success return 0 */
+    return 0;                           /* success return 0 */
 }
 
 /**
@@ -7456,18 +7461,18 @@ uint8_t mpu6050_motion_threshold_convert_to_register(mpu6050_handle_t *handle, f
  */
 uint8_t mpu6050_motion_threshold_convert_to_data(mpu6050_handle_t *handle, uint8_t reg, float *mg)
 {
-    if (handle == NULL)                 /* check handle */
+    if (handle == NULL)                /* check handle */
     {
-        return 2;                       /* return error */
+        return 2;                      /* return error */
     }
-    if (handle->inited != 1)            /* check handle initialization */
+    if (handle->inited != 1)           /* check handle initialization */
     {
-        return 3;                       /* return error */
+        return 3;                      /* return error */
     }
 
-    *mg = (float)(reg) * 32.0f;         /* convert raw data to real data */
+    *mg = (float)(reg) * 32.0f;        /* convert raw data to real data */
 
-    return 0;                           /* success return 0 */
+    return 0;                          /* success return 0 */
 }
 
 /**
